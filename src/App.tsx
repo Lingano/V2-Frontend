@@ -10,7 +10,7 @@ function App() {
         "https://linganodjango-8d1cd6dceb8a.herokuapp.com";
 
     useEffect(() => {
-        fetch(`${API_URL}/api/hello/`)
+        fetch(`${API_URL}/api/current-time/`)
             .then((response) => response.json())
             .then((data) => setMessage(data.message))
             .catch((error) => {
