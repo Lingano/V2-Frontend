@@ -6,7 +6,7 @@ function App() {
 
     // Use environment variables for API URL
     const API_URL =
-        import.meta.env.VITE_API_URL ||
+        import.meta.env.VITE_API_BASE_URL ||
         "https://linganodjango-8d1cd6dceb8a.herokuapp.com";
 
     useEffect(() => {
