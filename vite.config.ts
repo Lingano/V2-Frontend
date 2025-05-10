@@ -22,8 +22,10 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "http://localhost:8000",
+                target: "https://linganodjango-8d1cd6dceb8a.herokuapp.com",
                 changeOrigin: true,
+                secure: false,
+                rewrite: (path) => path,
             },
         },
     },

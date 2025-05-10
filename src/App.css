@@ -1,42 +1,319 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
+/* Remove conflicting styles */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+    filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+    filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
 }
 
 .card {
-  padding: 2em;
+    padding: 2em;
 }
 
 .read-the-docs {
-  color: #888;
+    color: #888;
+}
+
+/* Card enhancements */
+.chakra-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden !important;
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px !important;
+}
+
+.chakra-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Card header with gradient */
+.chakra-card .chakra-card__header {
+    background: linear-gradient(
+        to right,
+        rgba(79, 70, 229, 0.9),
+        rgba(56, 189, 248, 0.9)
+    );
+    color: white;
+    font-weight: bold;
+    padding: 1rem !important;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Time display card special styling */
+.chakra-card:first-of-type {
+    border: 1px solid rgba(79, 70, 229, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1) !important;
+}
+
+.time-card {
+    border: 1px solid rgba(79, 70, 229, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1) !important;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Animated time display */
+.animated-time {
+    position: relative;
+    display: inline-block;
+    animation: timeUpdate 0.5s ease-out;
+}
+
+@keyframes timeUpdate {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse button animation */
+.pulse-button {
+    position: relative;
+}
+
+.pulse-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    animation: pulse-animation 2s infinite;
+    opacity: 0.8;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(to right, #4f46e5, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Progress bar enhancements */
+.chakra-progress {
+    height: 10px !important;
+    border-radius: 5px !important;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chakra-progress__track {
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.chakra-progress__bar {
+    transition: width 1s ease-in-out;
+}
+
+/* Stats grid with hover effects */
+.chakra-stat {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.chakra-stat:hover {
+    transform: scale(1.05);
+}
+
+.chakra-stat__number {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(45deg, #4f46e5, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Badge styling */
+.chakra-badge {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tab styling */
+.chakra-tabs__tab {
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+}
+
+.chakra-tabs__tab[aria-selected="true"] {
+    position: relative;
+    overflow: hidden;
+}
+
+.chakra-tabs__tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #4f46e5, #38bdf8);
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Button animations */
+.chakra-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.chakra-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chakra-button:active {
+    transform: translateY(0);
+}
+
+.chakra-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.chakra-button:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Image hover effects */
+.chakra-image {
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+}
+
+.chakra-card:hover .chakra-image {
+    transform: scale(1.05);
+}
+
+/* App container styling */
+.app-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    max-width: 1400px !important;
+}
+
+/* Custom animation for skeleton loading */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.chakra-skeleton {
+    animation: pulse 1.5s infinite !important;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .chakra-card:hover {
+        transform: none;
+    }
+
+    .chakra-stat:hover {
+        transform: none;
+    }
 }
