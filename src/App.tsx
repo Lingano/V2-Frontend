@@ -12,7 +12,7 @@ function App() {
     useEffect(() => {
         fetch(`${API_URL}/api/current-time/`)
             .then((response) => response.json())
-            .then((data) => setMessage(data.message))
+            .then((data) => setMessage(data.current_time))
             .catch((error) => {
                 console.error("Error fetching data:", error);
                 setMessage("Error loading message");
