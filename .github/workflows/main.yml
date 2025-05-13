@@ -43,6 +43,8 @@ jobs:
             cd ~/LinganoDeployment/V2-Backend  # Change to your backend repo directory
             git pull origin main
             # Install dependencies and restart your backend service if necessary
+            python3 -m venv venv              # Create the virtual environment
+            source venv/bin/activate          # Activate the virtual environment
             pip install -r requirements.txt  # For Django or other Python dependencies
             python manage.py migrate         # For Django migrations
             sudo systemctl restart gunicorn  # If you're using Gunicorn (adjust as needed)
