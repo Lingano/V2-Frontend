@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     /* LingQ-inspired color palette */
     --primary-color: #3f7ee8; /* LingQ blue */
