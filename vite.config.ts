@@ -3,15 +3,13 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        react(),
-    ],
+    plugins: [react()],
     build: {
         // Generate manifest.json for Django to link assets
         manifest: true,
         // Ensure assets are referenced with relative paths
         assetsDir: "assets",
-        outDir: "dist",
+        outDir: "/var/www/lingano/build",
         emptyOutDir: true,
         rollupOptions: {
             output: {
@@ -24,7 +22,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "https://linganodjango-8d1cd6dceb8a.herokuapp.com",
+                target: "https://api.lingano.live",
                 changeOrigin: true,
                 secure: false,
                 rewrite: (path) => path,
