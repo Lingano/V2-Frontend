@@ -4,6 +4,7 @@ import "./App_fixed.css";
 import "./pages/Login.css";
 import Login from "./pages/Login";
 import About from "./pages/About";
+import Contact from "./pages/Contact"; // Import the Contact page
 
 // Home page component
 const Home = () => {
@@ -211,6 +212,15 @@ const App = () => {
                         >
                             About
                         </Link>
+                        <Link
+                            to="/contact" // Add link to Contact page
+                            style={{
+                                color: "var(--primary-color)",
+                                textDecoration: "none",
+                            }}
+                        >
+                            Contact
+                        </Link>
                     </nav>
                     <div>
                         <button
@@ -231,6 +241,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />{" "}
+                    {/* Add route for Contact page */}
                 </Routes>
 
                 {/* Footer */}
@@ -242,7 +254,8 @@ const App = () => {
                         <div className="footer-links">
                             <Link to="/about">About</Link>
                             <a href="#">Blog</a>
-                            <a href="#">Contact</a>
+                            <Link to="/contact">Contact</Link>{" "}
+                            {/* Add link to Contact page */}
                             <a href="#">Privacy</a>
                         </div>
                     </div>

@@ -62,6 +62,42 @@ const App = () => {
             {/* Navigation */}
             <header className="header">
                 <div className="logo">Lingano</div>
+                <nav
+                    className="nav-links"
+                    style={{
+                        display: "flex",
+                        gap: "20px",
+                        alignItems: "center",
+                    }}
+                >
+                    <a
+                        href="/"
+                        style={{
+                            color: "var(--primary-color)",
+                            textDecoration: "none",
+                        }}
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="/about"
+                        style={{
+                            color: "var(--primary-color)",
+                            textDecoration: "none",
+                        }}
+                    >
+                        About
+                    </a>
+                    <a
+                        href="/contact"
+                        style={{
+                            color: "var(--primary-color)",
+                            textDecoration: "none",
+                        }}
+                    >
+                        Contact
+                    </a>
+                </nav>
                 <div>
                     <button
                         className="button outline glass"
@@ -194,9 +230,9 @@ const App = () => {
                         © 2025 Lingano. All rights reserved
                     </p>
                     <div className="footer-links">
-                        <a href="#">About</a>
+                        <a href="/about">About</a>
                         <a href="#">Blog</a>
-                        <a href="#">Contact</a>
+                        <a href="/contact">Contact</a>
                         <a href="#">Privacy</a>
                     </div>
                 </div>
