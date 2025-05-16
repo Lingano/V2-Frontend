@@ -64,7 +64,7 @@ const App = () => {
                 <div className="logo">Lingano</div>
                 <div>
                     <button
-                        className="button outline"
+                        className="button outline glass"
                         onClick={() => setShowLogin(true)}
                     >
                         Sign In
@@ -83,7 +83,10 @@ const App = () => {
                 {/* Welcome Section */}
                 <div className="welcome">
                     <h1>Welcome to Lingano</h1>
-                    <p>The fast, fun and effective way to learn. This is netlify!</p>{" "}
+                    <p>
+                        The fast, fun and effective way to learn. This is
+                        netlify!
+                    </p>{" "}
                     <div className="time-card">
                         <div className="time-icon">⏰</div>
                         <div className="time-content">

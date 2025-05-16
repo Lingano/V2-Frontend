@@ -1,238 +1,143 @@
 /* About page styles */
 @import "tailwindcss";
+@plugin "daisyui";
+
+/*
+  The styles below are significantly reduced.
+  You should now primarily use DaisyUI components and Tailwind CSS utility classes in your HTML markup.
+
+  For example:
+  - For cards: <div class="card bg-base-100 shadow-xl">...</div>
+  - For buttons: <button class="btn btn-primary">...</button>
+  - For avatars/team photos: <div class="avatar"><div class="w-24 rounded-full"><img src="..." /></div></div>
+  - For section titles: <h2 class="text-2xl font-bold text-primary mb-2">Title</h2> <div class="divider"></div>
+  - For layout: Use Tailwind's grid, flexbox, and spacing utilities (e.g., <div class="grid grid-cols-1 md:grid-cols-3 gap-4">).
+  - For CTA sections: Consider using the DaisyUI `hero` component.
+*/
+
 .about-page {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    /* Basic page padding and max-width can be kept or handled by a container div with Tailwind classes like `container mx-auto px-4 py-8` */
+    padding: 40px 20px; /* Or use Tailwind p-10 px-5 */
+    max-width: 1200px; /* Or use Tailwind max-w-6xl */
+    margin: 0 auto; /* Or use Tailwind mx-auto */
 }
 
 .about-header {
+    /* Use Tailwind text alignment and margin utilities: e.g., `text-center mb-12` */
     text-align: center;
     margin-bottom: 60px;
 }
 
 .about-title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+    /* Use Tailwind text size and color utilities: e.g., `text-4xl font-bold text-primary mb-5` */
+    /* font-size: 2.5rem; */
+    /* color: var(--primary-color); */
+    /* margin-bottom: 20px; */
 }
 
 .about-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
+    /* Use Tailwind text size, color, and max-width utilities: e.g., `text-lg text-base-content/70 max-w-2xl mx-auto leading-relaxed` */
+    /* font-size: 1.2rem; */
+    /* color: var(--text-muted); */
+    /* max-width: 700px; */
+    /* margin: 0 auto; */
+    /* line-height: 1.6; */
 }
 
 .about-section {
+    /* Use Tailwind margin utilities: e.g., `mb-12` */
     margin-bottom: 60px;
 }
 
 .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    position: relative;
-    display: inline-block;
+    /* Use Tailwind text size, color, and margin utilities. For the underline, consider DaisyUI `divider` or Tailwind borders. */
+    /* e.g., `text-3xl font-semibold mb-3 text-primary inline-block` */
+    /* For the line: <div class="divider w-16 h-1 bg-secondary mb-10"></div> or similar after the title */
 }
 
-.section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: var(--secondary-color);
-}
+/* .section-title::after removed - use DaisyUI divider or Tailwind border utilities in HTML */
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+/* .about-grid removed - use Tailwind grid classes in HTML: e.g., `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10` */
 
-.about-card {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/*
+    .about-card and its child/hover styles removed.
+    Use DaisyUI `card` component in your HTML.
+    Example:
+    <div class="card bg-base-100 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
+        <figure><img src="path/to/image.jpg" alt="Card image" class="w-full h-48 object-cover" /></figure>
+        <div class="card-body">
+            <h2 class="card-title text-xl font-semibold">Card Title</h2>
+            <p class="text-base-content/70 text-sm">Card text description.</p>
+        </div>
+    </div>
+*/
 
-.about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.about-card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background-color: var(--background-light);
-}
-
-.about-card-content {
-    padding: 24px;
-}
-
-.about-card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--text-dark);
-}
-
-.about-card-text {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+/* .team-grid removed - use Tailwind grid classes in HTML: e.g., `grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10` */
 
 .team-member {
-    text-align: center;
+    /* Use Tailwind text alignment utilities: e.g., `text-center` */
 }
 
-.team-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 15px;
-    border: 3px solid white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: var(--background-light);
-}
+/*
+    .team-photo removed.
+    Use DaisyUI `avatar` component in your HTML.
+    Example:
+    <div class="avatar mx-auto mb-4">
+        <div class="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src="path/to/photo.jpg" alt="Team member photo" />
+        </div>
+    </div>
+*/
 
 .team-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 5px;
+    /* Use Tailwind text utilities: e.g., `text-xl font-semibold mb-1` */
 }
 
 .team-role {
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    /* Use Tailwind text utilities: e.g., `text-primary text-sm mb-2` */
 }
 
 .team-bio {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    /* Use Tailwind text utilities: e.g., `text-base-content/70 text-sm leading-relaxed` */
 }
 
 .vision-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    /* Use Tailwind flex/grid and gap utilities: e.g., `flex flex-col gap-8` or `grid gap-8` */
 }
 
 .vision-item {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* This can be a DaisyUI `card` or a div with Tailwind classes for background, padding, border-radius, shadow. */
+    /* e.g., `bg-base-100 p-8 rounded-lg shadow-lg` */
 }
 
 .vision-icon {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    display: inline-block;
+    /* Use Tailwind text size, color, margin: e.g., `text-3xl text-secondary mb-4 inline-block` */
+    /* Ensure you have an icon library integrated or use SVGs. */
 }
 
 .vision-title {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
+    /* Use Tailwind text utilities: e.g., `text-2xl font-semibold mb-4 text-primary` */
 }
 
 .vision-text {
-    color: var(--text-muted);
-    line-height: 1.6;
+    /* Use Tailwind text utilities: e.g., `text-base-content/70 leading-relaxed` */
 }
 
-.cta-section {
-    background: linear-gradient(
-        135deg,
-        var(--primary-color) 0%,
-        var(--accent-color) 100%
-    );
-    padding: 60px 40px;
-    text-align: center;
-    border-radius: 12px;
-    color: white;
-    margin-top: 60px;
-    margin-bottom: 40px;
-}
+/*
+    .cta-section and its child styles removed.
+    Consider using DaisyUI `hero` component or style a div with Tailwind classes.
+    Example for hero:
+    <div class="hero bg-gradient-to-r from-primary to-accent text-primary-content py-16 px-10 rounded-box my-10 text-center">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">CTA Title</h1>
+                <p class="mb-5">CTA text description, make it engaging.</p>
+                <button class="btn btn-secondary btn-wide">Get Started</button>
+            </div>
+        </div>
+    </div>
+*/
 
-.cta-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white;
-}
+/* .cta-btn and .cta-btn:hover removed - use DaisyUI `btn` component in HTML. */
 
-.cta-text {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.9;
-}
-
-.cta-btn {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.cta-btn:hover {
-    background-color: var(--secondary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .about-title {
-        font-size: 2rem;
-    }
-
-    .about-subtitle {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .cta-title {
-        font-size: 1.5rem;
-    }
-
-    .cta-text {
-        font-size: 1rem;
-    }
-
-    .cta-btn {
-        padding: 10px 25px;
-        font-size: 1rem;
-    }
-}
+/* Responsive adjustments via @media queries removed. Apply Tailwind's responsive prefixes directly in your HTML classes (e.g., `md:text-xl`, `lg:grid-cols-3`). */
