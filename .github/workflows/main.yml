@@ -10,27 +10,27 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Backend Repository
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   repository: "Lingano/V2-Backend" # Update with your backend repo
                   token: ${{ secrets.GITHUB_TOKEN }}
                   path: backend # Checkout backend to a specific 'backend' directory
 
             - name: Checkout Frontend Repository
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   repository: "Lingano/V2-Frontend" # Update with your frontend repo
                   token: ${{ secrets.GITHUB_TOKEN }}
                   path: frontend # Checkout frontend to a specific 'frontend' directory
 
             - name: Upload backend artifact
-              uses: actions/upload-artifact@v3.1.3
+              uses: actions/upload-artifact@v4
               with:
                   name: backend-code
                   path: backend
 
             - name: Upload frontend artifact
-              uses: actions/upload-artifact@v3.1.3
+              uses: actions/upload-artifact@v4
               with:
                   name: frontend-code
                   path: frontend
@@ -40,7 +40,7 @@ jobs:
         needs: checkout_code # Depends on the checkout_code job
         steps:
             - name: Download backend code
-              uses: actions/download-artifact@v3.0.2
+              uses: actions/download-artifact@v4
               with:
                   name: backend-code
                   path: backend # Download to a 'backend' directory
@@ -86,7 +86,7 @@ jobs:
         needs: checkout_code # Depends on the checkout_code job
         steps:
             - name: Download frontend code
-              uses: actions/download-artifact@v3.0.2
+              uses: actions/download-artifact@v4
               with:
                   name: frontend-code
                   path: frontend # Download to a 'frontend' directory
