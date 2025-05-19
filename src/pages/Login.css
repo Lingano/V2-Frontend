@@ -1,107 +1,28 @@
-/* Login page styles */
+/* Login page styles - most styles now come from Tailwind/DaisyUI */
+/* This file contains minimal custom styles that extend the Tailwind/DaisyUI framework */
+
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f9fafb;
-    padding: 20px;
+    /* These styles are now handled by Tailwind classes in the Login.tsx component */
+    /* min-height: 100vh, flex, justify-center, etc. */
 }
 
 .login-container {
-    width: 100%;
-    max-width: 420px;
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-container h1 {
-    color: #2563eb;
-    margin-bottom: 10px;
-    font-size: 24px;
-    text-align: center;
-}
-
-.subtitle {
-    color: #6b7280;
-    margin-bottom: 24px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-    color: #374151;
-    font-size: 14px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.2s;
-}
-
-.form-group input:focus {
-    border-color: #2563eb;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-}
-
-.login-button {
-    width: 100%;
-    padding: 12px 16px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.login-button:hover {
-    background-color: #1d4ed8;
-}
-
-.form-links {
-    margin-top: 16px;
-    text-align: center;
-    font-size: 14px;
-    color: #6b7280;
-}
-
-.form-links a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-.form-links a:hover {
-    text-decoration: underline;
-}
-
-.separator {
-    margin: 0 8px;
-    color: #9ca3af;
+    /* Now handled by the DaisyUI card component with Tailwind classes */
 }
 
 .error-message {
-    background-color: #fee2e2;
-    color: #b91c1c;
-    padding: 12px;
-    border-radius: 6px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    font-weight: 500;
+    /* Now using DaisyUI's alert component */
+}
+
+/* Add any custom styles below that aren't covered by Tailwind/DaisyUI */
+/* For example, custom animations or very specific styling needs */
+
+/* Custom focus effect for login inputs */
+.input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.25); /* Gold-colored focus ring */
+}
+
+/* Custom hover effect for the login button if needed */
+.btn-primary:hover {
+    filter: brightness(1.1);
 }

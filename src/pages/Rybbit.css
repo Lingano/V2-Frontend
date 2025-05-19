@@ -1,0 +1,68 @@
+/* Rybbit page specific styles */
+.rybbit-page {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Animated elements */
+.animate-spin-slow {
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom gradients */
+.rybbit-gradient-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 75%, rgba(255,215,0,0.1) 100%);
+}
+
+.rybbit-card {
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(20,20,20,0.9));
+  border: 1px solid rgba(255,215,0,0.1);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.rybbit-card:hover {
+  border-color: rgba(255,215,0,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(255,215,0,0.1);
+}
+
+/* Custom button styles */
+.rybbit-button {
+  background: linear-gradient(90deg, #FFD700, #B8860B);
+  color: black;
+  font-weight: bold;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.rybbit-button:hover {
+  background: linear-gradient(90deg, #F5C400, #A67700);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+/* Responsive overrides */
+@media (max-width: 768px) {
+  .rybbit-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .rybbit-nodes {
+    transform: scale(0.8);
+  }
+}

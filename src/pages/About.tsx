@@ -23,44 +23,29 @@ const About = () => {
             document.documentElement.setAttribute("data-theme", "dark");
             localStorage.setItem("dark-mode", "true");
         } else {
-            document.documentElement.setAttribute("data-theme", "light"); // Or your default light theme
+            document.documentElement.setAttribute("data-theme", "light");
             localStorage.setItem("dark-mode", "false");
         }
     }, [darkMode]);
 
     return (
-        // Use DaisyUI theme controller for dark mode, applied on <html> so remove from here
-        // The main div can use bg-base-100 for theme-aware background
-        <div className="bg-base-100">
-            {/* Sticky Navbar using DaisyUI */}
-            <div className="navbar bg-base-100 sticky top-0 z-50 shadow-md">
+        <div className="bg-base-100 min-h-screen">
+            {/* Sticky Navbar - Black with gold accents */}
+            <div className="navbar bg-secondary text-secondary-content sticky top-0 z-50 shadow-md">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16"
-                                />
-                            </svg>
+                            <span className="text-xl">☰</span>
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-secondary text-secondary-content rounded-box w-52"
                         >
                             <li>
                                 <a>Home</a>
                             </li>
                             <li>
-                                <a className="active">About</a>
+                                <a className="bg-primary text-primary-content">About</a>
                             </li>
                             <li>
                                 <a>Courses</a>
@@ -80,24 +65,24 @@ const About = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li>
-                            <a>Home</a>
+                            <a className="hover:text-primary">Home</a>
                         </li>
                         <li>
-                            <a className="active">About</a>
+                            <a className="bg-primary text-primary-content">About</a>
                         </li>
                         <li>
-                            <a>Courses</a>
+                            <a className="hover:text-primary">Courses</a>
                         </li>
                         <li>
-                            <a>Blog</a>
+                            <a className="hover:text-primary">Blog</a>
                         </li>
                         <li>
-                            <a>Contact</a>
+                            <a className="hover:text-primary">Contact</a>
                         </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <label className="swap swap-rotate btn btn-ghost">
+                    <label className="swap swap-rotate btn btn-ghost text-primary">
                         <input
                             type="checkbox"
                             className="theme-controller"
@@ -106,30 +91,18 @@ const About = () => {
                             onChange={() => setDarkMode(!darkMode)}
                         />
                         {/* sun icon */}
-                        <svg
-                            className="swap-off fill-current w-6 h-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-                        </svg>
+                        <span className="swap-off fill-current w-6 h-6 text-xl">☀️</span>
                         {/* moon icon */}
-                        <svg
-                            className="swap-on fill-current w-6 h-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-                        </svg>
+                        <span className="swap-on fill-current w-6 h-6 text-xl">🌙</span>
                     </label>
                 </div>
             </div>
 
-            {/* Hero Section using DaisyUI */}
-            <div className="hero min-h-[60vh] bg-base-200">
+            {/* Hero Section - Gold background with black text */}
+            <div className="hero min-h-[60vh] bg-primary text-primary-content">
                 <div className="hero-content text-center">
                     <div className="max-w-3xl">
-                        <h1 className="text-5xl font-bold text-primary">
+                        <h1 className="text-5xl font-bold">
                             About Lingano
                         </h1>
                         <p className="py-6 text-xl">
@@ -139,7 +112,7 @@ const About = () => {
                             innovative approach combines immersive learning
                             experiences with cutting-edge technology.
                         </p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button className="btn btn-secondary text-secondary-content">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -150,8 +123,8 @@ const About = () => {
                     <h2 className="text-3xl font-bold text-primary mb-6 text-center">
                         Our Story
                     </h2>
-                    {/* Using Card component for a slightly more styled presentation */}
-                    <div className="card lg:card-side bg-base-100 shadow-xl">
+                    {/* Using Card component with a black background and gold accents */}
+                    <div className="card lg:card-side bg-secondary text-secondary-content shadow-xl">
                         <div className="card-body">
                             <p className="mb-4">
                                 Founded in 2023, Lingano began with a simple
@@ -181,10 +154,10 @@ const About = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Card 1 */}
-                        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-2 border-primary">
                             <figure className="px-10 pt-10 text-5xl">🎯</figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     Contextual Learning
                                 </h3>
                                 <p>
@@ -197,10 +170,10 @@ const About = () => {
                             </div>
                         </div>
                         {/* Card 2 */}
-                        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-2 border-primary">
                             <figure className="px-10 pt-10 text-5xl">🧠</figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     Spaced Repetition
                                 </h3>
                                 <p>
@@ -213,10 +186,10 @@ const About = () => {
                             </div>
                         </div>
                         {/* Card 3 */}
-                        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-2 border-primary">
                             <figure className="px-10 pt-10 text-5xl">🤖</figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     AI-Powered Personalization
                                 </h3>
                                 <p>
@@ -236,25 +209,25 @@ const About = () => {
                     <h2 className="text-3xl font-bold text-primary mb-10 text-center">
                         Our Impact
                     </h2>
-                    <div className="stats stats-vertical lg:stats-horizontal shadow-xl w-full">
+                    <div className="stats stats-vertical lg:stats-horizontal shadow-xl w-full bg-secondary text-secondary-content">
                         <div className="stat place-items-center">
                             <div className="stat-value text-primary">1M+</div>
-                            <div className="stat-title">Active Learners</div>
+                            <div className="stat-title text-primary-focus">Active Learners</div>
                         </div>
 
                         <div className="stat place-items-center">
-                            <div className="stat-value text-secondary">25+</div>
-                            <div className="stat-title">Languages</div>
+                            <div className="stat-value text-primary">25+</div>
+                            <div className="stat-title text-primary-focus">Languages</div>
                         </div>
 
                         <div className="stat place-items-center">
-                            <div className="stat-value text-accent">92%</div>
-                            <div className="stat-title">Success Rate</div>
+                            <div className="stat-value text-primary">92%</div>
+                            <div className="stat-title text-primary-focus">Success Rate</div>
                         </div>
 
                         <div className="stat place-items-center">
-                            <div className="stat-value">4.8</div>
-                            <div className="stat-title">User Rating</div>
+                            <div className="stat-value text-primary">4.8</div>
+                            <div className="stat-title text-primary-focus">User Rating</div>
                         </div>
                     </div>
                 </div>
@@ -266,19 +239,19 @@ const About = () => {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {/* Team Member Card 1 */}
-                        <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="card bg-secondary text-secondary-content shadow-lg hover:shadow-xl transition-shadow">
                             <figure className="px-10 pt-10">
                                 <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-24 h-24">
+                                    <div className="bg-primary text-primary-content rounded-full w-24 h-24">
                                         <span className="text-4xl">👩‍💼</span>
                                     </div>
                                 </div>
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     Sophia Chen
                                 </h3>
-                                <p className="text-sm text-accent">
+                                <p className="text-sm text-primary-focus">
                                     Founder & CEO
                                 </p>
                                 <p className="text-xs">
@@ -289,19 +262,19 @@ const About = () => {
                             </div>
                         </div>
                         {/* Team Member Card 2 */}
-                        <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="card bg-secondary text-secondary-content shadow-lg hover:shadow-xl transition-shadow">
                             <figure className="px-10 pt-10">
                                 <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-24 h-24">
+                                    <div className="bg-primary text-primary-content rounded-full w-24 h-24">
                                         <span className="text-4xl">👨‍💻</span>
                                     </div>
                                 </div>
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     Miguel Rodriguez
                                 </h3>
-                                <p className="text-sm text-accent">CTO</p>
+                                <p className="text-sm text-primary-focus">CTO</p>
                                 <p className="text-xs">
                                     AI researcher and polyglot who's fluent in 5
                                     languages. Leads our technology and
@@ -310,19 +283,19 @@ const About = () => {
                             </div>
                         </div>
                         {/* Team Member Card 3 */}
-                        <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="card bg-secondary text-secondary-content shadow-lg hover:shadow-xl transition-shadow">
                             <figure className="px-10 pt-10">
                                 <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-24 h-24">
+                                    <div className="bg-primary text-primary-content rounded-full w-24 h-24">
                                         <span className="text-4xl">👨‍🎓</span>
                                     </div>
                                 </div>
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     Dr. James Wilson
                                 </h3>
-                                <p className="text-sm text-accent">
+                                <p className="text-sm text-primary-focus">
                                     Head of Pedagogy
                                 </p>
                                 <p className="text-xs">
@@ -332,19 +305,19 @@ const About = () => {
                             </div>
                         </div>
                         {/* Team Member Card 4 */}
-                        <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="card bg-secondary text-secondary-content shadow-lg hover:shadow-xl transition-shadow">
                             <figure className="px-10 pt-10">
                                 <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-24 h-24">
+                                    <div className="bg-primary text-primary-content rounded-full w-24 h-24">
                                         <span className="text-4xl">👩‍🎨</span>
                                     </div>
                                 </div>
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h3 className="card-title text-secondary">
+                                <h3 className="card-title text-primary">
                                     Aisha Patel
                                 </h3>
-                                <p className="text-sm text-accent">
+                                <p className="text-sm text-primary-focus">
                                     UX Director
                                 </p>
                                 <p className="text-xs">
@@ -364,37 +337,37 @@ const About = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Testimonial Card 1 */}
-                        <div className="card bg-base-100 shadow-xl">
+                        <div className="card bg-base-100 shadow-xl border-2 border-primary">
                             <div className="card-body">
                                 <div className="rating rating-sm mb-2">
                                     <input
                                         type="radio"
                                         name="rating-t1"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t1"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t1"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t1"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t1"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         defaultChecked
                                         disabled
                                     />
@@ -407,8 +380,7 @@ const About = () => {
                                 </p>
                                 <div className="flex items-center">
                                     <div className="avatar placeholder mr-3">
-                                        {/* Use w-12 h-12 for a 3rem size, flex items-center justify-center to center span text */}
-                                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12 h-12 flex items-center justify-center">
+                                        <div className="bg-secondary text-secondary-content rounded-full w-12 h-12 flex items-center justify-center">
                                             <span className="text-base">
                                                 MJ
                                             </span>
@@ -426,38 +398,37 @@ const About = () => {
                             </div>
                         </div>
                         {/* Testimonial Card 2 */}
-                        <div className="card bg-base-100 shadow-xl">
+                        <div className="card bg-base-100 shadow-xl border-2 border-primary">
                             <div className="card-body">
                                 <div className="rating rating-sm mb-2">
-                                    {/* Assuming 5 stars */}
                                     <input
                                         type="radio"
                                         name="rating-t2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t2"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         defaultChecked
                                         disabled
                                     />
@@ -470,7 +441,7 @@ const About = () => {
                                 </p>
                                 <div className="flex items-center">
                                     <div className="avatar placeholder mr-3">
-                                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12 h-12 flex items-center justify-center">
+                                        <div className="bg-secondary text-secondary-content rounded-full w-12 h-12 flex items-center justify-center">
                                             <span className="text-base">
                                                 SA
                                             </span>
@@ -488,38 +459,37 @@ const About = () => {
                             </div>
                         </div>
                         {/* Testimonial Card 3 */}
-                        <div className="card bg-base-100 shadow-xl">
+                        <div className="card bg-base-100 shadow-xl border-2 border-primary">
                             <div className="card-body">
                                 <div className="rating rating-sm mb-2">
-                                    {/* Assuming 5 stars */}
                                     <input
                                         type="radio"
                                         name="rating-t3"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t3"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t3"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t3"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         disabled
                                     />
                                     <input
                                         type="radio"
                                         name="rating-t3"
-                                        className="mask mask-star-2 bg-orange-400"
+                                        className="mask mask-star-2 bg-primary"
                                         defaultChecked
                                         disabled
                                     />
@@ -532,7 +502,7 @@ const About = () => {
                                 </p>
                                 <div className="flex items-center">
                                     <div className="avatar placeholder mr-3">
-                                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12 h-12 flex items-center justify-center">
+                                        <div className="bg-secondary text-secondary-content rounded-full w-12 h-12 flex items-center justify-center">
                                             <span className="text-base">
                                                 DP
                                             </span>
@@ -558,11 +528,11 @@ const About = () => {
                         Vision & Values
                     </h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div className="card bg-base-200 shadow-lg">
+                        <div className="card bg-secondary text-secondary-content shadow-lg">
                             <div className="card-body">
                                 <div className="flex items-center mb-4">
                                     <span className="text-4xl mr-4">🌍</span>
-                                    <h3 className="card-title text-secondary">
+                                    <h3 className="card-title text-primary">
                                         Our Vision
                                     </h3>
                                 </div>
@@ -578,107 +548,42 @@ const About = () => {
                             </div>
                         </div>
 
-                        <div className="card bg-base-200 shadow-lg">
+                        <div className="card bg-secondary text-secondary-content shadow-lg">
                             <div className="card-body">
                                 <div className="flex items-center mb-4">
                                     <span className="text-4xl mr-4">💡</span>
-                                    <h3 className="card-title text-secondary">
+                                    <h3 className="card-title text-primary">
                                         Our Values
                                     </h3>
                                 </div>
                                 <ul className="space-y-2">
                                     <li className="flex items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-4 w-4 mr-2 text-primary"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                        <strong>Accessibility:</strong> We
-                                        believe language learning should be
+                                        <span className="mr-2 text-primary">✓</span>
+                                        <strong className="text-primary-focus">Accessibility:</strong>&nbsp;
+                                        We believe language learning should be
                                         available to everyone.
                                     </li>
                                     <li className="flex items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-4 w-4 mr-2 text-primary"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                        <strong>Innovation:</strong> We
-                                        continuously improve our methods based
+                                        <span className="mr-2 text-primary">✓</span>
+                                        <strong className="text-primary-focus">Innovation:</strong>&nbsp;
+                                        We continuously improve our methods based
                                         on the latest research.
                                     </li>
                                     <li className="flex items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-4 w-4 mr-2 text-primary"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                        <strong>Community:</strong> We foster
-                                        connections between learners worldwide.
+                                        <span className="mr-2 text-primary">✓</span>
+                                        <strong className="text-primary-focus">Community:</strong>&nbsp;
+                                        We foster connections between learners worldwide.
                                     </li>
                                     <li className="flex items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-4 w-4 mr-2 text-primary"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                        <strong>Cultural Respect:</strong> We
-                                        promote understanding and appreciation
+                                        <span className="mr-2 text-primary">✓</span>
+                                        <strong className="text-primary-focus">Cultural Respect:</strong>&nbsp;
+                                        We promote understanding and appreciation
                                         of diverse cultures.
                                     </li>
                                     <li className="flex items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-4 w-4 mr-2 text-primary"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                        <strong>Effectiveness:</strong> We are
-                                        committed to providing learning methods
+                                        <span className="mr-2 text-primary">✓</span>
+                                        <strong className="text-primary-focus">Effectiveness:</strong>&nbsp;
+                                        We are committed to providing learning methods
                                         that actually work.
                                     </li>
                                 </ul>
@@ -688,7 +593,7 @@ const About = () => {
                 </div>
 
                 {/* Call to Action - Using Hero for a prominent CTA */}
-                <div className="hero bg-primary rounded-box shadow-xl text-primary-content">
+                <div className="hero bg-primary text-primary-content rounded-box shadow-xl">
                     <div className="hero-content text-center py-10">
                         <div className="max-w-md">
                             <h2 className="text-3xl font-bold mb-4">
@@ -701,10 +606,10 @@ const About = () => {
                                 difference today.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className="btn btn-secondary">
+                                <button className="btn btn-secondary text-secondary-content">
                                     Get Started Now
                                 </button>
-                                <button className="btn btn-outline text-primary-content hover:bg-primary-focus">
+                                <button className="btn btn-outline border-secondary-content text-secondary-content hover:bg-secondary hover:border-secondary">
                                     Learn More
                                 </button>
                             </div>
@@ -713,7 +618,7 @@ const About = () => {
                 </div>
 
                 {/* Footer using DaisyUI Footer component */}
-                <footer className="footer p-10 bg-base-200 text-base-content mt-16 rounded-box">
+                <footer className="footer p-10 bg-secondary text-secondary-content mt-16">
                     <nav>
                         <h6 className="footer-title text-primary">Lingano</h6>
                         <p className="w-3/4">
@@ -722,28 +627,28 @@ const About = () => {
                         </p>
                     </nav>
                     <nav>
-                        <h6 className="footer-title">Company</h6>
-                        <a className="link link-hover">About Us</a>
-                        <a className="link link-hover">Careers</a>
-                        <a className="link link-hover">Blog</a>
-                        <a className="link link-hover">Press</a>
+                        <h6 className="footer-title text-primary">Company</h6>
+                        <a className="link link-hover hover:text-primary">About Us</a>
+                        <a className="link link-hover hover:text-primary">Careers</a>
+                        <a className="link link-hover hover:text-primary">Blog</a>
+                        <a className="link link-hover hover:text-primary">Press</a>
                     </nav>
                     <nav>
-                        <h6 className="footer-title">Resources</h6>
-                        <a className="link link-hover">Language Guides</a>
-                        <a className="link link-hover">Community</a>
-                        <a className="link link-hover">Tutors</a>
-                        <a className="link link-hover">FAQ</a>
+                        <h6 className="footer-title text-primary">Resources</h6>
+                        <a className="link link-hover hover:text-primary">Language Guides</a>
+                        <a className="link link-hover hover:text-primary">Community</a>
+                        <a className="link link-hover hover:text-primary">Tutors</a>
+                        <a className="link link-hover hover:text-primary">FAQ</a>
                     </nav>
                     <nav>
-                        <h6 className="footer-title">Contact</h6>
+                        <h6 className="footer-title text-primary">Contact</h6>
                         <p>hello@lingano.com</p>
                         <p>1-800-LINGANO</p>
                         <p>123 Language Street</p>
                         <p>San Francisco, CA 94103</p>
                     </nav>
                 </footer>
-                <div className="footer footer-center p-4 bg-base-300 text-base-content mt-2 rounded-box">
+                <div className="footer footer-center p-4 bg-black text-primary mt-2">
                     <aside>
                         <p>
                             © {new Date().getFullYear()} Lingano. All rights

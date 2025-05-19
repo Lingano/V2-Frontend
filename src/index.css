@@ -1,26 +1,20 @@
-@import "tailwindcss";
-@plugin "daisyui";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    /* LingQ-inspired color palette */
-    --primary-color: #3f7ee8; /* LingQ blue */
-    --primary-hover: #3369d6;
-    --secondary-color: #ff9000; /* LingQ orange */
-    --secondary-hover: #e87f00;
-    --accent-color: #55c3ff;
-    --success-color: #5cb85c;
-    --warning-color: #ff9000;
-    --error-color: #d9534f;
-    --text-dark: #333333;
-    --text-light: #ffffff;
-    --text-muted: #6c757d;
-    --background-light: #f8f9fa;
-    --background-dark: #292b2c;
-    --border-color: #e9ecef;
+    /* Black and Gold color palette */
+    --primary-color: #111111; /* Gold */
+    --primary-hover: #F5C400;
+    --secondary-color: #111111; /* Black */
+    --secondary-hover: #2A2A2A;
+    --accent-color: #B8860B; /* Dark gold/bronze */
+    --text-dark: #111111;
+    --text-light: #FFD700;
+    --text-muted: #B8860B;
+    --background-light: #FFFFFF;
+    --background-dark: #121212;
+    --border-color: #FFD700;
 
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -29,7 +23,7 @@
 
     color-scheme: light;
     color: var(--text-dark);
-    background-color: var(--background-light);
+    background-color: #111111;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -37,7 +31,52 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Light background with a subtle pattern - inspired by LingQ's clean UI */
+/* Global animations */
+.animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin-slow {
+    animation: spin 15s linear infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modern gradient backgrounds */
+.gradient-bg {
+    background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 75%, rgba(255,215,0,0.1) 100%);
+}
+
+.gradient-card {
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(20,20,20,0.9));
+    border: 1px solid rgba(255,215,0,0.1);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.gradient-card:hover {
+    border-color: rgba(255,215,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(255,215,0,0.1);
+}
+
+/* Light background with a subtle gold pattern */
 body::before {
     content: "";
     position: fixed;
@@ -48,10 +87,30 @@ body::before {
     z-index: -1;
     background: linear-gradient(
         135deg,
-        rgba(63, 126, 232, 0.05) 0%,
-        rgba(255, 144, 0, 0.03) 100%
+        rgba(255, 215, 0, 0.05) 0%,
+        rgba(184, 134, 11, 0.03) 100%
     );
     pointer-events: none;
+}
+
+/* Custom button styles */
+.btn-gradient {
+    background: linear-gradient(90deg, #FFD700, #B8860B);
+    color: black;
+    font-weight: bold;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #F5C400, #A67700);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* Glow effects */
+.glow-effect {
+    box-shadow: 0 0 15px rgba(255,215,0,0.5);
 }
 
 a {
@@ -72,12 +131,7 @@ body {
     overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     font-weight: 600;
     color: var(--primary-color);
@@ -96,17 +150,27 @@ button {
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 
 button:hover {
     background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.2);
 }
 
 button:active {
     transform: translateY(1px);
+}
+
+/* Glass effect for cards and containers */
+.glass-effect {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 1rem;
 }
 
 /* Custom scrollbar */
@@ -121,12 +185,12 @@ button:active {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(63, 126, 232, 0.3);
+    background: rgba(255, 215, 0, 0.3);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(63, 126, 232, 0.5);
+    background: rgba(255, 215, 0, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -138,14 +202,18 @@ button:active {
     body::before {
         background: radial-gradient(
                 circle at top right,
-                rgba(79, 70, 229, 0.2) 0%,
+                rgba(255, 215, 0, 0.1) 0%,
                 transparent 70%
             ),
             radial-gradient(
                 circle at bottom left,
-                rgba(56, 189, 248, 0.15) 0%,
+                rgba(184, 134, 11, 0.1) 0%,
                 transparent 70%
             );
+    }
+
+    .gradient-card {
+        background: linear-gradient(to bottom right, rgba(20,20,20,0.9), rgba(30,30,30,0.9));
     }
 
     ::-webkit-scrollbar-track {
@@ -153,10 +221,10 @@ button:active {
     }
 
     ::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 215, 0, 0.2);
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 215, 0, 0.3);
     }
 }
