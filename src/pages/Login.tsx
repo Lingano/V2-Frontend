@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../index.css"; // Import for Tailwind/DaisyUI classes
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -7,6 +8,7 @@ const Login = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+    const navigate = useNavigate();
 
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -40,9 +42,9 @@ const Login = () => {
 
                     // Optionally, you can also store user info or redirect
                     // localStorage.setItem("user", JSON.stringify(data.user)); // If user data is also returned
-                    // navigate("/profile"); // Or to a dashboard
                     setIsLoggedIn(true); // Update some global state if you have one
                     console.log("Login successful, token saved.");
+                    navigate("/profile");
                 } else {
                     setError("Login successful, but no token received.");
                 }
