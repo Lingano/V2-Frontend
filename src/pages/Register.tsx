@@ -25,7 +25,7 @@ const Register = () => {
             setError("Passwords do not match.");
             return;
         }
-        // TODO: Add more validation if needed (e.g., password strength)
+        // TODO: Add more validation if needed (e.g., password strength)22
 
         setLoading(true);
         setError("");
