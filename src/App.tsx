@@ -426,7 +426,7 @@ const App = () => {
                             Contact Us
                         </Link>
                         <p>hello@lingano.com</p>
-                        <p>1-800-LINGANO</p>
+                        <p>1-800-LINGANO22</p>
                     </nav>
                 </footer>
                 <div className="footer footer-center p-4 bg-black text-primary">
