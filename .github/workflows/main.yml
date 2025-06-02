@@ -102,21 +102,42 @@ jobs:
                   VPS_IP: ${{ secrets.VPS_IP }}
 
             - name: Deploy Frontend to VPS
+              env: # Environment variables for the runner executing this step
+                  VPS_IP: ${{ secrets.VPS_IP }}
+                  VPS_USER: ${{ secrets.VPS_USER }}
+                  # This makes the secret available for interpolation into the run script's heredoc
+                  API_URL_FOR_BUILD: ${{ secrets.VITE_API_BASE_URL}}
               run: |
-                  ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} << 'EOF'
+                  # First part of SSH command to create directory (if needed) and echo
+                  ssh -o StrictHostKeyChecking=no ${{ env.VPS_USER }}@${{ env.VPS_IP }} << 'EOF'
                     # Ensure the target directory exists
                     mkdir -p ~/LinganoDeployment/V2-Frontend
                     echo "Copying frontend files to VPS..."
                   EOF
-                  rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./frontend/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}:~/LinganoDeployment/V2-Frontend/
-                  ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} << 'EOF'
+
+                  # rsync command
+                  rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./frontend/ ${{ env.VPS_USER }}@${{ env.VPS_IP }}:~/LinganoDeployment/V2-Frontend/
+                  
+                  # Second part of SSH command to build and restart
+                  # Note: Using EOF without quotes to allow runner-side expansion of API_URL_FOR_BUILD
+                  ssh -o StrictHostKeyChecking=no ${{ env.VPS_USER }}@${{ env.VPS_IP }} << EOF 
+                    echo "Setting VITE_API_BASE_URL for the build process on VPS."
+                    export VITE_API_BASE_URL="${API_URL_FOR_BUILD}" # Use the env var passed from the runner
+                    
+                    echo "Current VITE_API_BASE_URL on VPS: \$VITE_API_BASE_URL" # For debugging on VPS logs
+
                     cd ~/LinganoDeployment/V2-Frontend # Change to your frontend repo directory
-                    # git pull origin main # Not needed if rsyncing the latest code
-                    # Build your frontend (for React)
+                    
+                    echo "Installing frontend dependencies..."
                     npm install
-                    npm run build # Or any build command you use
-                    # Restart your frontend service if needed (e.g., nginx, pm2, etc.)
+                    
+                    echo "Building frontend..."
+                    # The npm run build command will now use the VITE_API_BASE_URL set above
+                    npm run build 
+                    
+                    echo "Restarting Nginx..."
                     sudo systemctl restart nginx # If you're using nginx for serving frontend
+                    
                     echo "Frontend deployed!"
                   EOF
               env:
