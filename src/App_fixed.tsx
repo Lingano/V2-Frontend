@@ -98,20 +98,6 @@ const App = () => {
                         Contact
                     </a>
                 </nav>
-                <div>
-                    <button
-                        className="button outline glass"
-                        onClick={() => setShowLogin(true)}
-                    >
-                        Sign In
-                    </button>
-                    <button
-                        className="button login-button"
-                        onClick={() => setShowLogin(true)}
-                    >
-                        Sign Up
-                    </button>
-                </div>
             </header>
 
             {/* Main Content */}
