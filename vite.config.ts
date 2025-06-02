@@ -22,7 +22,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "https://api.lingano.live",
+                target: "https://api2.lingano.live",
                 changeOrigin: true,
                 secure: false,
                 rewrite: (path) => path,

@@ -1,58 +1,78 @@
 import { useState } from "react";
 import "../index.css"; // Import for Tailwind/DaisyUI classes
 
-const Login = () => {
+const Register = () => {
+    const [name, setName] = useState(""); // <-- Add state for name
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+    // Get the API base URL from environment variables
+    // If using Vite proxy for all /api calls, this can be an empty string
+    // and the endpoint will be relative, e.g., "/api/auth/register"
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!email || !password) {
-            setError("Please enter both email and password.");
+        if (!name || !email || !password || !confirmPassword) {
+            setError("Please fill in all fields.");
             return;
         }
+        if (password !== confirmPassword) {
+            setError("Passwords do not match.");
+            return;
+        }
+        // TODO: Add more validation if needed (e.g., password strength)
 
         setLoading(true);
         setError("");
 
         try {
-            // Simulate API call
-            console.log("Login attempt:", { email });
-            await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
+            console.log("Register attempt:", { name, email }); // <-- Log name
+            const registerEndpoint = `${apiBaseUrl}/api/auth/register`;
 
-            const loginEndpoint = `${apiBaseUrl}/api/auth/login`;
-            // TODO: Replace with actual API call to your backend
-            const response = await fetch(loginEndpoint, {
+            const response = await fetch(registerEndpoint, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({
+                    name, // <-- Send name
+                    email,
+                    password,
+                }),
             });
 
-            alert(`Logging in with this api endpoint: ${loginEndpoint}`);
-
             if (!response.ok) {
-                const errorData = await response.json();
+                let errorData;
+                try {
+                    errorData = await response.json();
+                } catch (parseError) {
+                    throw new Error(
+                        response.statusText ||
+                            "Registration failed. Please try again."
+                    );
+                }
                 throw new Error(
                     errorData.message ||
-                        "Login failed. Please check your credentials."
+                        errorData.error ||
+                        "Registration failed. Please try again."
                 );
             }
 
             const data = await response.json();
-            console.log("Login successful:", data);
-            // TODO: Handle successful login (e.g., store token, redirect user via react-router-dom)
+            console.log("Registration successful:", data);
 
-            alert("Login successful! Redirecting..."); // Placeholder
+            alert("Registration successful! Please log in.");
+            setName(""); // <-- Clear name field
             setEmail("");
             setPassword("");
+            setConfirmPassword("");
         } catch (err: any) {
             setError(
-                err.message || "An unexpected error occurred during login."
+                err.message ||
+                    "An unexpected error occurred during registration."
             );
         } finally {
             setLoading(false);
@@ -64,10 +84,10 @@ const Login = () => {
             <div className="card bg-white max-w-md w-full shadow-2xl">
                 <div className="card-body">
                     <h1 className="text-center text-3xl font-bold text-primary mb-2">
-                        Welcome to Lingano
+                        Create Your Account
                     </h1>
                     <p className="text-center text-gray-600 mb-6">
-                        Log in to continue learning
+                        Sign up to start your Lingano journey
                     </p>
 
                     {error && (
@@ -90,6 +110,24 @@ const Login = () => {
                     )}
 
                     <form onSubmit={handleSubmit}>
+                        {/* Add Name Input Field */}
+                        <div className="form-control mb-4">
+                            <label className="label">
+                                <span className="label-text text-gray-700">
+                                    Name
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Enter your name"
+                                className="input input-bordered w-full bg-white focus:border-primary"
+                                required
+                                disabled={loading}
+                            />
+                        </div>
+
                         <div className="form-control mb-4">
                             <label className="label">
                                 <span className="label-text text-gray-700">
@@ -107,7 +145,7 @@ const Login = () => {
                             />
                         </div>
 
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-4">
                             <label className="label">
                                 <span className="label-text text-gray-700">
                                     Password
@@ -117,7 +155,26 @@ const Login = () => {
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Enter your password"
+                                placeholder="Create a password"
+                                className="input input-bordered w-full bg-white focus:border-primary"
+                                required
+                                disabled={loading}
+                            />
+                        </div>
+
+                        <div className="form-control mb-6">
+                            <label className="label">
+                                <span className="label-text text-gray-700">
+                                    Confirm Password
+                                </span>
+                            </label>
+                            <input
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) =>
+                                    setConfirmPassword(e.target.value)
+                                }
+                                placeholder="Confirm your password"
                                 className="input input-bordered w-full bg-white focus:border-primary"
                                 required
                                 disabled={loading}
@@ -133,23 +190,20 @@ const Login = () => {
                                 {loading ? (
                                     <span className="loading loading-spinner"></span>
                                 ) : (
-                                    "Log In"
+                                    "Register"
                                 )}
                             </button>
                         </div>
 
-                        <div className="text-sm flex justify-between mt-4">
+                        <div className="text-sm text-center mt-4">
+                            <span className="text-gray-600">
+                                Already have an account?{" "}
+                            </span>
                             <a
-                                href="/forgot-password"
+                                href="/login"
                                 /* TODO: Update to React Router Link */ className="link link-hover text-primary"
                             >
-                                Forgot password?
-                            </a>
-                            <a
-                                href="/register"
-                                /* TODO: Update to React Router Link */ className="link link-hover text-primary"
-                            >
-                                Create an account
+                                Log In
                             </a>
                         </div>
                     </form>
@@ -159,4 +213,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

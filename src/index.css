@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 :root {
-    /* Black and Gold color palette */
-    --primary-color: #111111; /* Gold */
-    --primary-hover: #F5C400;
-    --secondary-color: #111111; /* Black */
-    --secondary-hover: #2A2A2A;
-    --accent-color: #B8860B; /* Dark gold/bronze */
-    --text-dark: #111111;
-    --text-light: #FFD700;
-    --text-muted: #B8860B;
-    --background-light: #FFFFFF;
-    --background-dark: #121212;
-    --border-color: #FFD700;
+    /* Light theme with blue accents, aligning with App_fixed.css */
+    --primary-color: #3182ce; /* Blue from App_fixed.css */
+    --primary-hover: #2b6cb0; /* Darker blue for hover, from App_fixed.css --secondary-color */
+    --secondary-color: #2b6cb0; /* Darker blue */
+    --secondary-hover: #2c5282; /* Even darker blue for hover on secondary elements */
+    --accent-color: #63b3ed; /* A lighter blue for accents */
 
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --text-dark: #333333; /* Default text color, similar to App_fixed.css .app color */
+    --text-light: #ffffff; /* Text for use on dark backgrounds (e.g., primary buttons) */
+    --text-muted: #718096; /* Muted text color, e.g., slate grey */
+
+    --background-light: #f0f2f5; /* Light grey background from App_fixed.css .app */
+    --background-dark: #1a202c; /* A dark background for any potential future dark mode */
+
+    --border-color: #cbd5e0; /* A light border color like E2E8F0 or CBD5E0 */
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Consistent font stack */
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light;
-    color: var(--text-dark);
-    background-color: #111111;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    color: var(--text-dark); /* Default text color for the site */
+    background-color: var(
+        --background-light
+    ); /* Default background for the site */
 }
 
 /* Global animations */
@@ -41,7 +41,8 @@
 }
 
 @keyframes pulse {
-    0%, 100% {
+    0%,
+    100% {
         opacity: 1;
     }
     50% {
@@ -60,20 +61,29 @@
 
 /* Modern gradient backgrounds */
 .gradient-bg {
-    background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 75%, rgba(255,215,0,0.1) 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(17, 17, 17, 1) 75%,
+        rgba(255, 215, 0, 0.1) 100%
+    );
 }
 
 .gradient-card {
-    background: linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(20,20,20,0.9));
-    border: 1px solid rgba(255,215,0,0.1);
+    background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.9),
+        rgba(20, 20, 20, 0.9)
+    );
+    border: 1px solid rgba(255, 215, 0, 0.1);
     border-radius: 1rem;
     transition: all 0.3s ease;
 }
 
 .gradient-card:hover {
-    border-color: rgba(255,215,0,0.3);
+    border-color: rgba(255, 215, 0, 0.3);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(255,215,0,0.1);
+    box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.1);
 }
 
 /* Light background with a subtle gold pattern */
@@ -95,7 +105,7 @@ body::before {
 
 /* Custom button styles */
 .btn-gradient {
-    background: linear-gradient(90deg, #FFD700, #B8860B);
+    background: linear-gradient(90deg, #ffd700, #b8860b);
     color: black;
     font-weight: bold;
     border-radius: 9999px;
@@ -103,25 +113,25 @@ body::before {
 }
 
 .btn-gradient:hover {
-    background: linear-gradient(90deg, #F5C400, #A67700);
+    background: linear-gradient(90deg, #f5c400, #a67700);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
 
 /* Glow effects */
 .glow-effect {
-    box-shadow: 0 0 15px rgba(255,215,0,0.5);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
 a {
     font-weight: 500;
-    color: var(--primary-color);
-    text-decoration: none;
+    color: var(--primary-color); /* Links will use the primary blue color */
+    text-decoration: none; /* Assuming no underline by default, or add 'underline' if preferred */
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--primary-hover);
+    color: var(--primary-hover); /* Darker blue on hover */
 }
 
 body {
@@ -131,10 +141,16 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1.2;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--text-dark); /* Headings use the default dark text color */
+    /* If you want headings to be primary color: color: var(--primary-color); */
 }
 
 h1 {
@@ -151,14 +167,14 @@ button {
     font-family: inherit;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: var(--primary-color);
-    color: var(--text-dark);
+    background-color: var(--primary-color); /* Buttons use primary blue */
+    color: var(--text-light); /* Text on buttons should be light */
 }
 
 button:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--primary-hover); /* Darker blue on hover */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,215,0,0.2);
+    box-shadow: 0 5px 15px rgba(49, 130, 206, 0.2); /* Subtle shadow with primary color */
 }
 
 button:active {
@@ -195,36 +211,12 @@ button:active {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        color: var(--text-light);
-        background-color: var(--background-dark);
+        /* Example: Define a consistent dark theme if needed */
+        /* color: var(--text-light); */
+        /* background-color: var(--background-dark); */
+        /* --primary-color: #63b3ed; */ /* Lighter blue for dark mode */
+        /* --primary-hover: #4299e1; */
     }
 
-    body::before {
-        background: radial-gradient(
-                circle at top right,
-                rgba(255, 215, 0, 0.1) 0%,
-                transparent 70%
-            ),
-            radial-gradient(
-                circle at bottom left,
-                rgba(184, 134, 11, 0.1) 0%,
-                transparent 70%
-            );
-    }
-
-    .gradient-card {
-        background: linear-gradient(to bottom right, rgba(20,20,20,0.9), rgba(30,30,30,0.9));
-    }
-
-    ::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.05);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: rgba(255, 215, 0, 0.2);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 215, 0, 0.3);
-    }
+    /* ... other dark mode specific overrides ... */
 }

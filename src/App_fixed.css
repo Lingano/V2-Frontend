@@ -1,11 +1,6 @@
-/* Animations */
-@keyframes pulse {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0.8;
-    }
+:root {
+    --primary-color: #3182ce; /* A blue, matching other styles */
+    --secondary-color: #2b6cb0; /* A darker blue for hover, matching other styles */
 }
 
 /* Main app styles */
@@ -14,6 +9,8 @@
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: #333;
     line-height: 1.5;
+    background-color: #f0f2f5; /* Adds a light grey background to the app */
+    min-height: 100vh; /* Ensures the background covers the full viewport height */
 }
 
 .header {
