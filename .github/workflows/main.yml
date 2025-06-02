@@ -9,25 +9,24 @@ jobs:
     checkout_code:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Backend Repository
+            - name: Checkout Go Backend Repository (Current Repo)
               uses: actions/checkout@v4
               with:
-                  repository: "Lingano/V2-Backend" # Update with your backend repo
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  path: backend # Checkout backend to a specific 'backend' directory
+                  # This path ensures the Go project root (e.g., LinganoGO) is in 'backend/' on the runner.
+                  path: backend
 
             - name: Checkout Frontend Repository
               uses: actions/checkout@v4
               with:
-                  repository: "Lingano/V2-Frontend" # Update with your frontend repo
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  path: frontend # Checkout frontend to a specific 'frontend' directory
+                  repository: "Lingano/V2-Frontend" # Update with your actual frontend repo
+                  token: ${{ secrets.GITHUB_TOKEN }} # Or a PAT for private repos if GITHUB_TOKEN lacks access
+                  path: frontend
 
             - name: Upload backend artifact
               uses: actions/upload-artifact@v4
               with:
                   name: backend-code
-                  path: backend
+                  path: backend # Uploads the content of the 'backend' directory (your Go project)
 
             - name: Upload frontend artifact
               uses: actions/upload-artifact@v4
@@ -37,109 +36,160 @@ jobs:
 
     deploy_backend:
         runs-on: ubuntu-latest
-        needs: checkout_code # Depends on the checkout_code job
+        needs: checkout_code
+        env:
+            VPS_IP: ${{ secrets.VPS_IP }}
+            VPS_USER: ${{ secrets.VPS_USER }}
+            # Define MONGODB_URI, JWT_SECRET, DB_NAME etc. as secrets in your GitHub repo settings
+            # MONGODB_URI: ${{ secrets.MONGODB_URI }}
+            # JWT_SECRET: ${{ secrets.JWT_SECRET }}
+            # DB_NAME: ${{ secrets.DB_NAME }}
         steps:
             - name: Download backend code
               uses: actions/download-artifact@v4
               with:
                   name: backend-code
-                  path: backend # Download to a 'backend' directory
+                  path: backend # Go project is downloaded into 'backend/'
+
+            - name: Set up Go
+              uses: actions/setup-go@v4
+              with:
+                  go-version: "1.21" # Specify your Go version (e.g., 1.21, 1.22)
+
+            - name: Build Go application
+              run: |
+                  cd backend # Navigate into the Go project directory
+                  echo "Current directory: $(pwd)"
+                  echo "Listing files: $(ls -la)"
+                  # Generate Swagger docs
+                  go install github.com/swaggo/swag/cmd/swag@latest # Ensure swag is available
+                  swag init # Or swag init -g main.go if your main.go is not in the root
+                  # Build the Go binary. Output will be ./backend/LinganoGOApp
+                  go build -v -o LinganoGOApp main.go
 
             - name: Set up SSH key
               run: |
                   mkdir -p ~/.ssh
                   echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
-                  chmod 600 ~/.ssh/id_rsa # Correct permissions for the private key
-                  ssh-keyscan -H ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
-              env:
-                  VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
-                  VPS_IP: ${{ secrets.VPS_IP }}
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ env.VPS_IP }} >> ~/.ssh/known_hosts # Use env context
 
-            - name: Deploy Backend to VPS
+            - name: Deploy Go Backend to VPS
               run: |
-                  ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} << 'EOF'
-                    # Ensure the target directory exists
-                    mkdir -p ~/LinganoDeployment/V2-Backend
-                    # Copy files from the runner to the VPS
-                    # Note: scp requires the source path to be relative to the artifact download path
-                    # We will rsync the contents of the 'backend' directory on the runner
-                    echo "Copying backend files to VPS..."
-                  EOF
-                  rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./backend/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}:~/LinganoDeployment/V2-Backend/
-                  ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} << 'EOF'
-                    cd ~/LinganoDeployment/V2-Backend # Change to your backend repo directory
-                    # git pull origin main # Not needed if rsyncing the latest code
-                    # Install dependencies and restart your backend service if necessary
-                    python3 -m venv venv # Create the virtual environment
-                    source venv/bin/activate # Activate the virtual environment
-                    pip install -r requirements.txt # For Django or other Python dependencies
-                    python manage.py migrate # For Django migrations
-                    sudo systemctl restart gunicorn # If you're using Gunicorn (adjust as needed)
-                    echo "Backend deployed!"
-                  EOF
-              env:
-                  VPS_IP: ${{ secrets.VPS_IP }}
-                  VPS_USER: ${{ secrets.VPS_USER }}
+                  # Ensure the target directory exists on VPS
+                  ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ env.VPS_USER }}@${{ env.VPS_IP }} "mkdir -p ~/LinganoDeployment/LinganoGO"
+
+                  # Rsync the built Go binary from the runner to the VPS
+                  # The binary is at ./backend/LinganoGOApp on the runner
+                  rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./backend/LinganoGOApp ${{ env.VPS_USER }}@${{ env.VPS_IP }}:~/LinganoDeployment/LinganoGO/
+
+                  # --- Environment Configuration on VPS ---
+                  # Create/Update .env file on VPS using GitHub Secrets.
+                  ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ env.VPS_USER }}@${{ env.VPS_IP }} " \
+                    echo \"MONGODB_URI='${{ secrets.MONGODB_URI }}'\" > ~/LinganoDeployment/LinganoGO/.env && \
+                    echo \"JWT_SECRET='${{ secrets.JWT_SECRET }}'\" >> ~/LinganoDeployment/LinganoGO/.env && \
+                    echo \"DB_NAME='${{ secrets.DB_NAME }}'\" >> ~/LinganoDeployment/LinganoGO/.env && \
+                    echo \"PORT='${{ secrets.PORT_NUMBER }}'\" >> ~/LinganoDeployment/LinganoGO/.env # Ensure PORT_NUMBER secret exists or use a default like 8080
+                  "
+                  # Note: The Go app needs to be able to load this .env file (e.g., using a library like godotenv).
+
+                  # Option 2: Manually manage the .env file on the VPS.
+                  # Ensure ~/LinganoDeployment/LinganoGO/.env exists and is correctly configured on your server.
+
+                  # --- Remote commands to make binary executable and restart the application ---
+                  ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ env.VPS_USER }}@${{ env.VPS_IP }} << 'EOF_REMOTE_SCRIPT'
+                    cd ~/LinganoDeployment/LinganoGO
+                    chmod +x LinganoGOApp
+
+                    echo "Attempting to restart Go application..."
+
+                    # Ensure only the Go app process is stopped, not Nginx
+                    PORT_TO_USE=$(grep -oP 'PORT=\K[0-9]+' ~/LinganoDeployment/LinganoGO/.env || echo 8080) # Read port from .env, default to 8080
+                    echo "Attempting to stop any process on port $PORT_TO_USE..."
+                    if sudo fuser -k -n tcp $PORT_TO_USE; then
+                        echo "Successfully stopped process(es) on port $PORT_TO_USE using fuser."
+                        sleep 2 # Give services a moment to release the port
+                    else
+                        echo "No process found on port $PORT_TO_USE with fuser, or fuser is not available. Attempting pkill as fallback."
+                        if pgrep -f LinganoGOApp; then
+                            echo "Stopping existing LinganoGOApp process using pkill..."
+                            pkill -f LinganoGOApp
+                            sleep 2 # Give it a moment to stop gracefully
+                        else
+                            echo "No LinganoGOApp process found with pgrep."
+                        fi
+                    fi
+
+                    echo "Starting LinganoGOApp process in background on port $PORT_TO_USE..."
+                    nohup ./LinganoGOApp > app.log 2>&1 &
+
+                    echo "Restarting Nginx to ensure it is running..."
+                    sudo systemctl restart nginx
+
+                    echo "Go Backend deployed and Nginx restarted!"
+                  EOF_REMOTE_SCRIPT
+
+            # IMPORTANT - Server Configuration for api2.lingano.live:
+            # To make your Go application accessible via https://api2.lingano.live after this deployment:
+            #
+            # 1. DNS Configuration:
+            #    - Ensure that your DNS records for 'api2.lingano.live' point to the public IP
+            #      address of your VPS. This IP address should be the value stored in the
+            #      ${{ secrets.VPS_IP }} GitHub secret.
+            #
+            # 2. Reverse Proxy Setup (on your VPS):
+            #    - Install and configure a web server (e.g., Nginx, Caddy) to act as a reverse proxy.
+            #    - This reverse proxy must:
+            #      a. Listen for incoming traffic on 'api2.lingano.live' (typically port 80 for HTTP
+            #         and port 443 for HTTPS).
+            #      b. Forward (proxy) these requests to your Go application. The application is started
+            #         by this script and listens on the port defined by the $PORT_TO_USE variable
+            #         (which is read from ~/LinganoDeployment/LinganoGO/.env on your VPS, or defaults
+            #         to 8080). For example, proxy to http://localhost:$PORT_TO_USE.
+            #      c. Handle SSL/TLS termination for 'https://api2.lingano.live'. Tools like
+            #         Let's Encrypt can provide free SSL certificates.
+            #
+            # 3. Go Application Port:
+            #    - The remote script in this workflow determines $PORT_TO_USE from the .env file at
+            #      ~/LinganoDeployment/LinganoGO/.env on your VPS. Ensure this .env file exists,
+            #      contains the correct PORT for your Go application, and that your Go application
+            #      is configured to use this port.
+            #
+            # This GitHub Actions workflow handles deploying the Go application code and restarting
+            # the process. The DNS and reverse proxy configurations are manual steps required on
+            # your VPS and with your DNS provider.
 
     deploy_frontend:
         runs-on: ubuntu-latest
-        needs: checkout_code # Depends on the checkout_code job
+        needs: checkout_code
+        env:
+            VPS_IP: ${{ secrets.VPS_IP }}
+            VPS_USER: ${{ secrets.VPS_USER }}
         steps:
             - name: Download frontend code
               uses: actions/download-artifact@v4
               with:
                   name: frontend-code
-                  path: frontend # Download to a 'frontend' directory
+                  path: frontend
 
             - name: Set up SSH key
               run: |
                   mkdir -p ~/.ssh
                   echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
-                  chmod 600 ~/.ssh/id_rsa # Correct permissions for the private key
-                  ssh-keyscan -H ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
-              env:
-                  VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
-                  VPS_IP: ${{ secrets.VPS_IP }}
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan -H $VPS_IP >> ~/.ssh/known_hosts
+              # No need for individual env for VPS_SSH_KEY if it's a job secret or repo secret
 
             - name: Deploy Frontend to VPS
-              env: # Environment variables for the runner executing this step
-                  VPS_IP: ${{ secrets.VPS_IP }}
-                  VPS_USER: ${{ secrets.VPS_USER }}
-                  # This makes the secret available for interpolation into the run script's heredoc
-                  API_URL_FOR_BUILD: ${{ secrets.VITE_API_BASE_URL}}
               run: |
-                  # First part of SSH command to create directory (if needed) and echo
-                  ssh -o StrictHostKeyChecking=no ${{ env.VPS_USER }}@${{ env.VPS_IP }} << 'EOF'
-                    # Ensure the target directory exists
-                    mkdir -p ~/LinganoDeployment/V2-Frontend
-                    echo "Copying frontend files to VPS..."
-                  EOF
-
-                  # rsync command
-                  rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./frontend/ ${{ env.VPS_USER }}@${{ env.VPS_IP }}:~/LinganoDeployment/V2-Frontend/
-                  
-                  # Second part of SSH command to build and restart
-                  # Note: Using EOF without quotes to allow runner-side expansion of API_URL_FOR_BUILD
-                  ssh -o StrictHostKeyChecking=no ${{ env.VPS_USER }}@${{ env.VPS_IP }} << EOF 
-                    echo "Setting VITE_API_BASE_URL for the build process on VPS."
-                    export VITE_API_BASE_URL="${API_URL_FOR_BUILD}" # Use the env var passed from the runner
-                    
-                    echo "Current VITE_API_BASE_URL on VPS: \$VITE_API_BASE_URL" # For debugging on VPS logs
-
-                    cd ~/LinganoDeployment/V2-Frontend # Change to your frontend repo directory
-                    
-                    echo "Installing frontend dependencies..."
+                  ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_IP "mkdir -p ~/LinganoDeployment/V2-Frontend"
+                  rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./frontend/ $VPS_USER@$VPS_IP:~/LinganoDeployment/V2-Frontend/
+                  ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_IP << 'EOF_FRONTEND_SCRIPT'
+                    cd ~/LinganoDeployment/V2-Frontend
+                    # Add any frontend build steps here, e.g.:
                     npm install
-                    
-                    echo "Building frontend..."
-                    # The npm run build command will now use the VITE_API_BASE_URL set above
-                    npm run build 
-                    
-                    echo "Restarting Nginx..."
-                    sudo systemctl restart nginx # If you're using nginx for serving frontend
-                    
+                    npm run build # Or your specific build command
+                    # Restart your frontend serving mechanism (e.g., nginx, pm2)
+                    # sudo systemctl restart nginx # Example for nginx
                     echo "Frontend deployed!"
-                  EOF
-              env:
-                  VPS_IP: ${{ secrets.VPS_IP }}
-                  VPS_USER: ${{ secrets.VPS_USER }}
+                  EOF_FRONTEND_SCRIPT
