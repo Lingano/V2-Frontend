@@ -6,6 +6,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
 
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -21,35 +22,37 @@ const Login = () => {
         setError("");
 
         try {
-            // Simulate API call
-            console.log("Login attempt:", { email });
-            await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
-
             const loginEndpoint = `${apiBaseUrl}/api/auth/login`;
-            // TODO: Replace with actual API call to your backend
             const response = await fetch(loginEndpoint, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
             });
 
-            alert(`Logging in with this api endpoint: ${loginEndpoint}`);
+            const data = await response.json();
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(
-                    errorData.message ||
+            if (response.ok) {
+                // SUCCESSFUL LOGIN
+                if (data.token) {
+                    // VVVVVV  THIS IS THE CRITICAL PART VVVVVV
+                    localStorage.setItem("token", data.token);
+                    // ^^^^^^  THIS IS THE CRITICAL PART ^^^^^^
+
+                    // Optionally, you can also store user info or redirect
+                    // localStorage.setItem("user", JSON.stringify(data.user)); // If user data is also returned
+                    // navigate("/profile"); // Or to a dashboard
+                    setIsLoggedIn(true); // Update some global state if you have one
+                    console.log("Login successful, token saved.");
+                } else {
+                    setError("Login successful, but no token received.");
+                }
+            } else {
+                // Handle login errors (e.g., invalid credentials)
+                setError(
+                    data.message ||
                         "Login failed. Please check your credentials."
                 );
             }
-
-            const data = await response.json();
-            console.log("Login successful:", data);
-            // TODO: Handle successful login (e.g., store token, redirect user via react-router-dom)
-
-            alert("Login successful! Redirecting..."); // Placeholder
-            setEmail("");
-            setPassword("");
         } catch (err: any) {
             setError(
                 err.message || "An unexpected error occurred during login."
