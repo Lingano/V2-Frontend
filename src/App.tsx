@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Rybbit from "./pages/Rybbit";
 import Register from "./pages/Register";
+import UserProfile from "./pages/UserProfile"; // Add this import
 
 // Home page component
 const Home = () => {
@@ -373,6 +374,8 @@ const App = () => {
                     <Route path="/rybbit" element={<Rybbit />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/profile" element={<UserProfile />} />{" "}
+                    {/* Add this route */}
                 </Routes>
 
                 {/* Footer */}
