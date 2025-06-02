@@ -405,7 +405,7 @@ const App = () => {
                     <nav>
                         <h6 className="footer-title text-primary">Resources</h6>
                         <a className="link link-hover hover:text-primary">
-                            Language Guides
+                            Language Guides2
                         </a>
                         <a className="link link-hover hover:text-primary">
                             Community
