@@ -336,6 +336,22 @@ const App = () => {
                                     Rybbit
                                 </Link>
                             </li>
+                            <li>
+                                <Link
+                                    to="/profile"
+                                    className="hover:text-primary"
+                                >
+                                    Profile
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/login"
+                                    className="hover:text-primary"
+                                >
+                                    Login
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <div className="navbar-end">
