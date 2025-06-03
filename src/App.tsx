@@ -296,6 +296,15 @@ const App = () => {
                                 <li>
                                     <Link to="/rybbit">Rybbit</Link>
                                 </li>
+                                <li>
+                                    <Link to="/profile">Profile</Link>
+                                </li>
+                                <li>
+                                    <Link to="/login">Login</Link>
+                                </li>
+                                <li>
+                                    <Link to="/register">Register</Link>
+                                </li>
                             </ul>
                         </div>
                         <Link
