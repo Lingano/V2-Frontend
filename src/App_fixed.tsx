@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import { useNavigate } from "react-router-dom";
 
 // Your app
-const App = () => {
+const App2 = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [currentTime, setCurrentTime] = useState("");
     const Navigate = useNavigate();
@@ -259,4 +259,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default App2;
