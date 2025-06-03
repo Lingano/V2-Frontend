@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import "./App_fixed.css";
 import "./pages/Login.css";
 import Login from "./pages/Login";
+import { useNavigate } from "react-router-dom";
 
 // Your app
 const App = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [currentTime, setCurrentTime] = useState("");
+    const Navigate = useNavigate();
 
     // Use environment variables for API URL
     const API_URL =
@@ -96,6 +98,36 @@ const App = () => {
                         }}
                     >
                         Contact
+                    </a>
+                    <a
+                        href="/login"
+                        style={{
+                            color: "var(--primary-color)",
+                            textDecoration: "none",
+                        }}
+                        onClick={() => Navigate("/login")}
+                    >
+                        Login
+                    </a>
+                    <a
+                        href="/register"
+                        style={{
+                            color: "var(--primary-color)",
+                            textDecoration: "none",
+                        }}
+                        onClick={() => Navigate("/register")}
+                    >
+                        Register
+                    </a>
+                    <a
+                        href="/profile"
+                        style={{
+                            color: "var(--primary-color)",
+                            textDecoration: "none",
+                        }}
+                        onClick={() => Navigate("/profile")}
+                    >
+                        Profile
                     </a>
                 </nav>
             </header>
