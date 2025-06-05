@@ -5,7 +5,7 @@ const features = [
             "Engage with hands-on exercises and real-world scenarios to boost your language skills.",
         icon: (
             <svg
-                className="h-8 w-8 text-indigo-600"
+                className="h-8 w-8 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -25,7 +25,7 @@ const features = [
             "Get instant corrections and suggestions to improve your pronunciation and grammar.",
         icon: (
             <svg
-                className="h-8 w-8 text-indigo-600"
+                className="h-8 w-8 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -45,7 +45,7 @@ const features = [
             "Join a vibrant community of learners and native speakers for motivation and help.",
         icon: (
             <svg
-                className="h-8 w-8 text-indigo-600"
+                className="h-8 w-8 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -65,7 +65,7 @@ const features = [
             "Monitor your achievements and milestones with detailed analytics and reports.",
         icon: (
             <svg
-                className="h-8 w-8 text-indigo-600"
+                className="h-8 w-8 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -82,16 +82,19 @@ const features = [
 ];
 
 const Features = () => (
-    <section id="features" className="py-24 bg-white">
+    <section
+        id="features"
+        className="py-24 bg-base-100 text-base-content transition-colors duration-300"
+    >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-                <h2 className="text-base font-semibold leading-7 text-indigo-600 uppercase tracking-wider">
+                <h2 className="text-base font-semibold leading-7 text-primary uppercase tracking-wider">
                     Features
                 </h2>
-                <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                <p className="mt-2 text-4xl font-bold tracking-tight text-primary sm:text-5xl">
                     Everything you need to succeed
                 </p>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                <p className="mt-6 text-lg leading-8 text-base-content/70">
                     Our platform is packed with features to help you learn
                     faster and stay motivated.
                 </p>
@@ -102,13 +105,13 @@ const Features = () => (
                         key={feature.name}
                         className="flex flex-col items-center text-center"
                     >
-                        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-indigo-50 mb-4">
+                        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                             {feature.icon}
                         </div>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-base-content">
                             {feature.name}
                         </h3>
-                        <p className="mt-2 text-base text-gray-600">
+                        <p className="mt-2 text-base text-base-content/70">
                             {feature.description}
                         </p>
                     </div>

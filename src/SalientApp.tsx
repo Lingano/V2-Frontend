@@ -11,12 +11,18 @@ const Navbar = ({
     darkMode: boolean;
     setDarkMode: (v: boolean) => void;
 }) => (
-    <header className="bg-white/80 backdrop-blur border-b border-gray-200 sticky top-0 z-50 dark:bg-base-200/80 dark:border-base-300">
+    <header className="bg-base-100/80 backdrop-blur border-b border-base-200 sticky top-0 z-50 dark:bg-base-200/80 dark:border-base-300">
         <nav className="mx-auto max-w-7xl px-6 flex h-16 items-center justify-between">
             <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 text-2xl font-extrabold text-indigo-600 dark:text-primary">
+                <span className="inline-flex items-center gap-2 text-2xl font-extrabold text-primary">
                     <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                        <circle cx="16" cy="16" r="16" fill="#6366F1" />
+                        <circle
+                            cx="16"
+                            cy="16"
+                            r="16"
+                            fill="currentColor"
+                            className="text-primary"
+                        />
                         <text
                             x="16"
                             y="22"
@@ -34,25 +40,22 @@ const Navbar = ({
             <div className="hidden md:flex gap-8 text-base font-medium">
                 <a
                     href="#features"
-                    className="hover:text-indigo-600 transition-colors dark:hover:text-primary"
+                    className="hover:text-primary transition-colors"
                 >
                     Features
                 </a>
                 <a
                     href="#pricing"
-                    className="hover:text-indigo-600 transition-colors dark:hover:text-primary"
+                    className="hover:text-primary transition-colors"
                 >
                     Pricing
                 </a>
-                <a
-                    href="#faq"
-                    className="hover:text-indigo-600 transition-colors dark:hover:text-primary"
-                >
+                <a href="#faq" className="hover:text-primary transition-colors">
                     FAQ
                 </a>
                 <a
                     href="#contact"
-                    className="hover:text-indigo-600 transition-colors dark:hover:text-primary"
+                    className="hover:text-primary transition-colors"
                 >
                     Contact
                 </a>
@@ -69,7 +72,7 @@ const Navbar = ({
                     />
                     {/* sun icon */}
                     <svg
-                        className="swap-off fill-current w-6 h-6"
+                        className="swap-off fill-current w-6 h-6 text-base-content"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                     >
@@ -77,7 +80,7 @@ const Navbar = ({
                     </svg>
                     {/* moon icon */}
                     <svg
-                        className="swap-on fill-current w-6 h-6"
+                        className="swap-on fill-current w-6 h-6 text-base-content"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                     >
@@ -86,13 +89,13 @@ const Navbar = ({
                 </label>
                 <a
                     href="#"
-                    className="rounded-md px-4 py-2 text-sm font-semibold text-indigo-600 ring-1 ring-indigo-600/20 hover:bg-indigo-50 transition dark:text-primary dark:ring-primary/20 dark:hover:bg-base-300"
+                    className="rounded-md px-4 py-2 text-sm font-semibold text-primary ring-1 ring-primary/20 hover:bg-base-200 transition"
                 >
                     Sign in
                 </a>
                 <a
                     href="#"
-                    className="rounded-md px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition dark:bg-primary dark:hover:bg-primary-focus"
+                    className="rounded-md px-4 py-2 text-sm font-semibold text-base-100 bg-primary hover:bg-primary-focus transition"
                 >
                     Sign up
                 </a>
@@ -112,23 +115,6 @@ const SalientApp = () => {
     });
 
     useEffect(() => {
-        document.body.classList.add(
-            "bg-gradient-to-br",
-            "from-white",
-            "via-blue-50",
-            "to-purple-50"
-        );
-        return () => {
-            document.body.classList.remove(
-                "bg-gradient-to-br",
-                "from-white",
-                "via-blue-50",
-                "to-purple-50"
-            );
-        };
-    }, []);
-
-    useEffect(() => {
         if (darkMode) {
             document.documentElement.setAttribute("data-theme", "dark");
             localStorage.setItem("dark-mode", "true");
@@ -139,28 +125,34 @@ const SalientApp = () => {
     }, [darkMode]);
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-base-100 text-base-content transition-colors duration-300">
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
             <main className="flex-1">
-                <Hero />
-                <Features />
+                <section className="py-20 bg-base-100 text-base-content transition-colors duration-300">
+                    <Hero />
+                </section>
+                <div className="divider divider-primary mx-auto w-1/2"> </div>
+                <section className="py-20 bg-base-100 text-base-content transition-colors duration-300">
+                    <Features />
+                </section>
+                <div className="divider divider-primary mx-auto w-1/2"> </div>
                 {/* Pricing Section */}
                 <section id="pricing" className="py-20 bg-transparent">
                     <div className="max-w-5xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold text-center text-indigo-600 dark:text-primary mb-10">
+                        <h2 className="text-4xl font-bold text-center text-primary mb-10">
                             Pricing
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {/* Basic Plan */}
-                            <div className="card shadow-xl border border-indigo-100/60 bg-white/70 dark:bg-base-200/80 backdrop-blur-md transition-all hover:scale-105">
+                            <div className="card shadow-xl border border-base-200 bg-base-100/80 backdrop-blur-md transition-all hover:scale-105">
                                 <div className="card-body items-center text-center">
-                                    <h3 className="card-title text-indigo-600 dark:text-primary mb-2">
+                                    <h3 className="card-title text-primary mb-2">
                                         Basic
                                     </h3>
-                                    <div className="text-4xl font-bold text-indigo-600 dark:text-primary mb-4">
+                                    <div className="text-4xl font-bold text-primary mb-4">
                                         Free
                                     </div>
-                                    <ul className="mb-6 space-y-2 text-base-content dark:text-base-content/80">
+                                    <ul className="mb-6 space-y-2 text-base-content">
                                         <li>✔️ Access to core lessons</li>
                                         <li>✔️ Daily practice</li>
                                         <li>✔️ Community support</li>
@@ -171,41 +163,41 @@ const SalientApp = () => {
                                 </div>
                             </div>
                             {/* Pro Plan */}
-                            <div className="card shadow-2xl border-2 border-indigo-600 bg-indigo-600/90 dark:bg-primary/90 text-white backdrop-blur-md scale-105 z-10 transition-all hover:scale-110">
+                            <div className="card shadow-2xl border-2 border-primary bg-primary/90 text-primary-content backdrop-blur-md scale-105 z-10 transition-all hover:scale-110">
                                 <div className="card-body items-center text-center">
-                                    <h3 className="card-title text-white mb-2">
+                                    <h3 className="card-title text-base-100 mb-2">
                                         Pro
                                     </h3>
-                                    <div className="text-4xl font-bold text-white mb-4">
-                                        $9
+                                    <div className="text-4xl font-bold text-base-100 mb-4">
+                                        €9
                                         <span className="text-lg align-top">
                                             /mo
                                         </span>
                                     </div>
-                                    <ul className="mb-6 space-y-2 text-indigo-100/90 dark:text-base-100/90">
+                                    <ul className="mb-6 space-y-2 text-primary-content/80">
                                         <li>✔️ Everything in Basic</li>
                                         <li>✔️ Advanced analytics</li>
                                         <li>✔️ Real-time updates</li>
                                         <li>✔️ Priority support</li>
                                     </ul>
-                                    <button className="btn btn-white text-indigo-600 font-semibold w-full hover:bg-indigo-50">
+                                    <button className="btn btn-white text-primary font-semibold w-full hover:bg-base-200">
                                         Start Free Trial
                                     </button>
                                 </div>
                             </div>
                             {/* Team Plan */}
-                            <div className="card shadow-xl border border-indigo-100/60 bg-white/70 dark:bg-base-200/80 backdrop-blur-md transition-all hover:scale-105">
+                            <div className="card shadow-xl border border-base-200 bg-base-100/80 backdrop-blur-md transition-all hover:scale-105">
                                 <div className="card-body items-center text-center">
-                                    <h3 className="card-title text-indigo-600 dark:text-primary mb-2">
+                                    <h3 className="card-title text-primary mb-2">
                                         Team
                                     </h3>
-                                    <div className="text-4xl font-bold text-indigo-600 dark:text-primary mb-4">
-                                        $29
+                                    <div className="text-4xl font-bold text-primary mb-4">
+                                        €29
                                         <span className="text-lg align-top">
                                             /mo
                                         </span>
                                     </div>
-                                    <ul className="mb-6 space-y-2 text-base-content dark:text-base-content/80">
+                                    <ul className="mb-6 space-y-2 text-base-content">
                                         <li>✔️ All Pro features</li>
                                         <li>✔️ Team management</li>
                                         <li>✔️ Progress tracking</li>
@@ -219,56 +211,57 @@ const SalientApp = () => {
                         </div>
                     </div>
                 </section>
+                <div className="divider divider-primary mx-auto w-1/2"> </div>
                 {/* FAQ Section */}
                 <section id="faq" className="py-20 bg-transparent">
                     <div className="max-w-3xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold text-center text-indigo-600 dark:text-primary mb-10">
+                        <h2 className="text-4xl font-bold text-center text-primary mb-10">
                             Frequently Asked Questions
                         </h2>
                         <div className="space-y-4">
-                            <div className="collapse collapse-arrow bg-white/70 dark:bg-base-200/80 border border-indigo-100/60 backdrop-blur-md shadow-md">
+                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
                                 <input
                                     type="radio"
                                     name="faq-accordion"
                                     defaultChecked
                                 />
-                                <div className="collapse-title text-lg font-semibold text-indigo-600 dark:text-primary">
+                                <div className="collapse-title text-lg font-semibold text-primary">
                                     What is Lingano?
                                 </div>
-                                <div className="collapse-content text-base-content dark:text-base-content/80">
+                                <div className="collapse-content text-base-content">
                                     Lingano is a modern platform designed to
                                     make language learning fast, fun, and
                                     effective, with real-time updates and
                                     advanced analytics.
                                 </div>
                             </div>
-                            <div className="collapse collapse-arrow bg-white/70 dark:bg-base-200/80 border border-indigo-100/60 backdrop-blur-md shadow-md">
+                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
                                 <input type="radio" name="faq-accordion" />
-                                <div className="collapse-title text-lg font-semibold text-indigo-600 dark:text-primary">
+                                <div className="collapse-title text-lg font-semibold text-primary">
                                     Is there a free plan?
                                 </div>
-                                <div className="collapse-content text-base-content dark:text-base-content/80">
+                                <div className="collapse-content text-base-content">
                                     Yes! Our Basic plan is free and gives you
                                     access to core lessons and daily practice.
                                 </div>
                             </div>
-                            <div className="collapse collapse-arrow bg-white/70 dark:bg-base-200/80 border border-indigo-100/60 backdrop-blur-md shadow-md">
+                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
                                 <input type="radio" name="faq-accordion" />
-                                <div className="collapse-title text-lg font-semibold text-indigo-600 dark:text-primary">
+                                <div className="collapse-title text-lg font-semibold text-primary">
                                     Can I upgrade or cancel anytime?
                                 </div>
-                                <div className="collapse-content text-base-content dark:text-base-content/80">
+                                <div className="collapse-content text-base-content">
                                     Absolutely! You can upgrade, downgrade, or
                                     cancel your subscription at any time from
                                     your account settings.
                                 </div>
                             </div>
-                            <div className="collapse collapse-arrow bg-white/70 dark:bg-base-200/80 border border-indigo-100/60 backdrop-blur-md shadow-md">
+                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
                                 <input type="radio" name="faq-accordion" />
-                                <div className="collapse-title text-lg font-semibold text-indigo-600 dark:text-primary">
+                                <div className="collapse-title text-lg font-semibold text-primary">
                                     Do you offer team plans?
                                 </div>
-                                <div className="collapse-content text-base-content dark:text-base-content/80">
+                                <div className="collapse-content text-base-content">
                                     Yes, our Team plan is perfect for
                                     organizations and includes team management
                                     and dedicated support.
@@ -277,6 +270,7 @@ const SalientApp = () => {
                         </div>
                     </div>
                 </section>
+                <div className="divider divider-primary mx-auto w-1/2"> </div>
                 <CTA />
             </main>
             <Footer />
