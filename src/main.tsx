@@ -6,7 +6,7 @@ import SalientApp from "./SalientApp.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <App />
-        {/* <SalientApp /> */}
+        {/* <App /> */}
+        <SalientApp />
     </StrictMode>
 );

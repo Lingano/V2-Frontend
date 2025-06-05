@@ -152,6 +152,7 @@ const Home = () => {
                 className="range range-primary"
                 onChange={(e) => setRangeValue1(Number(e.target.value))}
             />
+            slider value: {rangeValue1}
             <input
                 type="range"
                 min={0}
@@ -221,7 +222,6 @@ const Home = () => {
                 </div>
             </div>
             <div className="divider">OR</div>
-
             <div className="mb-16">
                 <h2 className="text-3xl font-bold text-primary mb-6">
                     Key Features
