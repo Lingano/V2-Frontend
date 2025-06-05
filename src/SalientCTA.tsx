@@ -1,5 +1,5 @@
 const CTA = () => (
-    <section className="relative isolate overflow-hidden py-24 sm:py-32">
+    <section className="relative isolate overflow-hidden py-24 sm:py-32 text-base-content dark:text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
                 <h2 className="text-4xl font-bold tracking-tight text-base-content sm:text-5xl">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Hero from "./SalientHero";
 import Features from "./SalientFeatures";
 import CTA from "./SalientCTA";
@@ -126,20 +126,71 @@ const SalientApp = () => {
         }
     }, [darkMode]);
 
+    // Randomized background shape configurations
+    const shapeConfigs = [
+        {
+            color: "bg-primary/30",
+            size: "40vw",
+            blur: "blur-3xl",
+            opacity: 0.6,
+            animation: "animate-pulse-slow",
+        },
+        {
+            color: "bg-secondary/20",
+            size: "50vw",
+            blur: "blur-3xl",
+            opacity: 0.5,
+            animation: "animate-float-slow-delay-1",
+        },
+        {
+            color: "bg-accent/25",
+            size: "35vw",
+            blur: "blur-2xl",
+            opacity: 0.5,
+            animation: "animate-pulse-slow-delay-2",
+        },
+        {
+            color: "bg-info/30",
+            size: "30vw",
+            blur: "blur-3xl",
+            opacity: 0.6,
+            animation: "animate-float-slow",
+        },
+        {
+            color: "bg-success/20",
+            size: "30vw",
+            blur: "blur-3xl",
+            opacity: 0.4,
+            animation: "animate-pulse-slow-delay-1",
+        },
+    ];
+    const shapes = useMemo(
+        () =>
+            shapeConfigs.map((cfg) => ({
+                ...cfg,
+                top: `${Math.random() * 100 - 20}%`, // random top between -20% and 80%
+                left: `${Math.random() * 100 - 10}%`, // random left between -10% and 90%
+            })),
+        []
+    );
+
     return (
         <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 relative overflow-hidden">
             {/* Dynamic Background Elements */}
             <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden">
-                {/* Shape 1 */}
-                <div className="absolute top-[-20%] left-[-10%] w-[40vw] h-[40vw] bg-green-500/30 rounded-full blur-3xl opacity-60 animate-pulse-slow"></div>
-                {/* Shape 2 */}
-                <div className="absolute bottom-[-15%] right-[-15%] w-[50vw] h-[50vw] bg-cyan-500/20 rounded-full blur-3xl opacity-50 animate-float-slow-delay-1"></div>
-                {/* Shape 3 */}
-                <div className="absolute top-[10%] right-[5%] w-[35vw] h-[35vw] bg-blue-600/25 rounded-full blur-2xl opacity-50 animate-pulse-slow-delay-2"></div>
-                {/* Shape 4 */}
-                <div className="absolute bottom-[5%] left-[2%] w-[30vw] h-[30vw] bg-emerald-400/30 rounded-full blur-3xl opacity-60 animate-float-slow"></div>
-                {/* Shape 5 - more central */}
-                <div className="absolute top-[30%] left-[35%] w-[30vw] h-[30vw] bg-teal-500/20 rounded-full blur-3xl opacity-40 animate-pulse-slow-delay-1"></div>
+                {shapes.map((s, i) => (
+                    <div
+                        key={i}
+                        className={`absolute ${s.color} rounded-full ${s.blur} ${s.animation}`}
+                        style={{
+                            top: s.top,
+                            left: s.left,
+                            width: s.size,
+                            height: s.size,
+                            opacity: s.opacity,
+                        }}
+                    ></div>
+                ))}
             </div>
 
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />

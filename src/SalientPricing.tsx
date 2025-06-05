@@ -1,12 +1,15 @@
 const SalientPricing = () => (
-    <section id="pricing" className="py-20 bg-transparent">
+    <section
+        id="pricing"
+        className="py-20 bg-transparent text-base-content dark:text-white"
+    >
         <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-primary mb-10">
                 Pricing
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Basic Plan */}
-                <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md transition-all hover:scale-105">
+                <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md transition-transform duration-300 hover:scale-105">
                     <div className="card-body items-center text-center">
                         <h3 className="card-title text-primary mb-2">Basic</h3>
                         <div className="text-4xl font-bold text-primary mb-4">
@@ -23,7 +26,7 @@ const SalientPricing = () => (
                     </div>
                 </div>
                 {/* Pro Plan */}
-                <div className="card shadow-lg border-2 border-secondary bg-primary text-primary-content backdrop-blur-md scale-105 z-10 transition-all hover:scale-110">
+                <div className="card shadow-lg border-2 border-secondary bg-secondary text-secondary-content backdrop-blur-md transform scale-105 z-10 transition-transform duration-300 hover:scale-110">
                     <div className="card-body items-center text-center">
                         <h3 className="card-title text-xl font-bold mb-2">
                             Pro
@@ -46,7 +49,7 @@ const SalientPricing = () => (
                     </div>
                 </div>
                 {/* Team Plan */}
-                <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md transition-all hover:scale-105">
+                <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md transition-transform duration-300 hover:scale-105">
                     <div className="card-body items-center text-center">
                         <h3 className="card-title text-primary mb-2">Team</h3>
                         <div className="text-4xl font-bold text-primary mb-4">

@@ -69,7 +69,7 @@ const Footer = () => {
     return (
         <footer
             id="contact"
-            className="bg-transparent border-t border-base-200/50 dark:border-base-300/50"
+            className="bg-transparent border-t border-base-200/50 dark:border-base-300/50 text-base-content dark:text-white"
             aria-labelledby="footer-heading"
         >
             <h2 id="footer-heading" className="sr-only">

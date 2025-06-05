@@ -1,5 +1,5 @@
 const Hero = () => (
-    <section className="relative isolate overflow-hidden py-24 sm:py-32 bg-transparent">
+    <section className="relative isolate overflow-hidden py-24 sm:py-32 bg-transparent text-base-content">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
                 <h1 className="text-5xl font-bold tracking-tight text-primary sm:text-7xl transition-colors duration-300">

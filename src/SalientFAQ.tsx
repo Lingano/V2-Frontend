@@ -1,5 +1,8 @@
 const SalientFAQ = () => (
-    <section id="faq" className="py-20 bg-transparent">
+    <section
+        id="faq"
+        className="py-20 bg-transparent text-base-content dark:text-white"
+    >
         <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-primary mb-10">
                 Frequently Asked Questions
