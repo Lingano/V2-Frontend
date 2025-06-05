@@ -3,6 +3,9 @@ module.exports = {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
             animation: {
                 "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
                 "float-slow": "float 8s ease-in-out infinite",
