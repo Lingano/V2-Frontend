@@ -90,13 +90,13 @@ const Navbar = ({
                     </svg>
                 </label>
                 <a
-                    href="#"
+                    href="https://lingano.live/login"
                     className="rounded-md px-4 py-2 text-sm font-semibold text-primary ring-1 ring-primary/20 hover:bg-base-200 transition"
                 >
                     Sign in
                 </a>
                 <a
-                    href="#"
+                    href="https://lingano.live/register"
                     className="rounded-md px-4 py-2 text-sm font-semibold text-base-100 bg-primary hover:bg-primary-focus transition"
                 >
                     Sign up
