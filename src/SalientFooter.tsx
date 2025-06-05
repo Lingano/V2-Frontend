@@ -109,7 +109,7 @@ const Footer = () => {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                                    className="text-base-content/70 hover:text-base-content transition-colors"
                                     aria-label={item.name}
                                 >
                                     {item.icon}
@@ -121,14 +121,14 @@ const Footer = () => {
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
                         {navigation.map((section) => (
                             <nav key={section.title} className="space-y-2">
-                                <h6 className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-3">
+                                <h6 className="text-xs font-semibold text-primary uppercase mb-3">
                                     {section.title}
                                 </h6>
                                 {section.links.map((link) => (
                                     <a
                                         key={link.name}
                                         href={link.href}
-                                        className="block text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                                        className="block text-sm text-base-content/70 hover:text-base-content transition-colors"
                                     >
                                         {link.name}
                                     </a>
