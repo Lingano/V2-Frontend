@@ -3,6 +3,8 @@ import Hero from "./SalientHero";
 import Features from "./SalientFeatures";
 import CTA from "./SalientCTA";
 import Footer from "./SalientFooter";
+import SalientPricing from "./SalientPricing";
+import SalientFAQ from "./SalientFAQ"; // Import the new component
 
 const Navbar = ({
     darkMode,
@@ -11,7 +13,7 @@ const Navbar = ({
     darkMode: boolean;
     setDarkMode: (v: boolean) => void;
 }) => (
-    <header className="bg-base-100/80 backdrop-blur border-b border-base-200 sticky top-0 z-50 dark:bg-base-200/80 dark:border-base-300">
+    <header className="bg-transparent backdrop-blur border-b border-base-200/50 sticky top-0 z-50 dark:border-base-300/50">
         <nav className="mx-auto max-w-7xl px-6 flex h-16 items-center justify-between">
             <div className="flex items-center gap-3">
                 <span className="inline-flex items-center gap-2 text-2xl font-extrabold text-primary">
@@ -125,151 +127,36 @@ const SalientApp = () => {
     }, [darkMode]);
 
     return (
-        <div className="min-h-screen flex flex-col bg-base-100 text-base-content transition-colors duration-300">
+        <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 relative overflow-hidden">
+            {/* Dynamic Background Elements */}
+            <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden">
+                {/* Shape 1 */}
+                <div className="absolute top-[-20%] left-[-10%] w-[40vw] h-[40vw] bg-green-500/30 rounded-full blur-3xl opacity-60 animate-pulse-slow"></div>
+                {/* Shape 2 */}
+                <div className="absolute bottom-[-15%] right-[-15%] w-[50vw] h-[50vw] bg-cyan-500/20 rounded-full blur-3xl opacity-50 animate-float-slow-delay-1"></div>
+                {/* Shape 3 */}
+                <div className="absolute top-[10%] right-[5%] w-[35vw] h-[35vw] bg-blue-600/25 rounded-full blur-2xl opacity-50 animate-pulse-slow-delay-2"></div>
+                {/* Shape 4 */}
+                <div className="absolute bottom-[5%] left-[2%] w-[30vw] h-[30vw] bg-emerald-400/30 rounded-full blur-3xl opacity-60 animate-float-slow"></div>
+                {/* Shape 5 - more central */}
+                <div className="absolute top-[30%] left-[35%] w-[30vw] h-[30vw] bg-teal-500/20 rounded-full blur-3xl opacity-40 animate-pulse-slow-delay-1"></div>
+            </div>
+
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-            <main className="flex-1">
-                <section className="py-20 bg-base-100 text-base-content transition-colors duration-300">
+            <main className="flex-1 bg-transparent">
+                <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
                     <Hero />
                 </section>
                 <div className="divider divider-primary mx-auto w-1/2"> </div>
-                <section className="py-20 bg-base-100 text-base-content transition-colors duration-300">
+                <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
                     <Features />
                 </section>
                 <div className="divider divider-primary mx-auto w-1/2"> </div>
                 {/* Pricing Section */}
-                <section id="pricing" className="py-20 bg-transparent">
-                    <div className="max-w-5xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold text-center text-primary mb-10">
-                            Pricing
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* Basic Plan */}
-                            <div className="card shadow-xl border border-base-200 bg-base-100/80 backdrop-blur-md transition-all hover:scale-105">
-                                <div className="card-body items-center text-center">
-                                    <h3 className="card-title text-primary mb-2">
-                                        Basic
-                                    </h3>
-                                    <div className="text-4xl font-bold text-primary mb-4">
-                                        Free
-                                    </div>
-                                    <ul className="mb-6 space-y-2 text-base-content">
-                                        <li>✔️ Access to core lessons</li>
-                                        <li>✔️ Daily practice</li>
-                                        <li>✔️ Community support</li>
-                                    </ul>
-                                    <button className="btn btn-outline btn-primary w-full">
-                                        Get Started
-                                    </button>
-                                </div>
-                            </div>
-                            {/* Pro Plan */}
-                            <div className="card shadow-2xl border-2 border-primary bg-primary/90 text-primary-content backdrop-blur-md scale-105 z-10 transition-all hover:scale-110">
-                                <div className="card-body items-center text-center">
-                                    <h3 className="card-title text-base-100 mb-2">
-                                        Pro
-                                    </h3>
-                                    <div className="text-4xl font-bold text-base-100 mb-4">
-                                        €9
-                                        <span className="text-lg align-top">
-                                            /mo
-                                        </span>
-                                    </div>
-                                    <ul className="mb-6 space-y-2 text-primary-content/80">
-                                        <li>✔️ Everything in Basic</li>
-                                        <li>✔️ Advanced analytics</li>
-                                        <li>✔️ Real-time updates</li>
-                                        <li>✔️ Priority support</li>
-                                    </ul>
-                                    <button className="btn btn-white text-primary font-semibold w-full hover:bg-base-200">
-                                        Start Free Trial
-                                    </button>
-                                </div>
-                            </div>
-                            {/* Team Plan */}
-                            <div className="card shadow-xl border border-base-200 bg-base-100/80 backdrop-blur-md transition-all hover:scale-105">
-                                <div className="card-body items-center text-center">
-                                    <h3 className="card-title text-primary mb-2">
-                                        Team
-                                    </h3>
-                                    <div className="text-4xl font-bold text-primary mb-4">
-                                        €29
-                                        <span className="text-lg align-top">
-                                            /mo
-                                        </span>
-                                    </div>
-                                    <ul className="mb-6 space-y-2 text-base-content">
-                                        <li>✔️ All Pro features</li>
-                                        <li>✔️ Team management</li>
-                                        <li>✔️ Progress tracking</li>
-                                        <li>✔️ Dedicated support</li>
-                                    </ul>
-                                    <button className="btn btn-outline btn-primary w-full">
-                                        Contact Sales
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <SalientPricing /> {/* Use the new component here */}
                 <div className="divider divider-primary mx-auto w-1/2"> </div>
                 {/* FAQ Section */}
-                <section id="faq" className="py-20 bg-transparent">
-                    <div className="max-w-3xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold text-center text-primary mb-10">
-                            Frequently Asked Questions
-                        </h2>
-                        <div className="space-y-4">
-                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
-                                <input
-                                    type="radio"
-                                    name="faq-accordion"
-                                    defaultChecked
-                                />
-                                <div className="collapse-title text-lg font-semibold text-primary">
-                                    What is Lingano?
-                                </div>
-                                <div className="collapse-content text-base-content">
-                                    Lingano is a modern platform designed to
-                                    make language learning fast, fun, and
-                                    effective, with real-time updates and
-                                    advanced analytics.
-                                </div>
-                            </div>
-                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
-                                <input type="radio" name="faq-accordion" />
-                                <div className="collapse-title text-lg font-semibold text-primary">
-                                    Is there a free plan?
-                                </div>
-                                <div className="collapse-content text-base-content">
-                                    Yes! Our Basic plan is free and gives you
-                                    access to core lessons and daily practice.
-                                </div>
-                            </div>
-                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
-                                <input type="radio" name="faq-accordion" />
-                                <div className="collapse-title text-lg font-semibold text-primary">
-                                    Can I upgrade or cancel anytime?
-                                </div>
-                                <div className="collapse-content text-base-content">
-                                    Absolutely! You can upgrade, downgrade, or
-                                    cancel your subscription at any time from
-                                    your account settings.
-                                </div>
-                            </div>
-                            <div className="collapse collapse-arrow bg-base-100/80 border border-base-200 backdrop-blur-md shadow-md">
-                                <input type="radio" name="faq-accordion" />
-                                <div className="collapse-title text-lg font-semibold text-primary">
-                                    Do you offer team plans?
-                                </div>
-                                <div className="collapse-content text-base-content">
-                                    Yes, our Team plan is perfect for
-                                    organizations and includes team management
-                                    and dedicated support.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <SalientFAQ /> {/* Use the new component here */}
                 <div className="divider divider-primary mx-auto w-1/2"> </div>
                 <CTA />
             </main>

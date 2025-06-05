@@ -81,44 +81,44 @@ const features = [
     },
 ];
 
-const Features = () => (
-    <section
-        id="features"
-        className="py-24 bg-base-100 text-base-content transition-colors duration-300"
-    >
+const SalientFeatures = () => (
+    <section className="relative isolate overflow-hidden py-20 bg-transparent">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-                <h2 className="text-base font-semibold leading-7 text-primary uppercase tracking-wider">
-                    Features
-                </h2>
-                <p className="mt-2 text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+            <div className="mx-auto max-w-2xl text-center">
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                     Everything you need to succeed
-                </p>
+                </h2>
                 <p className="mt-6 text-lg leading-8 text-base-content/70">
                     Our platform is packed with features to help you learn
                     faster and stay motivated.
                 </p>
             </div>
-            <div className="mt-20 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-4">
-                {features.map((feature) => (
-                    <div
-                        key={feature.name}
-                        className="flex flex-col items-center text-center"
-                    >
-                        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                            {feature.icon}
+            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+                    {features.map((feature) => (
+                        <div
+                            key={feature.name}
+                            className="flex flex-col items-center text-center"
+                        >
+                            <dt className="flex items-center gap-x-3 text-lg font-semibold leading-7 text-primary">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                                    {feature.icon}
+                                </div>
+                            </dt>
+                            <dd className="mt-4 flex flex-auto flex-col text-base leading-7">
+                                <h3 className="flex-auto font-semibold text-primary">
+                                    {feature.name}
+                                </h3>
+                                <p className="text-base-content/70">
+                                    {feature.description}
+                                </p>
+                            </dd>
                         </div>
-                        <h3 className="text-lg font-semibold text-base-content">
-                            {feature.name}
-                        </h3>
-                        <p className="mt-2 text-base text-base-content/70">
-                            {feature.description}
-                        </p>
-                    </div>
-                ))}
+                    ))}
+                </dl>
             </div>
         </div>
     </section>
 );
 
-export default Features;
+export default SalientFeatures;
