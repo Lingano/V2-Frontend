@@ -220,6 +220,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className="divider">OR</div>
+
             <div className="mb-16">
                 <h2 className="text-3xl font-bold text-primary mb-6">
                     Key Features
