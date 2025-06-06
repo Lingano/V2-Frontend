@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import DaisyUIDemoPage from "./pages/DaisyUIDemoPage";
 import "./index.css"; // Ensure Tailwind CSS is imported
-import SalientLogin from "./SalientLogin";
+import SalientLogin from "./pages/SalientLogin";
 
 // Salient-style Navbar
 const Navbar = () => (

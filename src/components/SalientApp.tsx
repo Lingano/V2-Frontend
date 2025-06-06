@@ -5,8 +5,8 @@ import CTA from "./SalientCTA";
 import Footer from "./SalientFooter";
 import SalientPricing from "./SalientPricing";
 import SalientFAQ from "./SalientFAQ"; // Import the new component
-import SalientLogin from "./SalientLogin";
-import SalientRegister from "./SalientRegister";
+import SalientLogin from "../pages/SalientLogin";
+import SalientRegister from "../pages/SalientRegister";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Navbar = ({
