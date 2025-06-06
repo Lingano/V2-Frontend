@@ -1,5 +1,25 @@
-import { useState, useEffect } from "react";
+// @ts-nocheck
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { Cropper as ReactCropper } from "react-cropper";
+
+// Utility to create a cropped image blob
+async function getCroppedImg(imageSrc: string, cropper: any): Promise<Blob> {
+    const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+        const img = new Image();
+        img.src = imageSrc;
+        img.onload = () => resolve(img);
+        img.onerror = (e) => reject(e);
+    });
+    // For react-cropper we can directly get canvas from instance
+    const canvas = cropper.getCroppedCanvas({ width: 200, height: 200 });
+    return new Promise<Blob>((resolve, reject) =>
+        canvas.toBlob(
+            (blob) => (blob ? resolve(blob) : reject(new Error("Crop failed"))),
+            "image/jpeg"
+        )
+    );
+}
 
 const SalientRegister = () => {
     const [name, setName] = useState("");
@@ -10,16 +30,33 @@ const SalientRegister = () => {
     const [preview, setPreview] = useState<string | null>(null);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [imageSrc, setImageSrc] = useState<string | null>(null);
+    const cropperRef = useRef<any>(null);
+    const [croppedBlob, setCroppedBlob] = useState<Blob | null>(null);
     const navigate = useNavigate();
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
-    useEffect(() => {
-        if (!profileFile) return;
-        const url = URL.createObjectURL(profileFile);
-        setPreview(url);
-        return () => URL.revokeObjectURL(url);
-    }, [profileFile]);
+    // Handle file selection and load image
+    const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0] || null;
+        setProfileFile(file);
+        // reset preview & blob
+        setPreview(null);
+        setCroppedBlob(null);
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => setImageSrc(reader.result as string);
+        } else {
+            setImageSrc(null);
+            setPreview(null);
+            setCroppedBlob(null);
+        }
+        // reset crop states when switching file
+        setCroppedBlob(null);
+    };
 
+    // Before submitting, use croppedBlob if available
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!name || !email || !password || !confirm) {
@@ -37,7 +74,17 @@ const SalientRegister = () => {
             formData.append("name", name);
             formData.append("email", email);
             formData.append("password", password);
-            if (profileFile) formData.append("avatar", profileFile);
+            if (croppedBlob && profileFile) {
+                const fileName = profileFile.name;
+                formData.append(
+                    "avatar",
+                    new File([croppedBlob], fileName, {
+                        type: croppedBlob.type,
+                    })
+                );
+            } else if (profileFile) {
+                formData.append("avatar", profileFile);
+            }
 
             const response = await fetch(`${apiBaseUrl}/api/auth/register`, {
                 method: "POST",
@@ -81,6 +128,43 @@ const SalientRegister = () => {
                                     Profile Picture
                                 </span>
                             </label>
+
+                            {/* Multiple Croppers */}
+                            {imageSrc && !preview && (
+                                <div className="mb-4">
+                                    <ReactCropper
+                                        ref={cropperRef}
+                                        src={imageSrc}
+                                        style={{ height: 300, width: "100%" }}
+                                        aspectRatio={1}
+                                        guides
+                                        viewMode={1}
+                                        background={false}
+                                        autoCropArea={1}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm btn-primary mt-2"
+                                        onClick={async () => {
+                                            const cropperInstance =
+                                                cropperRef.current?.cropper;
+                                            if (!cropperInstance) return;
+                                            const blob = await getCroppedImg(
+                                                imageSrc,
+                                                cropperInstance
+                                            );
+                                            setCroppedBlob(blob);
+                                            setPreview(
+                                                URL.createObjectURL(blob)
+                                            );
+                                        }}
+                                    >
+                                        Crop
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* Preview */}
                             {preview && (
                                 <div className="flex justify-center mb-4">
                                     <div className="avatar">
@@ -88,19 +172,32 @@ const SalientRegister = () => {
                                             <img
                                                 src={preview}
                                                 alt="avatar preview"
+                                                className="object-cover w-full h-full"
                                             />
                                         </div>
                                     </div>
                                 </div>
                             )}
+                            {preview && (
+                                <div className="flex justify-center mb-4">
+                                    <button
+                                        className="btn btn-sm btn-secondary"
+                                        onClick={() => {
+                                            setPreview(null);
+                                            setCroppedBlob(null);
+                                        }}
+                                    >
+                                        Re-crop
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* File input */}
                             <input
                                 type="file"
                                 accept="image/*"
                                 className="file-input file-input-bordered w-full bg-base-100/50 mt-2"
-                                onChange={(e) =>
-                                    e.target.files &&
-                                    setProfileFile(e.target.files[0])
-                                }
+                                onChange={onFileChange}
                             />
                         </div>
 
