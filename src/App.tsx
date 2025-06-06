@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import DaisyUIDemoPage from "./pages/DaisyUIDemoPage";
 import "./index.css"; // Ensure Tailwind CSS is imported
+import SalientLogin from "./SalientLogin";
 
 // Salient-style Navbar
 const Navbar = () => (
@@ -111,6 +112,7 @@ const App = () => {
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/rybbit" element={<Rybbit />} />
                             <Route path="/login" element={<Login />} />
+                            <Route path="/login2" element={<SalientLogin />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/profile" element={<UserProfile />} />
                             <Route

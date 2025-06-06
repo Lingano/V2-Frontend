@@ -5,6 +5,9 @@ import CTA from "./SalientCTA";
 import Footer from "./SalientFooter";
 import SalientPricing from "./SalientPricing";
 import SalientFAQ from "./SalientFAQ"; // Import the new component
+import SalientLogin from "./SalientLogin";
+import SalientRegister from "./SalientRegister";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Navbar = ({
     darkMode,
@@ -175,44 +178,58 @@ const SalientApp = () => {
     );
 
     return (
-        <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 relative overflow-hidden">
-            {/* Dynamic Background Elements */}
-            <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden">
-                {shapes.map((s, i) => (
-                    <div
-                        key={i}
-                        className={`absolute ${s.color} rounded-full ${s.blur} ${s.animation}`}
-                        style={{
-                            top: s.top,
-                            left: s.left,
-                            width: s.size,
-                            height: s.size,
-                            opacity: s.opacity,
-                        }}
-                    ></div>
-                ))}
-            </div>
+        <Router>
+            <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 relative overflow-hidden">
+                {/* Dynamic Background Elements */}
+                <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden">
+                    {shapes.map((s, i) => (
+                        <div
+                            key={i}
+                            className={`absolute ${s.color} rounded-full ${s.blur} ${s.animation}`}
+                            style={{
+                                top: s.top,
+                                left: s.left,
+                                width: s.size,
+                                height: s.size,
+                                opacity: s.opacity,
+                            }}
+                        ></div>
+                    ))}
+                </div>
 
-            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-            <main className="flex-1 bg-transparent">
-                <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
-                    <Hero />
-                </section>
-                <div className="divider divider-primary mx-auto w-1/2"> </div>
-                <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
-                    <Features />
-                </section>
-                <div className="divider divider-primary mx-auto w-1/2"> </div>
-                {/* Pricing Section */}
-                <SalientPricing /> {/* Use the new component here */}
-                <div className="divider divider-primary mx-auto w-1/2"> </div>
-                {/* FAQ Section */}
-                <SalientFAQ /> {/* Use the new component here */}
-                <div className="divider divider-primary mx-auto w-1/2"> </div>
-                <CTA />
-            </main>
-            <Footer />
-        </div>
+                <main className="flex-1 bg-transparent">
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <>
+                                    <Navbar
+                                        darkMode={darkMode}
+                                        setDarkMode={setDarkMode}
+                                    />
+                                    <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
+                                        <Hero />
+                                    </section>
+                                    <div className="divider divider-primary mx-auto w-1/2"></div>
+                                    <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
+                                        <Features />
+                                    </section>
+                                    <div className="divider divider-primary mx-auto w-1/2"></div>
+                                    <SalientPricing />
+                                    <div className="divider divider-primary mx-auto w-1/2"></div>
+                                    <SalientFAQ />
+                                    <div className="divider divider-primary mx-auto w-1/2"></div>
+                                    <CTA />
+                                    <Footer />
+                                </>
+                            }
+                        />
+                        <Route path="/login2" element={<SalientLogin />} />
+                        <Route path="/register" element={<SalientRegister />} />
+                    </Routes>
+                </main>
+            </div>
+        </Router>
     );
 };
 

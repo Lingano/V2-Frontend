@@ -26,24 +26,24 @@ const SalientPricing = () => (
                     </div>
                 </div>
                 {/* Pro Plan */}
-                <div className="card shadow-lg border-2 border-secondary bg-secondary text-secondary-content backdrop-blur-md transform scale-105 z-10 transition-transform duration-300 hover:scale-110">
+                <div className="card shadow-xl border border-primary bg-primary text-primary-content backdrop-blur-md transform scale-105 z-10 transition-transform duration-300 hover:scale-110">
                     <div className="card-body items-center text-center">
                         <h3 className="card-title text-xl font-bold mb-2">
                             Pro
                         </h3>
-                        <div className="text-5xl font-extrabold mb-4">
+                        <div className="text-5xl font-extrabold text-primary-content mb-4">
                             €9
                             <span className="text-lg align-top opacity-80">
                                 /mo
                             </span>
                         </div>
-                        <ul className="mb-6 space-y-2 opacity-90">
+                        <ul className="mb-6 space-y-2 text-primary-content opacity-90">
                             <li>✔️ Everything in Basic</li>
                             <li>✔️ Advanced analytics</li>
                             <li>✔️ Real-time updates</li>
                             <li>✔️ Priority support</li>
                         </ul>
-                        <button className="btn btn-secondary btn-wide font-semibold hover:bg-secondary-focus transition">
+                        <button className="btn btn-primary btn-wide font-semibold hover:bg-primary-focus transition">
                             Start Free Trial
                         </button>
                     </div>
