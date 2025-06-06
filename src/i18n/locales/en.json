@@ -1,0 +1,163 @@
+{
+    "navbar": {
+        "home": "Home",
+        "features": "Features",
+        "pricing": "Pricing",
+        "contact": "Contact",
+        "signIn": "Sign In",
+        "signUp": "Sign Up"
+    },
+    "hero": {
+        "title": "Master New Languages with Lingano",
+        "subtitle": "Learn languages naturally, effectively, and enjoyably with our innovative platform designed for modern learners. Unlock global opportunities and connect with the world.",
+        "getStarted": "Start Learning",
+        "learnMore": "Learn More"
+    },
+    "features": {
+        "title": "Why Choose Lingano",
+        "subtitle": "Discover the powerful features that make language learning effective and enjoyable",
+        "aiPowered": {
+            "title": "AI-Powered Learning",
+            "description": "Leverage advanced AI to personalize your learning experience, adapt to your pace, and focus on areas where you need the most improvement."
+        },
+        "realTime": {
+            "title": "Real-time Practice",
+            "description": "Practice speaking and listening with real-time feedback, interactive conversations, and live pronunciation coaching."
+        },
+        "secure": {
+            "title": "Progress Tracking",
+            "description": "Monitor your learning journey with detailed analytics, achievement badges, and personalized study recommendations."
+        },
+        "scalable": {
+            "title": "Flexible Learning",
+            "description": "Learn at your own pace with bite-sized lessons, offline access, and a curriculum that adapts to your schedule and goals."
+        },
+        "integration": {
+            "title": "Cultural Immersion",
+            "description": "Experience authentic language use through cultural content, real-world scenarios, and native speaker interactions."
+        },
+        "support": {
+            "title": "Expert Tutors",
+            "description": "Get personalized guidance from certified language tutors available for one-on-one sessions and community support."
+        }
+    },
+    "pricing": {
+        "title": "Choose Your Learning Plan",
+        "subtitle": "Select the perfect plan for your language learning journey",
+        "monthly": "Monthly",
+        "yearly": "Yearly",
+        "save": "Save 20%",
+        "starter": {
+            "name": "Basic",
+            "price": "$9",
+            "period": "/month",
+            "description": "Perfect for beginners starting their journey",
+            "features": [
+                "Access to 1 language",
+                "Basic lessons & exercises",
+                "Mobile app access",
+                "Progress tracking",
+                "Community forums"
+            ],
+            "button": "Start Free Trial"
+        },
+        "professional": {
+            "name": "Premium",
+            "price": "$19",
+            "period": "/month",
+            "description": "Advanced features for serious learners",
+            "features": [
+                "Access to all languages",
+                "Advanced lessons & stories",
+                "Offline downloads",
+                "Live tutor sessions",
+                "Personalized study plan",
+                "Priority support"
+            ],
+            "button": "Start Free Trial",
+            "popular": "Most Popular"
+        },
+        "enterprise": {
+            "name": "Family",
+            "price": "$29",
+            "period": "/month",
+            "description": "Perfect for families and small groups",
+            "features": [
+                "Up to 6 family members",
+                "All Premium features",
+                "Family progress dashboard",
+                "Parental controls",
+                "Group challenges",
+                "Dedicated family support"
+            ],
+            "button": "Start Free Trial"
+        }
+    },
+    "footer": {
+        "tagline": "Making language learning natural, effective, and enjoyable for everyone.",
+        "company": "Company",
+        "about": "About",
+        "careers": "Careers",
+        "blog": "Blog",
+        "press": "Press",
+        "resources": "Resources",
+        "languageGuides": "Language Guides",
+        "community": "Community",
+        "tutors": "Tutors",
+        "faq": "FAQ",
+        "legal": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy",
+        "contact": "Contact",
+        "contactUs": "Contact Us",
+        "email": "hello@lingano.com",
+        "phone": "1-800-LINGANO22",
+        "madeInSwitzerland": "Made with ❤️ in",
+        "switzerland": "Switzerland",
+        "copyright": "© {{year}} Lingano. All rights reserved."
+    },
+    "cta": {
+        "title": "Ready to start your free trial?",
+        "subtitle": "Join thousands of learners who are mastering new languages with Lingano. Start your free trial now and unlock your potential!",
+        "startTrial": "🚀 Start Free Trial Now",
+        "viewPricing": "View pricing"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsLingano": {
+            "question": "What is Lingano?",
+            "answer": "Lingano is a modern platform designed to make language learning fast, fun, and effective, with real-time updates and advanced analytics."
+        },
+        "freePlan": {
+            "question": "Is there a free plan?",
+            "answer": "Yes! Our Basic plan is free and gives you access to core lessons and daily practice."
+        },
+        "upgradeCancel": {
+            "question": "Can I upgrade or cancel anytime?",
+            "answer": "Absolutely! You can upgrade, downgrade, or cancel your subscription at any time from your account settings."
+        },
+        "teamPlans": {
+            "question": "Do you offer team plans?",
+            "answer": "Yes, our Team plan is perfect for organizations and includes team management and dedicated support."
+        }
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "search": "Search",
+        "filter": "Filter",
+        "sort": "Sort",
+        "export": "Export",
+        "import": "Import"
+    }
+}

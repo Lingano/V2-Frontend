@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface NavbarProps {
     darkMode: boolean;
@@ -8,6 +10,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <header className="bg-transparent backdrop-blur border-b border-base-200/50 sticky top-0 z-50 dark:border-base-300/50">
@@ -43,21 +46,20 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         </svg>
                         Lingano
                     </Link>
-                </div>
-
+                </div>{" "}
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex gap-8 text-base font-medium">
                     <a
                         href="#features"
                         className="hover:text-primary transition-colors"
                     >
-                        Features
+                        {t("navbar.features")}
                     </a>
                     <a
                         href="#pricing"
                         className="hover:text-primary transition-colors"
                     >
-                        Pricing
+                        {t("navbar.pricing")}
                     </a>
                     <a
                         href="#faq"
@@ -69,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         href="#contact"
                         className="hover:text-primary transition-colors"
                     >
-                        Contact
+                        {t("navbar.contact")}
                     </a>{" "}
                     <Link
                         to="/profile"
@@ -85,10 +87,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         </svg>
                         Profile
                     </Link>
-                </div>
-
+                </div>{" "}
                 {/* Desktop Actions */}
                 <div className="hidden md:flex gap-2 items-center">
+                    <LanguageSwitcher />
                     <label className="swap swap-rotate">
                         <input
                             type="checkbox"
@@ -111,23 +113,23 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         >
                             <path d="M21.752 15.002A9.718 9.718 0 0112 22C6.477 22 2 17.523 2 12c0-4.418 2.865-8.166 6.839-9.489a1 1 0 01.987 1.676A7.001 7.001 0 0012 19a7.001 7.001 0 006.813-5.813 1 1 0 011.676-.987c.293.293.293.768 0 1.061z" />
                         </svg>
-                    </label>
+                    </label>{" "}
                     <Link
                         to="/login"
                         className="rounded-md px-4 py-2 text-sm font-semibold text-primary ring-1 ring-primary/20 hover:bg-base-200 transition"
                     >
-                        Sign in
+                        {t("navbar.signIn")}
                     </Link>
                     <Link
                         to="/register"
                         className="rounded-md px-4 py-2 text-sm font-semibold text-base-100 bg-primary hover:bg-primary-focus transition"
                     >
-                        Sign up
+                        {t("navbar.signUp")}
                     </Link>
-                </div>
-
+                </div>{" "}
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center gap-2">
+                    <LanguageSwitcher />
                     <label className="swap swap-rotate">
                         <input
                             type="checkbox"
@@ -186,19 +188,20 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
             {mobileMenuOpen && (
                 <div className="md:hidden bg-base-100 border-t border-base-200">
                     <div className="px-6 py-4 space-y-4">
+                        {" "}
                         <a
                             href="#features"
                             className="block hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            Features
+                            {t("navbar.features")}
                         </a>
                         <a
                             href="#pricing"
                             className="block hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            Pricing
+                            {t("navbar.pricing")}
                         </a>
                         <a
                             href="#faq"
@@ -212,7 +215,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             className="block hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            Contact
+                            {t("navbar.contact")}
                         </a>{" "}
                         <Link
                             to="/profile"
@@ -230,19 +233,20 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             Profile
                         </Link>
                         <div className="pt-4 border-t border-base-200 space-y-2">
+                            {" "}
                             <Link
                                 to="/login"
                                 className="block w-full text-center rounded-md px-4 py-2 text-sm font-semibold text-primary ring-1 ring-primary/20 hover:bg-base-200 transition"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                Sign in
+                                {t("navbar.signIn")}
                             </Link>
                             <Link
                                 to="/register"
                                 className="block w-full text-center rounded-md px-4 py-2 text-sm font-semibold text-base-100 bg-primary hover:bg-primary-focus transition"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                Sign up
+                                {t("navbar.signUp")}
                             </Link>
                         </div>
                     </div>

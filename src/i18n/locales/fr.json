@@ -1,0 +1,163 @@
+{
+    "navbar": {
+        "home": "Accueil",
+        "features": "Fonctionnalités",
+        "pricing": "Tarifs",
+        "contact": "Contact",
+        "signIn": "Se connecter",
+        "signUp": "S'inscrire"
+    },
+    "hero": {
+        "title": "Maîtrisez de nouvelles langues avec Lingano",
+        "subtitle": "Apprenez les langues naturellement, efficacement et de manière agréable avec notre plateforme innovante conçue pour les apprenants modernes. Débloquez des opportunités mondiales et connectez-vous avec le monde.",
+        "getStarted": "Commencer à apprendre",
+        "learnMore": "En savoir plus"
+    },
+    "features": {
+        "title": "Pourquoi choisir Lingano",
+        "subtitle": "Découvrez les fonctionnalités puissantes qui rendent l'apprentissage des langues efficace et agréable",
+        "aiPowered": {
+            "title": "Apprentissage alimenté par l'IA",
+            "description": "Exploitez l'IA avancée pour personnaliser votre expérience d'apprentissage, vous adapter à votre rythme et vous concentrer sur les domaines où vous avez besoin d'amélioration."
+        },
+        "realTime": {
+            "title": "Traitement en temps réel",
+            "description": "Traitez et analysez les données en temps réel pour garder une longueur d'avance sur la concurrence et réagir rapidement aux changements du marché."
+        },
+        "secure": {
+            "title": "Sécurité d'entreprise",
+            "description": "Les protocoles de sécurité de niveau bancaire protègent vos données sensibles avec un chiffrement de bout en bout et des normes de conformité."
+        },
+        "scalable": {
+            "title": "Infrastructure évolutive",
+            "description": "Développez votre entreprise sans limites avec notre architecture cloud-native qui s'adapte automatiquement à vos besoins."
+        },
+        "integration": {
+            "title": "Intégration transparente",
+            "description": "Connectez-vous avec vos outils et flux de travail existants grâce à notre API étendue et nos intégrations pré-construites."
+        },
+        "support": {
+            "title": "Support expert 24/7",
+            "description": "Obtenez de l'aide quand vous en avez besoin avec notre équipe de support dédiée disponible 24h/24 et 7j/7."
+        }
+    },
+    "pricing": {
+        "title": "Choisissez votre plan",
+        "subtitle": "Sélectionnez le plan parfait pour les besoins de votre entreprise",
+        "monthly": "Mensuel",
+        "yearly": "Annuel",
+        "save": "Économisez 20%",
+        "starter": {
+            "name": "Starter",
+            "price": "29€",
+            "period": "/mois",
+            "description": "Parfait pour les petites entreprises qui commencent",
+            "features": [
+                "Jusqu'à 5 utilisateurs",
+                "Analyse de base",
+                "Support par e-mail",
+                "Accès API",
+                "Application mobile"
+            ],
+            "button": "Démarrer l'essai gratuit"
+        },
+        "professional": {
+            "name": "Professionnel",
+            "price": "99€",
+            "period": "/mois",
+            "description": "Fonctionnalités avancées pour les équipes en croissance",
+            "features": [
+                "Jusqu'à 25 utilisateurs",
+                "Analyse avancée",
+                "Support prioritaire",
+                "Intégrations personnalisées",
+                "Rapports avancés",
+                "Collaboration d'équipe"
+            ],
+            "button": "Démarrer l'essai gratuit",
+            "popular": "Le plus populaire"
+        },
+        "enterprise": {
+            "name": "Entreprise",
+            "price": "Personnalisé",
+            "period": "",
+            "description": "Solutions sur mesure pour les grandes organisations",
+            "features": [
+                "Utilisateurs illimités",
+                "Analyse d'entreprise",
+                "Support dédié",
+                "Développement personnalisé",
+                "Garantie SLA",
+                "Déploiement sur site"
+            ],
+            "button": "Contacter les ventes"
+        }
+    },
+    "footer": {
+        "tagline": "Rendre l'apprentissage des langues naturel, efficace et agréable pour tous.",
+        "company": "Entreprise",
+        "about": "À propos",
+        "careers": "Carrières",
+        "blog": "Blog",
+        "press": "Presse",
+        "resources": "Ressources",
+        "languageGuides": "Guides linguistiques",
+        "community": "Communauté",
+        "tutors": "Tuteurs",
+        "faq": "FAQ",
+        "legal": "Légal",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation",
+        "cookies": "Politique des cookies",
+        "contact": "Contact",
+        "contactUs": "Nous contacter",
+        "email": "hello@lingano.com",
+        "phone": "1-800-LINGANO22",
+        "madeInSwitzerland": "Fait avec ❤️ en",
+        "switzerland": "Suisse",
+        "copyright": "© {{year}} Lingano. Tous droits réservés."
+    },
+    "cta": {
+        "title": "Prêt à commencer votre essai gratuit ?",
+        "subtitle": "Rejoignez des milliers d'apprenants qui maîtrisent de nouvelles langues avec Lingano. Commencez votre essai gratuit maintenant et libérez votre potentiel !",
+        "startTrial": "🚀 Commencer l'essai gratuit",
+        "viewPricing": "Voir les prix"
+    },
+    "faq": {
+        "title": "Questions fréquemment posées",
+        "whatIsLingano": {
+            "question": "Qu'est-ce que Lingano ?",
+            "answer": "Lingano est une plateforme moderne conçue pour rendre l'apprentissage des langues rapide, amusant et efficace, avec des mises à jour en temps réel et des analyses avancées."
+        },
+        "freePlan": {
+            "question": "Y a-t-il un plan gratuit ?",
+            "answer": "Oui ! Notre plan de base est gratuit et vous donne accès aux leçons principales et à la pratique quotidienne."
+        },
+        "upgradeCancel": {
+            "question": "Puis-je mettre à niveau ou annuler à tout moment ?",
+            "answer": "Absolument ! Vous pouvez mettre à niveau, rétrograder ou annuler votre abonnement à tout moment depuis les paramètres de votre compte."
+        },
+        "teamPlans": {
+            "question": "Proposez-vous des plans d'équipe ?",
+            "answer": "Oui, notre plan d'équipe est parfait pour les organisations et comprend la gestion d'équipe et un support dédié."
+        }
+    },
+    "common": {
+        "loading": "Chargement...",
+        "error": "Erreur",
+        "success": "Succès",
+        "cancel": "Annuler",
+        "save": "Enregistrer",
+        "delete": "Supprimer",
+        "edit": "Modifier",
+        "close": "Fermer",
+        "back": "Retour",
+        "next": "Suivant",
+        "previous": "Précédent",
+        "search": "Rechercher",
+        "filter": "Filtrer",
+        "sort": "Trier",
+        "export": "Exporter",
+        "import": "Importer"
+    }
+}

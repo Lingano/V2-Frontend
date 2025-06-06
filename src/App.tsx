@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import UserProfile from "./pages/UserProfile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import "./i18n"; // Initialize i18n
 
 const App = () => {
     const [darkMode, setDarkMode] = useState(() => {

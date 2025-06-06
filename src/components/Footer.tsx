@@ -1,62 +1,80 @@
 import { FaTwitter, FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
-const navigation = [
-    {
-        title: "Company",
-        links: [
-            { name: "About", href: "#" },
-            { name: "Careers", href: "#" },
-            { name: "Blog", href: "#" },
-            { name: "Press", href: "#" },
-        ],
-    },
-    {
-        title: "Resources",
-        links: [
-            { name: "Language Guides", href: "#" },
-            { name: "Community", href: "#" },
-            { name: "Tutors", href: "#" },
-            { name: "FAQ", href: "#" },
-        ],
-    },
-    {
-        title: "Legal",
-        links: [
-            { name: "Privacy Policy", href: "#" },
-            { name: "Terms of Service", href: "#" },
-            { name: "Cookie Policy", href: "#" },
-        ],
-    },
-    {
-        title: "Contact",
-        links: [
-            { name: "Contact Us", href: "#" },
-            { name: "hello@lingano.com", href: "mailto:hello@lingano.com" },
-            { name: "1-800-LINGANO22", href: "tel:1-800-LINGANO22" },
-        ],
-    },
-];
+// Swiss Flag SVG Component
+const SwissFlag = () => (
+    <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="inline-block"
+    >
+        <rect width="16" height="16" fill="#FF0000" rx="1" />
+        <rect x="3" y="6.5" width="10" height="3" fill="white" />
+        <rect x="6.5" y="3" width="3" height="10" fill="white" />
+    </svg>
+);
 
-const social = [
-    { name: "Twitter", href: "#", icon: <FaTwitter className="h-6 w-6" /> },
-    {
-        name: "GitHub",
-        href: "https://github.com/Lingano",
-        icon: <FaGithub className="h-6 w-6" />,
-    },
-    {
-        name: "LinkedIn",
-        href: "https://www.linkedin.com/company/lingano/",
-        icon: <FaLinkedin className="h-6 w-6" />,
-    },
-    {
-        name: "Discord",
-        href: "https://discord.com/invite/lingano",
-        icon: <FaDiscord className="h-6 w-6" />,
-    },
-];
+function Footer() {
+    const { t } = useTranslation();
 
-const Footer = () => {
+    const navigation = [
+        {
+            title: t("footer.company"),
+            links: [
+                { name: t("footer.about"), href: "#" },
+                { name: t("footer.careers"), href: "#" },
+                { name: t("footer.blog"), href: "#" },
+                { name: t("footer.press"), href: "#" },
+            ],
+        },
+        {
+            title: t("footer.resources"),
+            links: [
+                { name: t("footer.languageGuides"), href: "#" },
+                { name: t("footer.community"), href: "#" },
+                { name: t("footer.tutors"), href: "#" },
+                { name: t("footer.faq"), href: "#" },
+            ],
+        },
+        {
+            title: t("footer.legal"),
+            links: [
+                { name: t("footer.privacy"), href: "#" },
+                { name: t("footer.terms"), href: "#" },
+                { name: t("footer.cookies"), href: "#" },
+            ],
+        },
+        {
+            title: t("footer.contact"),
+            links: [
+                { name: t("footer.contactUs"), href: "#" },
+                { name: t("footer.email"), href: "mailto:hello@lingano.com" },
+                { name: t("footer.phone"), href: "tel:1-800-LINGANO22" },
+            ],
+        },
+    ];
+
+    const social = [
+        { name: "Twitter", href: "#", icon: <FaTwitter className="h-6 w-6" /> },
+        {
+            name: "GitHub",
+            href: "https://github.com/Lingano",
+            icon: <FaGithub className="h-6 w-6" />,
+        },
+        {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/company/lingano/",
+            icon: <FaLinkedin className="h-6 w-6" />,
+        },
+        {
+            name: "Discord",
+            href: "https://discord.com/invite/lingano",
+            icon: <FaDiscord className="h-6 w-6" />,
+        },
+    ];
     return (
         <footer
             id="contact"
@@ -90,10 +108,9 @@ const Footer = () => {
                                 </text>
                             </svg>
                             Lingano
-                        </span>
+                        </span>{" "}
                         <p className="text-gray-600 max-w-xs text-center md:text-left mb-6">
-                            Making language learning natural, effective, and
-                            enjoyable for everyone.
+                            {t("footer.tagline")}
                         </p>
                         <div className="flex gap-4">
                             {social.map((item) => (
@@ -127,37 +144,51 @@ const Footer = () => {
                             </nav>
                         ))}
                     </div>
-                </div>
+                </div>{" "}
                 <div className="mt-12 border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400">
-                    <p className="text-sm tracking-wide text-center md:text-left">
-                        © {new Date().getFullYear()}{" "}
-                        <span className="font-semibold">Lingano</span>. All
-                        rights reserved.
-                    </p>
+                    {" "}
+                    <div className="flex flex-col md:flex-row items-center gap-4">
+                        <p className="text-sm tracking-wide text-center md:text-left">
+                            {t("footer.copyright", {
+                                year: new Date().getFullYear(),
+                            })}
+                        </p>
+                        <div className="flex items-center gap-2 text-sm">
+                            <span className="text-xs text-gray-500">
+                                {t("footer.madeInSwitzerland")}
+                            </span>
+                            <div className="flex items-center gap-1">
+                                <SwissFlag />
+                                <span className="text-xs font-medium text-gray-600">
+                                    {t("footer.switzerland")}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div className="flex gap-4">
                         <a
                             href="#"
                             className="hover:text-indigo-600 transition-colors text-xs"
                         >
-                            Privacy Policy
+                            {t("footer.privacy")}
                         </a>
                         <a
                             href="#"
                             className="hover:text-indigo-600 transition-colors text-xs"
                         >
-                            Terms
+                            {t("footer.terms")}
                         </a>
                         <a
                             href="#"
                             className="hover:text-indigo-600 transition-colors text-xs"
                         >
-                            Cookies
+                            {t("footer.cookies")}
                         </a>
                     </div>
                 </div>
             </div>
         </footer>
     );
-};
+}
 
 export default Footer;

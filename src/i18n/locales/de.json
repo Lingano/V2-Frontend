@@ -1,0 +1,163 @@
+{
+    "navbar": {
+        "home": "Startseite",
+        "features": "Funktionen",
+        "pricing": "Preise",
+        "contact": "Kontakt",
+        "signIn": "Anmelden",
+        "signUp": "Registrieren"
+    },
+    "hero": {
+        "title": "Meistern Sie neue Sprachen mit Lingano",
+        "subtitle": "Lernen Sie Sprachen natürlich, effektiv und unterhaltsam mit unserer innovativen Plattform für moderne Lernende. Erschließen Sie globale Möglichkeiten und verbinden Sie sich mit der Welt.",
+        "getStarted": "Lernen beginnen",
+        "learnMore": "Mehr erfahren"
+    },
+    "features": {
+        "title": "Warum Lingano wählen",
+        "subtitle": "Entdecken Sie die leistungsstarken Funktionen, die das Sprachenlernen effektiv und unterhaltsam machen",
+        "aiPowered": {
+            "title": "KI-gestütztes Lernen",
+            "description": "Nutzen Sie fortschrittliche KI, um Ihre Lernerfahrung zu personalisieren, sich an Ihr Tempo anzupassen und sich auf Bereiche zu konzentrieren, in denen Sie am meisten Verbesserung benötigen."
+        },
+        "realTime": {
+            "title": "Echtzeit-Übungen",
+            "description": "Üben Sie Sprechen und Hören mit Echtzeit-Feedback, interaktiven Gesprächen und Live-Aussprache-Coaching."
+        },
+        "secure": {
+            "title": "Fortschritts-Verfolgung",
+            "description": "Verfolgen Sie Ihre Lernreise mit detaillierten Analysen, Erfolgs-Abzeichen und personalisierten Studienempfehlungen."
+        },
+        "scalable": {
+            "title": "Flexibles Lernen",
+            "description": "Lernen Sie in Ihrem eigenen Tempo mit mundgerechten Lektionen, Offline-Zugang und einem Lehrplan, der sich an Ihren Zeitplan und Ziele anpasst."
+        },
+        "integration": {
+            "title": "Kulturelle Immersion",
+            "description": "Erleben Sie authentischen Sprachgebrauch durch kulturelle Inhalte, realitätsnahe Szenarien und Interaktionen mit Muttersprachlern."
+        },
+        "support": {
+            "title": "Experten-Tutoren",
+            "description": "Erhalten Sie persönliche Betreuung von zertifizierten Sprachlehrern für Einzelstunden und Community-Support."
+        }
+    },
+    "pricing": {
+        "title": "Wählen Sie Ihren Lernplan",
+        "subtitle": "Wählen Sie den perfekten Plan für Ihre Sprachlern-Reise",
+        "monthly": "Monatlich",
+        "yearly": "Jährlich",
+        "save": "20% sparen",
+        "starter": {
+            "name": "Basic",
+            "price": "9€",
+            "period": "/Monat",
+            "description": "Perfekt für Anfänger, die ihre Reise beginnen",
+            "features": [
+                "Zugang zu 1 Sprache",
+                "Grundlektionen & Übungen",
+                "Mobile App Zugang",
+                "Fortschritts-Verfolgung",
+                "Community-Foren"
+            ],
+            "button": "Kostenlose Testversion starten"
+        },
+        "professional": {
+            "name": "Premium",
+            "price": "19€",
+            "period": "/Monat",
+            "description": "Erweiterte Funktionen für ernsthafte Lernende",
+            "features": [
+                "Zugang zu allen Sprachen",
+                "Erweiterte Lektionen & Geschichten",
+                "Offline-Downloads",
+                "Live-Tutor-Sitzungen",
+                "Personalisierter Studienplan",
+                "Prioritäts-Support"
+            ],
+            "button": "Kostenlose Testversion starten",
+            "popular": "Am beliebtesten"
+        },
+        "enterprise": {
+            "name": "Familie",
+            "price": "29€",
+            "period": "/Monat",
+            "description": "Perfekt für Familien und kleine Gruppen",
+            "features": [
+                "Bis zu 6 Familienmitglieder",
+                "Alle Premium-Funktionen",
+                "Familien-Fortschritts-Dashboard",
+                "Elternkontrolle",
+                "Gruppen-Herausforderungen",
+                "Dedizierter Familien-Support"
+            ],
+            "button": "Kostenlose Testversion starten"
+        }
+    },
+    "footer": {
+        "tagline": "Sprachenlernen natürlich, effektiv und unterhaltsam für alle zu gestalten.",
+        "company": "Unternehmen",
+        "about": "Über uns",
+        "careers": "Karriere",
+        "blog": "Blog",
+        "press": "Presse",
+        "resources": "Ressourcen",
+        "languageGuides": "Sprachleitfäden",
+        "community": "Community",
+        "tutors": "Tutoren",
+        "faq": "FAQ",
+        "legal": "Rechtliches",
+        "privacy": "Datenschutzrichtlinie",
+        "terms": "Nutzungsbedingungen",
+        "cookies": "Cookie-Richtlinie",
+        "contact": "Kontakt",
+        "contactUs": "Kontaktieren Sie uns",
+        "email": "hello@lingano.com",
+        "phone": "1-800-LINGANO22",
+        "madeInSwitzerland": "Hergestellt mit ❤️ in",
+        "switzerland": "der Schweiz",
+        "copyright": "© {{year}} Lingano. Alle Rechte vorbehalten."
+    },
+    "cta": {
+        "title": "Bereit, Ihre kostenlose Testversion zu starten?",
+        "subtitle": "Schließen Sie sich Tausenden von Lernenden an, die mit Lingano neue Sprachen meistern. Starten Sie jetzt Ihre kostenlose Testversion und entfalten Sie Ihr Potenzial!",
+        "startTrial": "🚀 Kostenlose Testversion starten",
+        "viewPricing": "Preise anzeigen"
+    },
+    "faq": {
+        "title": "Häufig gestellte Fragen",
+        "whatIsLingano": {
+            "question": "Was ist Lingano?",
+            "answer": "Lingano ist eine moderne Plattform, die das Sprachenlernen schnell, unterhaltsam und effektiv gestaltet, mit Echtzeit-Updates und erweiterten Analysen."
+        },
+        "freePlan": {
+            "question": "Gibt es einen kostenlosen Plan?",
+            "answer": "Ja! Unser Basic-Plan ist kostenlos und bietet Ihnen Zugang zu Grundlektionen und täglichen Übungen."
+        },
+        "upgradeCancel": {
+            "question": "Kann ich jederzeit upgraden oder kündigen?",
+            "answer": "Absolut! Sie können Ihr Abonnement jederzeit von Ihren Kontoeinstellungen aus upgraden, downgraden oder kündigen."
+        },
+        "teamPlans": {
+            "question": "Bieten Sie Teampläne an?",
+            "answer": "Ja, unser Team-Plan ist perfekt für Organisationen und umfasst Teamverwaltung und dedizierten Support."
+        }
+    },
+    "common": {
+        "loading": "Laden...",
+        "error": "Fehler",
+        "success": "Erfolg",
+        "cancel": "Abbrechen",
+        "save": "Speichern",
+        "delete": "Löschen",
+        "edit": "Bearbeiten",
+        "close": "Schließen",
+        "back": "Zurück",
+        "next": "Weiter",
+        "previous": "Vorherige",
+        "search": "Suchen",
+        "filter": "Filter",
+        "sort": "Sortieren",
+        "export": "Exportieren",
+        "import": "Importieren"
+    }
+}

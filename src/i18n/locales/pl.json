@@ -1,0 +1,163 @@
+{
+    "navbar": {
+        "home": "Strona główna",
+        "features": "Funkcje",
+        "pricing": "Cennik",
+        "contact": "Kontakt",
+        "signIn": "Zaloguj się",
+        "signUp": "Zarejestruj się"
+    },
+    "hero": {
+        "title": "Opanuj nowe języki z Lingano",
+        "subtitle": "Ucz się języków naturalnie, skutecznie i przyjemnie dzięki naszej innowacyjnej platformie zaprojektowanej dla nowoczesnych uczących się. Odblokuj globalne możliwości i połącz się ze światem.",
+        "getStarted": "Zacznij naukę",
+        "learnMore": "Dowiedz się więcej"
+    },
+    "features": {
+        "title": "Dlaczego wybrać naszą platformę",
+        "subtitle": "Odkryj potężne funkcje, które czynią naszą platformę idealnym wyborem dla Twojej firmy",
+        "aiPowered": {
+            "title": "Analityka oparta na AI",
+            "description": "Wykorzystuj zaawansowane algorytmy uczenia maszynowego, aby uzyskać głębokie wglądy w dane swojej firmy i podejmować świadome decyzje."
+        },
+        "realTime": {
+            "title": "Przetwarzanie w czasie rzeczywistym",
+            "description": "Przetwarzaj i analizuj dane w czasie rzeczywistym, aby wyprzedzić konkurencję i szybko reagować na zmiany rynkowe."
+        },
+        "secure": {
+            "title": "Bezpieczeństwo korporacyjne",
+            "description": "Protokoły bezpieczeństwa na poziomie bankowym chronią Twoje wrażliwe dane dzięki szyfrowaniu end-to-end i standardom zgodności."
+        },
+        "scalable": {
+            "title": "Skalowalna infrastruktura",
+            "description": "Rozwijaj swoją firmę bez ograniczeń dzięki naszej architekturze natywnej dla chmury, która automatycznie skaluje się wraz z Twoimi potrzebami."
+        },
+        "integration": {
+            "title": "Bezproblemowa integracja",
+            "description": "Połącz się z istniejącymi narzędziami i przepływami pracy dzięki naszemu rozbudowanemu API i gotowym integracjom."
+        },
+        "support": {
+            "title": "Wsparcie ekspertów 24/7",
+            "description": "Uzyskaj pomoc, gdy jej potrzebujesz, dzięki naszemu dedykowanemu zespołowi wsparcia dostępnemu przez całą dobę."
+        }
+    },
+    "pricing": {
+        "title": "Wybierz swój plan",
+        "subtitle": "Wybierz idealny plan dla potrzeb swojej firmy",
+        "monthly": "Miesięcznie",
+        "yearly": "Rocznie",
+        "save": "Oszczędź 20%",
+        "starter": {
+            "name": "Starter",
+            "price": "129 zł",
+            "period": "/miesiąc",
+            "description": "Idealny dla małych firm rozpoczynających działalność",
+            "features": [
+                "Do 5 użytkowników",
+                "Podstawowa analityka",
+                "Wsparcie e-mail",
+                "Dostęp do API",
+                "Aplikacja mobilna"
+            ],
+            "button": "Rozpocznij darmowy okres próbny"
+        },
+        "professional": {
+            "name": "Professional",
+            "price": "429 zł",
+            "period": "/miesiąc",
+            "description": "Zaawansowane funkcje dla rozwijających się zespołów",
+            "features": [
+                "Do 25 użytkowników",
+                "Zaawansowana analityka",
+                "Priorytetowe wsparcie",
+                "Niestandardowe integracje",
+                "Zaawansowane raporty",
+                "Współpraca zespołowa"
+            ],
+            "button": "Rozpocznij darmowy okres próbny",
+            "popular": "Najpopularniejszy"
+        },
+        "enterprise": {
+            "name": "Enterprise",
+            "price": "Indywidualnie",
+            "period": "",
+            "description": "Dostosowane rozwiązania dla dużych organizacji",
+            "features": [
+                "Nieograniczona liczba użytkowników",
+                "Analityka korporacyjna",
+                "Dedykowane wsparcie",
+                "Niestandardowy rozwój",
+                "Gwarancja SLA",
+                "Wdrożenie on-premise"
+            ],
+            "button": "Skontaktuj się z działem sprzedaży"
+        }
+    },
+    "footer": {
+        "tagline": "Sprawianie, że nauka języków jest naturalna, skuteczna i przyjemna dla wszystkich.",
+        "company": "Firma",
+        "about": "O nas",
+        "careers": "Kariera",
+        "blog": "Blog",
+        "press": "Prasa",
+        "resources": "Zasoby",
+        "languageGuides": "Przewodniki językowe",
+        "community": "Społeczność",
+        "tutors": "Korepetytorzy",
+        "faq": "FAQ",
+        "legal": "Prawne",
+        "privacy": "Polityka prywatności",
+        "terms": "Warunki korzystania",
+        "cookies": "Polityka cookies",
+        "contact": "Kontakt",
+        "contactUs": "Skontaktuj się z nami",
+        "email": "hello@lingano.com",
+        "phone": "1-800-LINGANO22",
+        "madeInSwitzerland": "Stworzone z ❤️ w",
+        "switzerland": "Szwajcarii",
+        "copyright": "© {{year}} Lingano. Wszelkie prawa zastrzeżone."
+    },
+    "cta": {
+        "title": "Gotowy na rozpoczęcie bezpłatnego okresu próbnego?",
+        "subtitle": "Dołącz do tysięcy uczniów, którzy opanowują nowe języki z Lingano. Rozpocznij bezpłatny okres próbny już teraz i uwolnij swój potencjał!",
+        "startTrial": "🚀 Rozpocznij bezpłatny okres próbny",
+        "viewPricing": "Zobacz cennik"
+    },
+    "faq": {
+        "title": "Często zadawane pytania",
+        "whatIsLingano": {
+            "question": "Czym jest Lingano?",
+            "answer": "Lingano to nowoczesna platforma zaprojektowana, aby uczynić naukę języków szybką, zabawną i skuteczną, z aktualizacjami w czasie rzeczywistym i zaawansowaną analityką."
+        },
+        "freePlan": {
+            "question": "Czy istnieje plan darmowy?",
+            "answer": "Tak! Nasz plan podstawowy jest darmowy i daje dostęp do głównych lekcji i codziennych ćwiczeń."
+        },
+        "upgradeCancel": {
+            "question": "Czy mogę w każdej chwili zmienić plan lub anulować?",
+            "answer": "Oczywiście! Możesz w każdej chwili zmienić plan na wyższy lub niższy, lub anulować subskrypcję w ustawieniach konta."
+        },
+        "teamPlans": {
+            "question": "Czy oferujecie plany zespołowe?",
+            "answer": "Tak, nasz plan zespołowy jest idealny dla organizacji i obejmuje zarządzanie zespołem oraz dedykowane wsparcie."
+        }
+    },
+    "common": {
+        "loading": "Ładowanie...",
+        "error": "Błąd",
+        "success": "Sukces",
+        "cancel": "Anuluj",
+        "save": "Zapisz",
+        "delete": "Usuń",
+        "edit": "Edytuj",
+        "close": "Zamknij",
+        "back": "Wstecz",
+        "next": "Dalej",
+        "previous": "Poprzedni",
+        "search": "Szukaj",
+        "filter": "Filtruj",
+        "sort": "Sortuj",
+        "export": "Eksportuj",
+        "import": "Importuj"
+    }
+}
