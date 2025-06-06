@@ -1,4 +1,4 @@
-const SalientPricing = () => (
+const Pricing = () => (
     <section
         id="pricing"
         className="py-20 bg-transparent text-base-content dark:text-white"
@@ -41,10 +41,10 @@ const SalientPricing = () => (
                             <li>✔️ Everything in Basic</li>
                             <li>✔️ Advanced analytics</li>
                             <li>✔️ Real-time updates</li>
-                            <li>✔️ Priority support</li>
+                            <li>✔️ Priority support</li>{" "}
                         </ul>
-                        <button className="btn btn-primary btn-wide font-semibold hover:bg-primary-focus transition">
-                            Start Free Trial
+                        <button className="btn btn-accent btn-lg btn-wide font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-pulse bg-white text-primary border-2 border-white hover:bg-accent hover:text-white">
+                            🚀 Start Free Trial
                         </button>
                     </div>
                 </div>
@@ -72,4 +72,4 @@ const SalientPricing = () => (
     </section>
 );
 
-export default SalientPricing;
+export default Pricing;

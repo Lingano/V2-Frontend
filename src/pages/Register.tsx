@@ -1,119 +1,209 @@
-import { useState } from "react";
-import "../index.css"; // Import for Tailwind/DaisyUI classes
+// @ts-nocheck
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { Cropper as ReactCropper } from "react-cropper";
+
+// Utility to create a cropped image blob
+async function getCroppedImg(imageSrc: string, cropper: any): Promise<Blob> {
+    const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+        const img = new Image();
+        img.src = imageSrc;
+        img.onload = () => resolve(img);
+        img.onerror = (e) => reject(e);
+    });
+    // For react-cropper we can directly get canvas from instance
+    const canvas = cropper.getCroppedCanvas({ width: 200, height: 200 });
+    return new Promise<Blob>((resolve, reject) =>
+        canvas.toBlob(
+            (blob) => (blob ? resolve(blob) : reject(new Error("Crop failed"))),
+            "image/jpeg"
+        )
+    );
+}
 
 const Register = () => {
-    const [name, setName] = useState(""); // <-- Add state for name
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [confirm, setConfirm] = useState("");
+    const [profileFile, setProfileFile] = useState<File | null>(null);
+    const [preview, setPreview] = useState<string | null>(null);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [imageSrc, setImageSrc] = useState<string | null>(null);
+    const cropperRef = useRef<any>(null);
+    const [croppedBlob, setCroppedBlob] = useState<Blob | null>(null);
+    const navigate = useNavigate();
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
-    // Get the API base URL from environment variables
-    // If using Vite proxy for all /api calls, this can be an empty string
-    // and the endpoint will be relative, e.g., "/api/auth/register"
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
+    // Handle file selection and load image
+    const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0] || null;
+        setProfileFile(file);
+        // reset preview & blob
+        setPreview(null);
+        setCroppedBlob(null);
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => setImageSrc(reader.result as string);
+        } else {
+            setImageSrc(null);
+            setPreview(null);
+            setCroppedBlob(null);
+        }
+        // reset crop states when switching file
+        setCroppedBlob(null);
+    };
 
+    // Before submitting, use croppedBlob if available
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        if (!name || !email || !password || !confirmPassword) {
-            setError("Please fill in all fields.");
+        if (!name || !email || !password || !confirm) {
+            setError("All fields are required.");
             return;
         }
-        if (password !== confirmPassword) {
+        if (password !== confirm) {
             setError("Passwords do not match.");
             return;
         }
-        // TODO: Add more validation if needed (e.g., password strength)22
-
         setLoading(true);
         setError("");
-
         try {
-            console.log("Register attempt:", { name, email }); // <-- Log name
-            const registerEndpoint = `${apiBaseUrl}/api/auth/register`;
-
-            const response = await fetch(registerEndpoint, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name, // <-- Send name
-                    email,
-                    password,
-                }),
-            });
-
-            if (!response.ok) {
-                let errorData;
-                try {
-                    errorData = await response.json();
-                } catch (parseError) {
-                    throw new Error(
-                        response.statusText ||
-                            "Registration failed. Please try again."
-                    );
-                }
-                throw new Error(
-                    errorData.message ||
-                        errorData.error ||
-                        "Registration failed. Please try again."
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("email", email);
+            formData.append("password", password);
+            if (croppedBlob && profileFile) {
+                const fileName = profileFile.name;
+                formData.append(
+                    "avatar",
+                    new File([croppedBlob], fileName, {
+                        type: croppedBlob.type,
+                    })
                 );
+            } else if (profileFile) {
+                formData.append("avatar", profileFile);
             }
 
+            const response = await fetch(`${apiBaseUrl}/api/auth/register`, {
+                method: "POST",
+                body: formData,
+            });
             const data = await response.json();
-            console.log("Registration successful:", data);
-
-            alert("Registration successful! Please log in.");
-            setName(""); // <-- Clear name field
-            setEmail("");
-            setPassword("");
-            setConfirmPassword("");
+            if (response.ok && data.token) {
+                localStorage.setItem("token", data.token);
+                navigate("/profile");
+            } else {
+                setError(
+                    data.message || "Registration failed. Please try again."
+                );
+            }
         } catch (err: any) {
-            setError(
-                err.message ||
-                    "An unexpected error occurred during registration."
-            );
+            setError(err.message || "An unexpected error occurred.");
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div className="min-h-screen bg-base-100 flex justify-center items-center p-4">
-            <div className="card bg-white max-w-md w-full shadow-2xl">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 p-4">
+            <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md max-w-md w-full">
                 <div className="card-body">
-                    <h1 className="text-center text-3xl font-bold text-primary mb-2">
-                        Create Your Account
+                    <h1 className="text-4xl font-bold text-center text-primary mb-4">
+                        Create an Account
                     </h1>
-                    <p className="text-center text-gray-600 mb-6">
-                        Sign up to start your Lingano journey
+                    <p className="text-center text-base-content mb-6">
+                        Sign up to start learning
                     </p>
-
                     {error && (
                         <div role="alert" className="alert alert-error mb-4">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="stroke-current shrink-0 h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M10 14l2-2m0 0l2-2m-2 2l-2 2m2-2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
                             <span>{error}</span>
                         </div>
                     )}
-
                     <form onSubmit={handleSubmit}>
-                        {/* Add Name Input Field */}
+                        <div className="form-control mb-4">
+                            <label className="label justify-center">
+                                <span className="label-text text-base-content">
+                                    Profile Picture
+                                </span>
+                            </label>
+
+                            {/* Multiple Croppers */}
+                            {imageSrc && !preview && (
+                                <div className="mb-4">
+                                    <ReactCropper
+                                        ref={cropperRef}
+                                        src={imageSrc}
+                                        style={{ height: 300, width: "100%" }}
+                                        aspectRatio={1}
+                                        guides
+                                        viewMode={1}
+                                        background={false}
+                                        autoCropArea={1}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm btn-primary mt-2"
+                                        onClick={async () => {
+                                            const cropperInstance =
+                                                cropperRef.current?.cropper;
+                                            if (!cropperInstance) return;
+                                            const blob = await getCroppedImg(
+                                                imageSrc,
+                                                cropperInstance
+                                            );
+                                            setCroppedBlob(blob);
+                                            setPreview(
+                                                URL.createObjectURL(blob)
+                                            );
+                                        }}
+                                    >
+                                        Crop
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* Preview */}
+                            {preview && (
+                                <div className="flex justify-center mb-4">
+                                    <div className="avatar">
+                                        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto">
+                                            <img
+                                                src={preview}
+                                                alt="avatar preview"
+                                                className="object-cover w-full h-full"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            {preview && (
+                                <div className="flex justify-center mb-4">
+                                    <button
+                                        className="btn btn-sm btn-secondary"
+                                        onClick={() => {
+                                            setPreview(null);
+                                            setCroppedBlob(null);
+                                        }}
+                                    >
+                                        Re-crop
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* File input */}
+                            <input
+                                type="file"
+                                accept="image/*"
+                                className="file-input file-input-bordered w-full bg-base-100/50 mt-2"
+                                onChange={onFileChange}
+                            />
+                        </div>
+
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text text-gray-700">
+                                <span className="label-text text-base-content">
                                     Name
                                 </span>
                             </label>
@@ -121,8 +211,8 @@ const Register = () => {
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                placeholder="Enter your name"
-                                className="input input-bordered w-full bg-white focus:border-primary"
+                                placeholder="Your full name"
+                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
                                 disabled={loading}
                             />
@@ -130,7 +220,7 @@ const Register = () => {
 
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text text-gray-700">
+                                <span className="label-text text-base-content">
                                     Email
                                 </span>
                             </label>
@@ -139,7 +229,7 @@ const Register = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
-                                className="input input-bordered w-full bg-white focus:border-primary"
+                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
                                 disabled={loading}
                             />
@@ -147,7 +237,7 @@ const Register = () => {
 
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text text-gray-700">
+                                <span className="label-text text-base-content">
                                     Password
                                 </span>
                             </label>
@@ -156,7 +246,7 @@ const Register = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Create a password"
-                                className="input input-bordered w-full bg-white focus:border-primary"
+                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
                                 disabled={loading}
                             />
@@ -164,18 +254,16 @@ const Register = () => {
 
                         <div className="form-control mb-6">
                             <label className="label">
-                                <span className="label-text text-gray-700">
+                                <span className="label-text text-base-content">
                                     Confirm Password
                                 </span>
                             </label>
                             <input
                                 type="password"
-                                value={confirmPassword}
-                                onChange={(e) =>
-                                    setConfirmPassword(e.target.value)
-                                }
-                                placeholder="Confirm your password"
-                                className="input input-bordered w-full bg-white focus:border-primary"
+                                value={confirm}
+                                onChange={(e) => setConfirm(e.target.value)}
+                                placeholder="Confirm password"
+                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
                                 disabled={loading}
                             />
@@ -195,16 +283,14 @@ const Register = () => {
                             </button>
                         </div>
 
-                        <div className="text-sm text-center mt-4">
-                            <span className="text-gray-600">
-                                Already have an account?{" "}
-                            </span>
-                            <a
-                                href="/login"
-                                /* TODO: Update to React Router Link */ className="link link-hover text-primary"
+                        <div className="text-sm flex justify-between mt-4">
+                            <button
+                                type="button"
+                                className="link link-hover text-primary"
+                                onClick={() => navigate("/login2")}
                             >
-                                Log In
-                            </a>
+                                Already have an account?
+                            </button>
                         </div>
                     </form>
                 </div>

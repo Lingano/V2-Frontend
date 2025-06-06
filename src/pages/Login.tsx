@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../index.css"; // Import for Tailwind/DaisyUI classes
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -8,55 +7,34 @@ const Login = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
         if (!email || !password) {
             setError("Please enter both email and password.");
             return;
         }
-
         setLoading(true);
         setError("");
-
         try {
-            const loginEndpoint = `${apiBaseUrl}/api/auth/login`;
-            const response = await fetch(loginEndpoint, {
+            const response = await fetch(`${apiBaseUrl}/api/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
             });
-
             const data = await response.json();
-
-            if (response.ok) {
-                // SUCCESSFUL LOGIN
-                if (data.token) {
-                    // VVVVVV  THIS IS THE CRITICAL PART VVVVVV
-                    localStorage.setItem("token", data.token);
-                    // ^^^^^^  THIS IS THE CRITICAL PART ^^^^^^
-
-                    // Optionally, you can also store user info or redirect
-                    // localStorage.setItem("user", JSON.stringify(data.user)); // If user data is also returned
-                    console.log("Login successful, token saved.");
-                    navigate("/profile");
-                } else {
-                    setError("Login successful, but no token received.");
-                }
+            if (response.ok && data.token) {
+                localStorage.setItem("token", data.token);
+                navigate("/profile");
             } else {
-                // Handle login errors (e.g., invalid credentials)
                 setError(
                     data.message ||
                         "Login failed. Please check your credentials."
                 );
             }
         } catch (err: any) {
-            setError(
-                err.message || "An unexpected error occurred during login."
-            );
+            setError(err.message || "An unexpected error occurred.");
         } finally {
             setLoading(false);
         }
@@ -70,7 +48,7 @@ const Login = () => {
                         Welcome to Lingano
                     </h1>
                     <p className="text-center text-base-content mb-6">
-                        Log in to continue learning
+                        Sign in to continue learning
                     </p>
 
                     {error && (
@@ -95,7 +73,7 @@ const Login = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text text-gray-700">
+                                <span className="label-text text-base-content">
                                     Email
                                 </span>
                             </label>
@@ -112,7 +90,7 @@ const Login = () => {
 
                         <div className="form-control mb-6">
                             <label className="label">
-                                <span className="label-text text-gray-700">
+                                <span className="label-text text-base-content">
                                     Password
                                 </span>
                             </label>
@@ -142,18 +120,20 @@ const Login = () => {
                         </div>
 
                         <div className="text-sm flex justify-between mt-4">
-                            <a
-                                href="/forgot-password"
-                                /* TODO: Update to React Router Link */ className="link link-hover text-primary"
-                            >
-                                Forgot password?
-                            </a>
-                            <a
-                                href="/register"
-                                /* TODO: Update to React Router Link */ className="link link-hover text-primary"
+                            <button
+                                type="button"
+                                className="link link-hover text-primary"
+                                onClick={() => navigate("/register")}
                             >
                                 Create an account
-                            </a>
+                            </button>
+                            <button
+                                type="button"
+                                className="link link-hover text-primary"
+                                onClick={() => navigate("/forgot-password")}
+                            >
+                                Forgot password?
+                            </button>
                         </div>
                     </form>
                 </div>

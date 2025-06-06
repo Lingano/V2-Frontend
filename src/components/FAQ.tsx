@@ -1,4 +1,4 @@
-const SalientFAQ = () => (
+const FAQ = () => (
     <section
         id="faq"
         className="py-20 bg-transparent text-base-content dark:text-white"
@@ -54,4 +54,4 @@ const SalientFAQ = () => (
     </section>
 );
 
-export default SalientFAQ;
+export default FAQ;

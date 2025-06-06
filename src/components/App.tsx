@@ -103,9 +103,7 @@ const App = () => {
                         <Route
                             path="/"
                             element={
-                                <>
-                                    {" "}
-                                    <Navbar
+                                <>                                    <Navbar
                                         darkMode={darkMode}
                                         setDarkMode={setDarkMode}
                                     />
@@ -125,8 +123,7 @@ const App = () => {
                                     <Footer />
                                 </>
                             }
-                        />{" "}
-                        <Route path="/login" element={<Login />} />
+                        />                        <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                     </Routes>
                 </main>

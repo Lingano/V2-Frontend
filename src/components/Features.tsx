@@ -81,7 +81,7 @@ const features = [
     },
 ];
 
-const SalientFeatures = () => (
+const Features = () => (
     <section className="relative isolate overflow-hidden py-20 bg-transparent text-base-content dark:text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
@@ -121,4 +121,4 @@ const SalientFeatures = () => (
     </section>
 );
 
-export default SalientFeatures;
+export default Features;
