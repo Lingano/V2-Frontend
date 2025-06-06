@@ -1,14 +1,15 @@
 import { useEffect, useState, useMemo } from "react";
-import Hero from "./Hero";
-import Features from "./Features";
-import CTA from "./CTA";
-import Footer from "./Footer";
-import Pricing from "./Pricing";
-import FAQ from "./FAQ"; // Import the new component
-import Login from "../pages/Login";
-import Register from "../pages/Register";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import CTA from "./components/CTA";
+import Footer from "./components/Footer";
+import Pricing from "./components/Pricing";
+import FAQ from "./components/FAQ"; // Import the new component
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import UserProfile from "./pages/UserProfile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 
 const App = () => {
     const [darkMode, setDarkMode] = useState(() => {
@@ -103,7 +104,9 @@ const App = () => {
                         <Route
                             path="/"
                             element={
-                                <>                                    <Navbar
+                                <>
+                                    {" "}
+                                    <Navbar
                                         darkMode={darkMode}
                                         setDarkMode={setDarkMode}
                                     />
@@ -123,8 +126,10 @@ const App = () => {
                                     <Footer />
                                 </>
                             }
-                        />                        <Route path="/login" element={<Login />} />
+                        />{" "}
+                        <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/profile" element={<UserProfile />} />
                     </Routes>
                 </main>
             </div>
