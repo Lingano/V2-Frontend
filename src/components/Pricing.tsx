@@ -42,8 +42,8 @@ const Pricing = () => (
                             <li>✔️ Advanced analytics</li>
                             <li>✔️ Real-time updates</li>
                             <li>✔️ Priority support</li>{" "}
-                        </ul>
-                        <button className="btn btn-accent btn-lg btn-wide font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-pulse bg-white text-primary border-2 border-white hover:bg-accent hover:text-white">
+                        </ul>{" "}
+                        <button className="btn btn-lg btn-wide font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-pulse bg-white text-primary ring-2 ring-gray-300 ring-inset hover:bg-accent hover:text-white hover:ring-white">
                             🚀 Start Free Trial
                         </button>
                     </div>
