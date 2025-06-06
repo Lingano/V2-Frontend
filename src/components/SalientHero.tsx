@@ -12,7 +12,7 @@ const Hero = () => (
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                     <a
-                        href="https://lingano.live/register"
+                        href="/register"
                         className="rounded-md bg-primary px-6 py-3 text-lg font-semibold text-base-100 shadow-sm hover:bg-primary-focus transition"
                     >
                         Get started

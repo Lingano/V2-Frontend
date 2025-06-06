@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -64,18 +64,18 @@ const Navbar = () => (
                 </a>
             </div>
             <div className="flex gap-2">
-                <a
-                    href="/login"
+                <Link
+                    to="/login"
                     className="rounded-md px-4 py-2 text-sm font-semibold text-primary ring-1 ring-primary/20 hover:bg-primary/10 transition"
                 >
                     Sign in
-                </a>
-                <a
-                    href="/register"
+                </Link>
+                <Link
+                    to="/register"
                     className="rounded-md px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary/90 transition"
                 >
                     Sign up
-                </a>
+                </Link>
             </div>
         </nav>
     </header>
