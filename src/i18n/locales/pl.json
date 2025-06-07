@@ -307,5 +307,38 @@
             "subtitle": "Zawsze szukamy utalentowanych osób, które podzielają naszą pasję do edukacji i technologii. Skontaktuj się z nami!",
             "contactUs": "Skontaktuj się z nami"
         }
+    },
+    "jobDetail": {
+        "backToCareers": "← Powrót do Kariery",
+        "responsibilities": "Główne Obowiązki",
+        "qualifications": "Kwalifikacje",
+        "benefits": "Korzyści i Przywileje",
+        "applicationProcess": {
+            "title": "Proces Aplikacji",
+            "step1": {
+                "title": "Złóż Aplikację",
+                "description": "Wyślij nam swoje CV i powiedz, dlaczego jesteś zainteresowany"
+            },
+            "step2": {
+                "title": "Rozmowa Techniczna",
+                "description": "Dyskusja o twoim doświadczeniu i umiejętnościach technicznych"
+            },
+            "step3": {
+                "title": "Finalna Rozmowa",
+                "description": "Poznaj zespół i dowiedz się więcej o roli"
+            }
+        },
+        "readyToApply": "Gotowy do Aplikowania?",
+        "applyDescription": "Dołącz do naszego zespołu i pomóż nam budować przyszłość nauki języków. Nie możemy się doczekać, aby od Ciebie usłyszeć!",
+        "applyNow": "Aplikuj Teraz",
+        "compensation": "Wynagrodzenie",
+        "workModel": "Model Pracy",
+        "remote": "Zdalna",
+        "hybrid": "Hybrydowa",
+        "onsite": "W Biurze",
+        "fullTime": "Pełny Etat",
+        "partTime": "Niepełny Etat",
+        "contract": "Kontrakt",
+        "internship": "Staż"
     }
 }

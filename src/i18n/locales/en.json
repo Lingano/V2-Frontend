@@ -199,6 +199,8 @@
                 "department": "Engineering",
                 "location": "Remote / Zurich",
                 "type": "Full-time",
+                "workModel": "Remote",
+                "compensation": "$80,000 - $120,000",
                 "description": "We're looking for a talented Frontend Developer to help build beautiful, responsive user interfaces for our language learning platform using React, TypeScript, and modern web technologies.",
                 "requirements": [
                     "3+ years of experience with React and TypeScript",
@@ -209,6 +211,26 @@
                     "Understanding of responsive design and cross-browser compatibility",
                     "Knowledge of version control systems (Git)",
                     "Good communication skills in English"
+                ],
+                "responsibilities": [
+                    "Develop and maintain responsive web applications using React and TypeScript",
+                    "Collaborate with designers to implement pixel-perfect UI components",
+                    "Optimize applications for maximum speed and scalability",
+                    "Write clean, maintainable, and well-documented code",
+                    "Participate in code reviews and maintain coding standards",
+                    "Work closely with backend developers to integrate APIs",
+                    "Implement automated testing and ensure code quality",
+                    "Stay up-to-date with latest frontend technologies and best practices"
+                ],
+                "qualifications": [
+                    "Bachelor's degree in Computer Science or related field",
+                    "Proven experience with React ecosystem and modern JavaScript",
+                    "Strong understanding of web development fundamentals",
+                    "Experience with version control and collaborative development",
+                    "Problem-solving skills and attention to detail",
+                    "Ability to work in a fast-paced, agile environment",
+                    "Excellent communication and teamwork skills",
+                    "Portfolio of previous work and projects"
                 ],
                 "benefits": [
                     "Competitive salary with equity options",
@@ -225,6 +247,8 @@
                 "department": "Engineering",
                 "location": "Remote / Zurich",
                 "type": "Full-time",
+                "workModel": "Hybrid",
+                "compensation": "$90,000 - $140,000",
                 "description": "Join our backend team to build scalable, secure APIs and services that power our language learning platform. Work with Node.js, PostgreSQL, and cloud technologies.",
                 "requirements": [
                     "4+ years of experience with Node.js and TypeScript",
@@ -235,6 +259,26 @@
                     "Understanding of microservices architecture",
                     "Experience with CI/CD pipelines",
                     "Good understanding of security best practices"
+                ],
+                "responsibilities": [
+                    "Design and develop scalable backend services and APIs",
+                    "Build and maintain microservices architecture",
+                    "Optimize database queries and ensure data integrity",
+                    "Implement security best practices and authentication systems",
+                    "Collaborate with frontend team on API design and integration",
+                    "Monitor application performance and troubleshoot issues",
+                    "Write comprehensive tests and maintain code quality",
+                    "Participate in system architecture and technical decisions"
+                ],
+                "qualifications": [
+                    "Bachelor's degree in Computer Science or related field",
+                    "Extensive experience with server-side technologies",
+                    "Strong understanding of database design and optimization",
+                    "Experience with cloud infrastructure and deployment",
+                    "Knowledge of security principles and best practices",
+                    "Ability to design scalable and maintainable systems",
+                    "Strong problem-solving and analytical skills",
+                    "Experience with agile development methodologies"
                 ],
                 "benefits": [
                     "Competitive salary with equity options",
@@ -251,6 +295,8 @@
                 "department": "Design",
                 "location": "Remote / Zurich",
                 "type": "Full-time",
+                "workModel": "Remote",
+                "compensation": "$70,000 - $110,000",
                 "description": "Shape the user experience of our language learning platform. Create intuitive, engaging designs that make learning languages fun and effective for millions of users.",
                 "requirements": [
                     "3+ years of experience in UI/UX design",
@@ -261,6 +307,26 @@
                     "Understanding of accessibility principles",
                     "Experience with prototyping and user flows",
                     "Good communication and presentation skills"
+                ],
+                "responsibilities": [
+                    "Design user interfaces for web and mobile applications",
+                    "Conduct user research and usability testing",
+                    "Create wireframes, prototypes, and design specifications",
+                    "Develop and maintain design systems and style guides",
+                    "Collaborate with developers to ensure design implementation",
+                    "Analyze user feedback and iterate on designs",
+                    "Present design concepts to stakeholders",
+                    "Stay current with design trends and best practices"
+                ],
+                "qualifications": [
+                    "Bachelor's degree in Design, HCI, or related field",
+                    "Strong portfolio demonstrating design thinking process",
+                    "Experience with user-centered design methodologies",
+                    "Knowledge of web and mobile design principles",
+                    "Understanding of frontend development constraints",
+                    "Excellent visual design and typography skills",
+                    "Strong communication and collaboration abilities",
+                    "Experience with design system implementation"
                 ],
                 "benefits": [
                     "Competitive salary with equity options",
@@ -277,6 +343,8 @@
                 "department": "Infrastructure",
                 "location": "Remote / Zurich",
                 "type": "Full-time",
+                "workModel": "Hybrid",
+                "compensation": "$95,000 - $150,000",
                 "description": "Help us build and maintain robust, scalable infrastructure that supports millions of language learners worldwide. Work with cloud technologies, automation, and monitoring systems.",
                 "requirements": [
                     "4+ years of experience in DevOps or Site Reliability Engineering",
@@ -287,6 +355,26 @@
                     "Knowledge of monitoring and logging tools (Prometheus, Grafana, ELK)",
                     "Scripting skills (Bash, Python, or Go)",
                     "Understanding of security and compliance requirements"
+                ],
+                "responsibilities": [
+                    "Design and maintain cloud infrastructure and deployment pipelines",
+                    "Implement and manage containerized applications with Kubernetes",
+                    "Monitor system performance and ensure high availability",
+                    "Automate infrastructure provisioning and configuration management",
+                    "Implement security best practices and compliance measures",
+                    "Collaborate with development teams on deployment strategies",
+                    "Troubleshoot and resolve infrastructure issues",
+                    "Optimize costs and performance of cloud resources"
+                ],
+                "qualifications": [
+                    "Bachelor's degree in Computer Science or related field",
+                    "Extensive experience with cloud platforms and services",
+                    "Strong knowledge of containerization and orchestration",
+                    "Experience with infrastructure automation tools",
+                    "Understanding of networking and security principles",
+                    "Ability to work with cross-functional teams",
+                    "Strong problem-solving and troubleshooting skills",
+                    "Experience with agile development and DevOps practices"
                 ],
                 "benefits": [
                     "Competitive salary with equity options",
@@ -307,5 +395,38 @@
             "subtitle": "We're always looking for talented individuals who share our passion for education and technology. Reach out to us!",
             "contactUs": "Contact Us"
         }
+    },
+    "jobDetail": {
+        "backToCareers": "← Back to Careers",
+        "responsibilities": "Key Responsibilities",
+        "qualifications": "Qualifications",
+        "benefits": "Benefits & Perks",
+        "applicationProcess": {
+            "title": "Application Process",
+            "step1": {
+                "title": "Submit Application",
+                "description": "Send us your resume and tell us why you're interested"
+            },
+            "step2": {
+                "title": "Technical Interview",
+                "description": "Discussion about your experience and technical skills"
+            },
+            "step3": {
+                "title": "Final Interview",
+                "description": "Meet the team and learn more about the role"
+            }
+        },
+        "readyToApply": "Ready to Apply?",
+        "applyDescription": "Join our team and help us build the future of language learning. We can't wait to hear from you!",
+        "applyNow": "Apply Now",
+        "compensation": "Compensation",
+        "workModel": "Work Model",
+        "remote": "Remote",
+        "hybrid": "Hybrid",
+        "onsite": "On-site",
+        "fullTime": "Full-time",
+        "partTime": "Part-time",
+        "contract": "Contract",
+        "internship": "Internship"
     }
 }

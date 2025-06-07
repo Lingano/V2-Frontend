@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import {
     IoLocationOutline,
     IoTimeOutline,
@@ -8,6 +9,7 @@ import {
     IoGlobeOutline,
     IoCheckmarkCircleOutline,
     IoMailOutline,
+    IoArrowForwardOutline,
 } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -182,14 +184,13 @@ const Careers = () => {
                         <p className="mt-4 text-lg text-base-content/70">
                             {t("careers.openPositions.subtitle")}
                         </p>
-                    </div>
-
+                    </div>{" "}
                     <div className="mx-auto mt-16 max-w-5xl">
                         <div className="space-y-8">
                             {jobPositions.map((job) => (
                                 <div
                                     key={job.id}
-                                    className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow"
+                                    className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
                                 >
                                     <div className="card-body">
                                         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
@@ -226,21 +227,37 @@ const Careers = () => {
                                                             )}
                                                         </h4>
                                                         <ul className="space-y-2">
-                                                            {job.requirements.map(
-                                                                (
-                                                                    req,
-                                                                    index
-                                                                ) => (
-                                                                    <li
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="flex items-start gap-2 text-sm text-base-content/70"
-                                                                    >
-                                                                        <IoCheckmarkCircleOutline className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                                                                        {req}
-                                                                    </li>
-                                                                )
+                                                            {job.requirements
+                                                                .slice(0, 3)
+                                                                .map(
+                                                                    (
+                                                                        req,
+                                                                        index
+                                                                    ) => (
+                                                                        <li
+                                                                            key={
+                                                                                index
+                                                                            }
+                                                                            className="flex items-start gap-2 text-sm text-base-content/70"
+                                                                        >
+                                                                            <IoCheckmarkCircleOutline className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                                                                            {
+                                                                                req
+                                                                            }
+                                                                        </li>
+                                                                    )
+                                                                )}
+                                                            {job.requirements
+                                                                .length > 3 && (
+                                                                <li className="text-sm text-base-content/50 italic">
+                                                                    +
+                                                                    {job
+                                                                        .requirements
+                                                                        .length -
+                                                                        3}{" "}
+                                                                    more
+                                                                    requirements...
+                                                                </li>
                                                             )}
                                                         </ul>
                                                     </div>
@@ -252,30 +269,51 @@ const Careers = () => {
                                                             )}
                                                         </h4>
                                                         <ul className="space-y-2">
-                                                            {job.benefits.map(
-                                                                (
-                                                                    benefit,
-                                                                    index
-                                                                ) => (
-                                                                    <li
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="flex items-start gap-2 text-sm text-base-content/70"
-                                                                    >
-                                                                        <IoCheckmarkCircleOutline className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                                                        {
-                                                                            benefit
-                                                                        }
-                                                                    </li>
-                                                                )
+                                                            {job.benefits
+                                                                .slice(0, 3)
+                                                                .map(
+                                                                    (
+                                                                        benefit,
+                                                                        index
+                                                                    ) => (
+                                                                        <li
+                                                                            key={
+                                                                                index
+                                                                            }
+                                                                            className="flex items-start gap-2 text-sm text-base-content/70"
+                                                                        >
+                                                                            <IoCheckmarkCircleOutline className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                                                            {
+                                                                                benefit
+                                                                            }
+                                                                        </li>
+                                                                    )
+                                                                )}
+                                                            {job.benefits
+                                                                .length > 3 && (
+                                                                <li className="text-sm text-base-content/50 italic">
+                                                                    +
+                                                                    {job
+                                                                        .benefits
+                                                                        .length -
+                                                                        3}{" "}
+                                                                    more
+                                                                    benefits...
+                                                                </li>
                                                             )}
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div className="mt-6 lg:mt-0 lg:ml-8">
+                                            <div className="mt-6 lg:mt-0 lg:ml-8 flex flex-col gap-3">
+                                                <Link
+                                                    to={`/careers/${job.id}`}
+                                                    className="btn btn-outline btn-primary gap-2"
+                                                >
+                                                    <IoArrowForwardOutline className="w-4 h-4" />
+                                                    View Details
+                                                </Link>
                                                 <a
                                                     href={`mailto:careers@lingano.com?subject=Application for ${job.title}`}
                                                     className="btn btn-primary gap-2"

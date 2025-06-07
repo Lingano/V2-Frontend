@@ -307,5 +307,38 @@
             "subtitle": "Nous recherchons toujours des personnes talentueuses qui partagent notre passion pour l'éducation et la technologie. Contactez-nous !",
             "contactUs": "Nous Contacter"
         }
+    },
+    "jobDetail": {
+        "backToCareers": "← Retour aux Carrières",
+        "responsibilities": "Responsabilités Clés",
+        "qualifications": "Qualifications",
+        "benefits": "Avantages & Privilèges",
+        "applicationProcess": {
+            "title": "Processus de Candidature",
+            "step1": {
+                "title": "Soumettre la Candidature",
+                "description": "Envoyez-nous votre CV et dites-nous pourquoi vous êtes intéressé"
+            },
+            "step2": {
+                "title": "Entretien Technique",
+                "description": "Discussion sur votre expérience et compétences techniques"
+            },
+            "step3": {
+                "title": "Entretien Final",
+                "description": "Rencontrez l'équipe et apprenez-en plus sur le rôle"
+            }
+        },
+        "readyToApply": "Prêt à Postuler ?",
+        "applyDescription": "Rejoignez notre équipe et aidez-nous à construire l'avenir de l'apprentissage des langues. Nous avons hâte d'avoir de vos nouvelles !",
+        "applyNow": "Postuler Maintenant",
+        "compensation": "Rémunération",
+        "workModel": "Modèle de Travail",
+        "remote": "Distant",
+        "hybrid": "Hybride",
+        "onsite": "Sur Site",
+        "fullTime": "Temps Plein",
+        "partTime": "Temps Partiel",
+        "contract": "Contrat",
+        "internship": "Stage"
     }
 }
