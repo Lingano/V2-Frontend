@@ -130,27 +130,31 @@ const Features = () => {
                     <p className="mt-6 text-lg leading-8 text-base-content/70">
                         {t("features.subtitle")}
                     </p>
-                </div>
+                </div>{" "}
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-3">
                         {features.map((feature, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col items-center text-center"
+                                className="group relative flex flex-col items-center text-center p-8 rounded-xl border border-base-300/50 bg-base-100/50 backdrop-blur-sm shadow-sm hover:shadow-xl hover:border-primary/30 hover:bg-base-100/80 transition-all duration-300 hover:-translate-y-2"
                             >
                                 <dt className="flex items-center gap-x-3 text-lg font-semibold leading-7 text-primary">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                                        {feature.icon}
+                                    <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 shadow-md">
+                                        <div className="h-8 w-8 text-primary group-hover:text-primary transition-colors duration-300">
+                                            {feature.icon}
+                                        </div>
                                     </div>
                                 </dt>
-                                <dd className="mt-4 flex flex-auto flex-col text-base leading-7">
-                                    <h3 className="flex-auto font-semibold text-primary">
+                                <dd className="mt-6 flex flex-auto flex-col text-base leading-7">
+                                    <h3 className="flex-auto font-semibold text-primary text-xl mb-3 group-hover:text-primary transition-colors duration-300">
                                         {feature.name}
                                     </h3>
-                                    <p className="text-base-content/70">
+                                    <p className="text-base-content/70 group-hover:text-base-content/90 transition-colors duration-300 leading-relaxed">
                                         {feature.description}
                                     </p>
                                 </dd>
+                                {/* Subtle gradient overlay on hover */}
+                                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             </div>
                         ))}
                     </dl>
