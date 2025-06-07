@@ -25,7 +25,7 @@ function Footer() {
         {
             title: t("footer.company"),
             links: [
-                { name: t("footer.about"), href: "#" },
+                { name: t("footer.about"), href: "/about" },
                 { name: t("footer.careers"), href: "/careers" },
                 { name: t("footer.blog"), href: "#" },
                 { name: t("footer.press"), href: "#" },
