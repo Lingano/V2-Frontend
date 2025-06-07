@@ -30,7 +30,15 @@ interface JobPosition {
     workModel: string;
 }
 
-const JobDetail = () => {
+interface JobDetailProps {
+    darkMode?: boolean;
+    setDarkMode?: (darkMode: boolean) => void;
+}
+
+const JobDetail = ({
+    darkMode = false,
+    setDarkMode = () => {},
+}: JobDetailProps) => {
     const { t } = useTranslation();
     const { jobId } = useParams<{ jobId: string }>();
 
@@ -164,10 +172,9 @@ const JobDetail = () => {
             </div>
         );
     }
-
     return (
         <div className="min-h-screen bg-base-100">
-            <Navbar darkMode={false} setDarkMode={() => {}} />
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
             {/* Job Header */}
             <section className="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">

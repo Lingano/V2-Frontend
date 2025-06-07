@@ -26,7 +26,15 @@ interface JobPosition {
     benefits: string[];
 }
 
-const Careers = () => {
+interface CareersProps {
+    darkMode?: boolean;
+    setDarkMode?: (darkMode: boolean) => void;
+}
+
+const Careers = ({
+    darkMode = false,
+    setDarkMode = () => {},
+}: CareersProps) => {
     const { t } = useTranslation();
 
     // Scroll to top when component mounts
@@ -115,10 +123,9 @@ const Careers = () => {
             description: t("careers.values.passion.description"),
         },
     ];
-
     return (
         <div className="min-h-screen bg-base-100">
-            <Navbar darkMode={false} setDarkMode={() => {}} />
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
             {/* Hero Section */}
             <section className="relative isolate overflow-hidden py-24 sm:py-32 bg-gradient-to-br from-primary/5 to-secondary/5">

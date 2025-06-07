@@ -133,7 +133,7 @@ const App = () => {
                         />{" "}
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
-                        <Route path="/profile" element={<UserProfile />} />
+                        <Route path="/profile" element={<UserProfile />} />{" "}
                         <Route
                             path="/about"
                             element={
@@ -142,9 +142,25 @@ const App = () => {
                                     setDarkMode={setDarkMode}
                                 />
                             }
+                        />{" "}
+                        <Route
+                            path="/careers"
+                            element={
+                                <Careers
+                                    darkMode={darkMode}
+                                    setDarkMode={setDarkMode}
+                                />
+                            }
                         />
-                        <Route path="/careers" element={<Careers />} />
-                        <Route path="/careers/:jobId" element={<JobDetail />} />
+                        <Route
+                            path="/careers/:jobId"
+                            element={
+                                <JobDetail
+                                    darkMode={darkMode}
+                                    setDarkMode={setDarkMode}
+                                />
+                            }
+                        />
                     </Routes>
                 </main>
             </div>
