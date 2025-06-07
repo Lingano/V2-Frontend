@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         Lingano
                     </Link>
                 </div>{" "}
-                {/* Desktop Navigation */}
+                {/* Desktop Navigation */}{" "}
                 <div className="hidden md:flex gap-8 text-base font-medium">
                     <a
                         href="#features"
@@ -61,6 +61,12 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                     >
                         {t("navbar.pricing")}
                     </a>
+                    <Link
+                        to="/about"
+                        className="hover:text-primary transition-colors"
+                    >
+                        {t("navbar.about")}
+                    </Link>
                     <a
                         href="#faq"
                         className="hover:text-primary transition-colors"
@@ -195,7 +201,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {t("navbar.features")}
-                        </a>
+                        </a>{" "}
                         <a
                             href="#pricing"
                             className="block hover:text-primary transition-colors"
@@ -203,6 +209,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         >
                             {t("navbar.pricing")}
                         </a>
+                        <Link
+                            to="/about"
+                            className="block hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            {t("navbar.about")}
+                        </Link>
                         <a
                             href="#faq"
                             className="block hover:text-primary transition-colors"

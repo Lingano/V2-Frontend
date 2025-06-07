@@ -44,7 +44,7 @@ const LanguageSwitcher: React.FC = () => {
             >
                 <div className="hidden sm:flex items-center gap-2">
                     <currentLanguage.FlagComponent className="w-5 h-4" />
-                    <span>{currentLanguage.name}</span>
+                    {/* <span>{currentLanguage.name}</span> */}
                 </div>
                 <div className="sm:hidden">
                     <currentLanguage.FlagComponent className="w-5 h-4" />

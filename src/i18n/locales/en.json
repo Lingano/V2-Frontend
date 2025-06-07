@@ -3,6 +3,7 @@
         "home": "Home",
         "features": "Features",
         "pricing": "Pricing",
+        "about": "About",
         "contact": "Contact",
         "signIn": "Sign In",
         "signUp": "Sign Up"
@@ -470,5 +471,58 @@
         "partTime": "Part-time",
         "contract": "Contract",
         "internship": "Internship"
+    },
+    "about": {
+        "hero": {
+            "title": "About Lingano",
+            "subtitle": "We're revolutionizing language learning through innovative technology and passionate dedication to helping people connect across cultures and borders."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "To make language learning accessible, enjoyable, and effective for everyone, breaking down communication barriers and fostering global understanding."
+        },
+        "story": {
+            "title": "Our Story",
+            "paragraph1": "Founded in 2024, Lingano emerged from a simple observation: traditional language learning methods weren't keeping pace with how people actually learn and communicate in the digital age.",
+            "paragraph2": "Our team of linguists, educators, and technologists came together with a shared vision to create a platform that adapts to each learner's unique style, pace, and goals."
+        },
+        "values": {
+            "title": "Our Values",
+            "subtitle": "The principles that guide everything we do",
+            "innovation": {
+                "title": "Innovation",
+                "description": "We continuously push the boundaries of educational technology to create better, more effective learning experiences."
+            },
+            "accessibility": {
+                "title": "Accessibility",
+                "description": "Language learning should be available to everyone, regardless of background, location, or learning style."
+            },
+            "excellence": {
+                "title": "Excellence",
+                "description": "We strive for the highest quality in everything we do, from content creation to user experience design."
+            }
+        },
+        "team": {
+            "title": "Meet Our Team",
+            "subtitle": "The passionate individuals behind Lingano's success",
+            "ceo": {
+                "role": "CEO & Co-Founder",
+                "description": "Passionate about making language learning accessible to everyone worldwide."
+            },
+            "cto": {
+                "role": "CTO & Co-Founder",
+                "description": "Leading our technical innovation and AI-powered learning systems."
+            },
+            "head_linguist": {
+                "role": "Head of Linguistics",
+                "description": "Ensuring our content is linguistically accurate and pedagogically sound."
+            }
+        },
+        "stats": {
+            "users": "Active Users",
+            "languages": "Languages",
+            "satisfaction": "User Satisfaction",
+            "support": "Support"
+        }
     }
 }

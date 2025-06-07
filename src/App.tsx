@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import UserProfile from "./pages/UserProfile";
 import Careers from "./pages/Careers";
 import JobDetail from "./pages/JobDetail";
+import About from "./pages/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./i18n"; // Initialize i18n
@@ -133,6 +134,15 @@ const App = () => {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/profile" element={<UserProfile />} />
+                        <Route
+                            path="/about"
+                            element={
+                                <About
+                                    darkMode={darkMode}
+                                    setDarkMode={setDarkMode}
+                                />
+                            }
+                        />
                         <Route path="/careers" element={<Careers />} />
                         <Route path="/careers/:jobId" element={<JobDetail />} />
                     </Routes>
