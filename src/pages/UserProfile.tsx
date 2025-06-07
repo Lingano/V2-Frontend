@@ -22,8 +22,10 @@ const UserProfile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
-
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+
         const fetchUserProfile = async () => {
             setLoading(true);
             setError(null);

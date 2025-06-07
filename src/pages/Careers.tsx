@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
     IoLocationOutline,
     IoTimeOutline,
@@ -27,6 +28,11 @@ interface JobPosition {
 
 const Careers = () => {
     const { t } = useTranslation();
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const jobPositions: JobPosition[] = [
         {
