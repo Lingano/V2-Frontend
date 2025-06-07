@@ -159,5 +159,153 @@
         "sort": "Ordina",
         "export": "Esporta",
         "import": "Importa"
+    },
+    "careers": {
+        "hero": {
+            "title": "Unisciti alla Nostra Missione",
+            "subtitle": "Aiutaci a rivoluzionare l'apprendimento delle lingue e rendere l'educazione accessibile a tutti nel mondo. Costruisci il futuro dell'apprendimento con noi.",
+            "viewPositions": "Visualizza Posizioni Aperte",
+            "learnCulture": "Scopri la Nostra Cultura"
+        },
+        "culture": {
+            "title": "La Nostra Cultura e Valori",
+            "subtitle": "Crediamo nel creare un ambiente dove ognuno può prosperare e avere un impatto significativo."
+        },
+        "values": {
+            "global": {
+                "title": "Impatto Globale",
+                "description": "Stiamo costruendo prodotti che connettono persone di diverse culture e lingue in tutto il mondo."
+            },
+            "innovation": {
+                "title": "Innovazione",
+                "description": "Abbracciamo tecnologie all'avanguardia e soluzioni creative per risolvere problemi complessi."
+            },
+            "collaboration": {
+                "title": "Collaborazione",
+                "description": "Lavoriamo insieme come un unico team, condividendo conoscenze e supportando la crescita reciproca."
+            },
+            "passion": {
+                "title": "Passione",
+                "description": "Siamo appassionati dell'educazione e creiamo esperienze significative per i nostri utenti."
+            }
+        },
+        "openPositions": {
+            "title": "Posizioni Aperte",
+            "subtitle": "Unisciti al nostro team e aiuta a costruire il futuro dell'apprendimento delle lingue"
+        },
+        "positions": {
+            "frontendDev": {
+                "title": "Sviluppatore Frontend",
+                "department": "Ingegneria",
+                "location": "Remoto / Zurigo",
+                "type": "Tempo pieno",
+                "description": "Stiamo cercando uno sviluppatore Frontend di talento per aiutare a costruire interfacce utente belle e responsive per la nostra piattaforma di apprendimento delle lingue utilizzando React, TypeScript e tecnologie web moderne.",
+                "requirements": [
+                    "3+ anni di esperienza con React e TypeScript",
+                    "Solida conoscenza di HTML5, CSS3 e JavaScript moderno",
+                    "Esperienza con gestione dello stato (Redux, Zustand o simili)",
+                    "Familiarità con framework CSS (Tailwind CSS preferito)",
+                    "Esperienza con framework di testing (Jest, React Testing Library)",
+                    "Comprensione del design responsive e compatibilità cross-browser",
+                    "Conoscenza dei sistemi di controllo versione (Git)",
+                    "Buone capacità di comunicazione in inglese"
+                ],
+                "benefits": [
+                    "Stipendio competitivo con opzioni equity",
+                    "Orari flessibili e opzioni di lavoro remoto",
+                    "Assicurazione sanitaria e benefici benessere",
+                    "Budget per sviluppo professionale",
+                    "Ultimo MacBook Pro e attrezzature",
+                    "Ritiri annuali del team in Svizzera",
+                    "Accesso gratuito a tutte le funzionalità premium di Lingano"
+                ]
+            },
+            "backendDev": {
+                "title": "Sviluppatore Backend",
+                "department": "Ingegneria",
+                "location": "Remoto / Zurigo",
+                "type": "Tempo pieno",
+                "description": "Unisciti al nostro team backend per costruire API e servizi scalabili e sicuri che alimentano la nostra piattaforma di apprendimento delle lingue. Lavora con Node.js, PostgreSQL e tecnologie cloud.",
+                "requirements": [
+                    "4+ anni di esperienza con Node.js e TypeScript",
+                    "Solida conoscenza di API RESTful e GraphQL",
+                    "Esperienza con database (PostgreSQL, Redis)",
+                    "Conoscenza delle piattaforme cloud (AWS, Google Cloud o Azure)",
+                    "Esperienza con containerizzazione (Docker, Kubernetes)",
+                    "Comprensione dell'architettura microservizi",
+                    "Esperienza con pipeline CI/CD",
+                    "Buona comprensione delle best practice di sicurezza"
+                ],
+                "benefits": [
+                    "Stipendio competitivo con opzioni equity",
+                    "Orari flessibili e opzioni di lavoro remoto",
+                    "Assicurazione sanitaria e benefici benessere",
+                    "Budget per sviluppo professionale",
+                    "Ultimo MacBook Pro e attrezzature",
+                    "Ritiri annuali del team in Svizzera",
+                    "Accesso gratuito a tutte le funzionalità premium di Lingano"
+                ]
+            },
+            "uiUxDesigner": {
+                "title": "Designer UI/UX",
+                "department": "Design",
+                "location": "Remoto / Zurigo",
+                "type": "Tempo pieno",
+                "description": "Forma l'esperienza utente della nostra piattaforma di apprendimento delle lingue. Crea design intuitivi e coinvolgenti che rendono l'apprendimento delle lingue divertente ed efficace per milioni di utenti.",
+                "requirements": [
+                    "3+ anni di esperienza nel design UI/UX",
+                    "Competenza negli strumenti di design (Figma, Sketch, Adobe Creative Suite)",
+                    "Portfolio solido che mostra design di app web e mobile",
+                    "Esperienza con sistemi di design e librerie di componenti",
+                    "Conoscenza della ricerca utente e test di usabilità",
+                    "Comprensione dei principi di accessibilità",
+                    "Esperienza con prototipazione e flussi utente",
+                    "Buone capacità di comunicazione e presentazione"
+                ],
+                "benefits": [
+                    "Stipendio competitivo con opzioni equity",
+                    "Orari flessibili e opzioni di lavoro remoto",
+                    "Assicurazione sanitaria e benefici benessere",
+                    "Budget per sviluppo professionale",
+                    "Ultimo MacBook Pro e licenze strumenti design",
+                    "Ritiri annuali del team in Svizzera",
+                    "Accesso gratuito a tutte le funzionalità premium di Lingano"
+                ]
+            },
+            "devopsEngineer": {
+                "title": "Ingegnere DevOps",
+                "department": "Infrastruttura",
+                "location": "Remoto / Zurigo",
+                "type": "Tempo pieno",
+                "description": "Aiutaci a costruire e mantenere un'infrastruttura robusta e scalabile che supporta milioni di studenti di lingue in tutto il mondo. Lavora con tecnologie cloud, automazione e sistemi di monitoraggio.",
+                "requirements": [
+                    "4+ anni di esperienza in DevOps o Site Reliability Engineering",
+                    "Solida conoscenza delle piattaforme cloud (AWS preferito)",
+                    "Esperienza con Infrastructure as Code (Terraform, CloudFormation)",
+                    "Competenza con containerizzazione (Docker, Kubernetes)",
+                    "Esperienza con pipeline CI/CD (GitHub Actions, Jenkins)",
+                    "Conoscenza di strumenti di monitoraggio e logging (Prometheus, Grafana, ELK)",
+                    "Competenze di scripting (Bash, Python o Go)",
+                    "Comprensione dei requisiti di sicurezza e conformità"
+                ],
+                "benefits": [
+                    "Stipendio competitivo con opzioni equity",
+                    "Orari flessibili e opzioni di lavoro remoto",
+                    "Assicurazione sanitaria e benefici benessere",
+                    "Budget per sviluppo professionale",
+                    "Ultimo MacBook Pro e attrezzature",
+                    "Ritiri annuali del team in Svizzera",
+                    "Accesso gratuito a tutte le funzionalità premium di Lingano"
+                ]
+            }
+        },
+        "requirements": "Requisiti",
+        "benefits": "Benefici",
+        "applyNow": "Candidati Ora",
+        "cta": {
+            "title": "Non Trovi il Ruolo Perfetto?",
+            "subtitle": "Stiamo sempre cercando persone di talento che condividono la nostra passione per l'educazione e la tecnologia. Contattaci!",
+            "contactUs": "Contattaci"
+        }
     }
 }

@@ -159,5 +159,153 @@
         "sort": "Sortuj",
         "export": "Eksportuj",
         "import": "Importuj"
+    },
+    "careers": {
+        "hero": {
+            "title": "Dołącz do Naszej Misji",
+            "subtitle": "Pomóż nam zrewolucjonizować naukę języków i uczynić edukację dostępną dla wszystkich na całym świecie. Buduj z nami przyszłość nauki.",
+            "viewPositions": "Zobacz Otwarte Stanowiska",
+            "learnCulture": "Poznaj Naszą Kulturę"
+        },
+        "culture": {
+            "title": "Nasza Kultura i Wartości",
+            "subtitle": "Wierzymy w tworzenie środowiska, w którym każdy może się rozwijać i mieć znaczący wpływ."
+        },
+        "values": {
+            "global": {
+                "title": "Globalny Wpływ",
+                "description": "Budujemy produkty, które łączą ludzi z różnych kultur i języków na całym świecie."
+            },
+            "innovation": {
+                "title": "Innowacyjność",
+                "description": "Przyjmujemy najnowocześniejsze technologie i kreatywne rozwiązania do rozwiązywania złożonych problemów."
+            },
+            "collaboration": {
+                "title": "Współpraca",
+                "description": "Pracujemy razem jako jeden zespół, dzieląc się wiedzą i wspierając wzajemny rozwój."
+            },
+            "passion": {
+                "title": "Pasja",
+                "description": "Jesteśmy pasjonatami edukacji i tworzymy znaczące doświadczenia dla naszych użytkowników."
+            }
+        },
+        "openPositions": {
+            "title": "Otwarte Stanowiska",
+            "subtitle": "Dołącz do naszego zespołu i pomóż budować przyszłość nauki języków"
+        },
+        "positions": {
+            "frontendDev": {
+                "title": "Programista Frontend",
+                "department": "Inżynieria",
+                "location": "Zdalnie / Zurych",
+                "type": "Pełny etat",
+                "description": "Szukamy utalentowanego programisty Frontend, który pomoże budować piękne, responsywne interfejsy użytkownika dla naszej platformy do nauki języków używając React, TypeScript i nowoczesnych technologii webowych.",
+                "requirements": [
+                    "3+ lat doświadczenia z React i TypeScript",
+                    "Solidna znajomość HTML5, CSS3 i nowoczesnego JavaScript",
+                    "Doświadczenie z zarządzaniem stanem (Redux, Zustand lub podobne)",
+                    "Znajomość frameworków CSS (preferowany Tailwind CSS)",
+                    "Doświadczenie z frameworkami testowymi (Jest, React Testing Library)",
+                    "Zrozumienie responsive design i kompatybilności cross-browser",
+                    "Znajomość systemów kontroli wersji (Git)",
+                    "Dobre umiejętności komunikacyjne w języku angielskim"
+                ],
+                "benefits": [
+                    "Konkurencyjne wynagrodzenie z opcjami equity",
+                    "Elastyczne godziny pracy i możliwość pracy zdalnej",
+                    "Ubezpieczenie zdrowotne i świadczenia wellness",
+                    "Budżet na rozwój zawodowy",
+                    "Najnowszy MacBook Pro i sprzęt",
+                    "Coroczne wyjazdy zespołowe w Szwajcarii",
+                    "Darmowy dostęp do wszystkich funkcji premium Lingano"
+                ]
+            },
+            "backendDev": {
+                "title": "Programista Backend",
+                "department": "Inżynieria",
+                "location": "Zdalnie / Zurych",
+                "type": "Pełny etat",
+                "description": "Dołącz do naszego zespołu backend, aby budować skalowalne, bezpieczne API i usługi, które napędzają naszą platformę do nauki języków. Pracuj z Node.js, PostgreSQL i technologiami chmurowymi.",
+                "requirements": [
+                    "4+ lat doświadczenia z Node.js i TypeScript",
+                    "Solidna znajomość RESTful API i GraphQL",
+                    "Doświadczenie z bazami danych (PostgreSQL, Redis)",
+                    "Znajomość platform chmurowych (AWS, Google Cloud lub Azure)",
+                    "Doświadczenie z konteneryzacją (Docker, Kubernetes)",
+                    "Zrozumienie architektury mikrousług",
+                    "Doświadczenie z pipeline'ami CI/CD",
+                    "Dobre zrozumienie najlepszych praktyk bezpieczeństwa"
+                ],
+                "benefits": [
+                    "Konkurencyjne wynagrodzenie z opcjami equity",
+                    "Elastyczne godziny pracy i możliwość pracy zdalnej",
+                    "Ubezpieczenie zdrowotne i świadczenia wellness",
+                    "Budżet na rozwój zawodowy",
+                    "Najnowszy MacBook Pro i sprzęt",
+                    "Coroczne wyjazdy zespołowe w Szwajcarii",
+                    "Darmowy dostęp do wszystkich funkcji premium Lingano"
+                ]
+            },
+            "uiUxDesigner": {
+                "title": "Designer UI/UX",
+                "department": "Design",
+                "location": "Zdalnie / Zurych",
+                "type": "Pełny etat",
+                "description": "Kształtuj doświadczenie użytkownika naszej platformy do nauki języków. Twórz intuicyjne, angażujące projekty, które czynią naukę języków zabawną i skuteczną dla milionów użytkowników.",
+                "requirements": [
+                    "3+ lat doświadczenia w projektowaniu UI/UX",
+                    "Biegłość w narzędziach projektowych (Figma, Sketch, Adobe Creative Suite)",
+                    "Silne portfolio prezentujące projekty aplikacji webowych i mobilnych",
+                    "Doświadczenie z systemami projektowymi i bibliotekami komponentów",
+                    "Znajomość badań użytkowników i testów użyteczności",
+                    "Zrozumienie zasad dostępności",
+                    "Doświadczenie z prototypowaniem i przepływami użytkownika",
+                    "Dobre umiejętności komunikacyjne i prezentacyjne"
+                ],
+                "benefits": [
+                    "Konkurencyjne wynagrodzenie z opcjami equity",
+                    "Elastyczne godziny pracy i możliwość pracy zdalnej",
+                    "Ubezpieczenie zdrowotne i świadczenia wellness",
+                    "Budżet na rozwój zawodowy",
+                    "Najnowszy MacBook Pro i licencje narzędzi projektowych",
+                    "Coroczne wyjazdy zespołowe w Szwajcarii",
+                    "Darmowy dostęp do wszystkich funkcji premium Lingano"
+                ]
+            },
+            "devopsEngineer": {
+                "title": "Inżynier DevOps",
+                "department": "Infrastruktura",
+                "location": "Zdalnie / Zurych",
+                "type": "Pełny etat",
+                "description": "Pomóż nam budować i utrzymywać solidną, skalowalną infrastrukturę, która wspiera miliony uczących się języków na całym świecie. Pracuj z technologiami chmurowymi, automatyzacją i systemami monitorowania.",
+                "requirements": [
+                    "4+ lat doświadczenia w DevOps lub Site Reliability Engineering",
+                    "Solidna znajomość platform chmurowych (preferowany AWS)",
+                    "Doświadczenie z Infrastructure as Code (Terraform, CloudFormation)",
+                    "Biegłość w konteneryzacji (Docker, Kubernetes)",
+                    "Doświadczenie z pipeline'ami CI/CD (GitHub Actions, Jenkins)",
+                    "Znajomość narzędzi monitorowania i logowania (Prometheus, Grafana, ELK)",
+                    "Umiejętności skryptowe (Bash, Python lub Go)",
+                    "Zrozumienie wymagań bezpieczeństwa i zgodności"
+                ],
+                "benefits": [
+                    "Konkurencyjne wynagrodzenie z opcjami equity",
+                    "Elastyczne godziny pracy i możliwość pracy zdalnej",
+                    "Ubezpieczenie zdrowotne i świadczenia wellness",
+                    "Budżet na rozwój zawodowy",
+                    "Najnowszy MacBook Pro i sprzęt",
+                    "Coroczne wyjazdy zespołowe w Szwajcarii",
+                    "Darmowy dostęp do wszystkich funkcji premium Lingano"
+                ]
+            }
+        },
+        "requirements": "Wymagania",
+        "benefits": "Korzyści",
+        "applyNow": "Aplikuj Teraz",
+        "cta": {
+            "title": "Nie Widzisz Idealnej Roli?",
+            "subtitle": "Zawsze szukamy utalentowanych osób, które podzielają naszą pasję do edukacji i technologii. Skontaktuj się z nami!",
+            "contactUs": "Skontaktuj się z nami"
+        }
     }
 }

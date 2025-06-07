@@ -159,5 +159,153 @@
         "sort": "Sort",
         "export": "Export",
         "import": "Import"
+    },
+    "careers": {
+        "hero": {
+            "title": "Join Our Mission",
+            "subtitle": "Help us revolutionize language learning and make education accessible to everyone around the world. Build the future of learning with us.",
+            "viewPositions": "View Open Positions",
+            "learnCulture": "Learn About Our Culture"
+        },
+        "culture": {
+            "title": "Our Culture & Values",
+            "subtitle": "We believe in creating an environment where everyone can thrive and make a meaningful impact."
+        },
+        "values": {
+            "global": {
+                "title": "Global Impact",
+                "description": "We're building products that connect people across cultures and languages worldwide."
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "We embrace cutting-edge technology and creative solutions to solve complex problems."
+            },
+            "collaboration": {
+                "title": "Collaboration",
+                "description": "We work together as one team, sharing knowledge and supporting each other's growth."
+            },
+            "passion": {
+                "title": "Passion",
+                "description": "We're passionate about education and creating meaningful experiences for our users."
+            }
+        },
+        "openPositions": {
+            "title": "Open Positions",
+            "subtitle": "Join our team and help build the future of language learning"
+        },
+        "positions": {
+            "frontendDev": {
+                "title": "Frontend Developer",
+                "department": "Engineering",
+                "location": "Remote / Zurich",
+                "type": "Full-time",
+                "description": "We're looking for a talented Frontend Developer to help build beautiful, responsive user interfaces for our language learning platform using React, TypeScript, and modern web technologies.",
+                "requirements": [
+                    "3+ years of experience with React and TypeScript",
+                    "Strong knowledge of HTML5, CSS3, and modern JavaScript",
+                    "Experience with state management (Redux, Zustand, or similar)",
+                    "Familiarity with CSS frameworks (Tailwind CSS preferred)",
+                    "Experience with testing frameworks (Jest, React Testing Library)",
+                    "Understanding of responsive design and cross-browser compatibility",
+                    "Knowledge of version control systems (Git)",
+                    "Good communication skills in English"
+                ],
+                "benefits": [
+                    "Competitive salary with equity options",
+                    "Flexible working hours and remote work options",
+                    "Health insurance and wellness benefits",
+                    "Professional development budget",
+                    "Latest MacBook Pro and equipment",
+                    "Annual team retreats in Switzerland",
+                    "Free access to all Lingano premium features"
+                ]
+            },
+            "backendDev": {
+                "title": "Backend Developer",
+                "department": "Engineering",
+                "location": "Remote / Zurich",
+                "type": "Full-time",
+                "description": "Join our backend team to build scalable, secure APIs and services that power our language learning platform. Work with Node.js, PostgreSQL, and cloud technologies.",
+                "requirements": [
+                    "4+ years of experience with Node.js and TypeScript",
+                    "Strong knowledge of RESTful APIs and GraphQL",
+                    "Experience with databases (PostgreSQL, Redis)",
+                    "Knowledge of cloud platforms (AWS, Google Cloud, or Azure)",
+                    "Experience with containerization (Docker, Kubernetes)",
+                    "Understanding of microservices architecture",
+                    "Experience with CI/CD pipelines",
+                    "Good understanding of security best practices"
+                ],
+                "benefits": [
+                    "Competitive salary with equity options",
+                    "Flexible working hours and remote work options",
+                    "Health insurance and wellness benefits",
+                    "Professional development budget",
+                    "Latest MacBook Pro and equipment",
+                    "Annual team retreats in Switzerland",
+                    "Free access to all Lingano premium features"
+                ]
+            },
+            "uiUxDesigner": {
+                "title": "UI/UX Designer",
+                "department": "Design",
+                "location": "Remote / Zurich",
+                "type": "Full-time",
+                "description": "Shape the user experience of our language learning platform. Create intuitive, engaging designs that make learning languages fun and effective for millions of users.",
+                "requirements": [
+                    "3+ years of experience in UI/UX design",
+                    "Proficiency in design tools (Figma, Sketch, Adobe Creative Suite)",
+                    "Strong portfolio showcasing web and mobile app designs",
+                    "Experience with design systems and component libraries",
+                    "Knowledge of user research and usability testing",
+                    "Understanding of accessibility principles",
+                    "Experience with prototyping and user flows",
+                    "Good communication and presentation skills"
+                ],
+                "benefits": [
+                    "Competitive salary with equity options",
+                    "Flexible working hours and remote work options",
+                    "Health insurance and wellness benefits",
+                    "Professional development budget",
+                    "Latest MacBook Pro and design tools licenses",
+                    "Annual team retreats in Switzerland",
+                    "Free access to all Lingano premium features"
+                ]
+            },
+            "devopsEngineer": {
+                "title": "DevOps Engineer",
+                "department": "Infrastructure",
+                "location": "Remote / Zurich",
+                "type": "Full-time",
+                "description": "Help us build and maintain robust, scalable infrastructure that supports millions of language learners worldwide. Work with cloud technologies, automation, and monitoring systems.",
+                "requirements": [
+                    "4+ years of experience in DevOps or Site Reliability Engineering",
+                    "Strong knowledge of cloud platforms (AWS preferred)",
+                    "Experience with Infrastructure as Code (Terraform, CloudFormation)",
+                    "Proficiency with containerization (Docker, Kubernetes)",
+                    "Experience with CI/CD pipelines (GitHub Actions, Jenkins)",
+                    "Knowledge of monitoring and logging tools (Prometheus, Grafana, ELK)",
+                    "Scripting skills (Bash, Python, or Go)",
+                    "Understanding of security and compliance requirements"
+                ],
+                "benefits": [
+                    "Competitive salary with equity options",
+                    "Flexible working hours and remote work options",
+                    "Health insurance and wellness benefits",
+                    "Professional development budget",
+                    "Latest MacBook Pro and equipment",
+                    "Annual team retreats in Switzerland",
+                    "Free access to all Lingano premium features"
+                ]
+            }
+        },
+        "requirements": "Requirements",
+        "benefits": "Benefits",
+        "applyNow": "Apply Now",
+        "cta": {
+            "title": "Don't See the Perfect Role?",
+            "subtitle": "We're always looking for talented individuals who share our passion for education and technology. Reach out to us!",
+            "contactUs": "Contact Us"
+        }
     }
 }

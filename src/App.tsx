@@ -8,6 +8,7 @@ import FAQ from "./components/FAQ"; // Import the new component
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import UserProfile from "./pages/UserProfile";
+import Careers from "./pages/Careers";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./i18n"; // Initialize i18n
@@ -131,6 +132,7 @@ const App = () => {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/profile" element={<UserProfile />} />
+                        <Route path="/careers" element={<Careers />} />
                     </Routes>
                 </main>
             </div>

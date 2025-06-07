@@ -159,5 +159,153 @@
         "sort": "Trier",
         "export": "Exporter",
         "import": "Importer"
+    },
+    "careers": {
+        "hero": {
+            "title": "Rejoignez Notre Mission",
+            "subtitle": "Aidez-nous à révolutionner l'apprentissage des langues et à rendre l'éducation accessible à tous dans le monde entier. Construisez l'avenir de l'apprentissage avec nous.",
+            "viewPositions": "Voir les Postes Ouverts",
+            "learnCulture": "Découvrir Notre Culture"
+        },
+        "culture": {
+            "title": "Notre Culture & Valeurs",
+            "subtitle": "Nous croyons en la création d'un environnement où chacun peut s'épanouir et avoir un impact significatif."
+        },
+        "values": {
+            "global": {
+                "title": "Impact Global",
+                "description": "Nous construisons des produits qui connectent les personnes de différentes cultures et langues dans le monde entier."
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "Nous adoptons des technologies de pointe et des solutions créatives pour résoudre des problèmes complexes."
+            },
+            "collaboration": {
+                "title": "Collaboration",
+                "description": "Nous travaillons ensemble comme une seule équipe, partageant les connaissances et soutenant la croissance de chacun."
+            },
+            "passion": {
+                "title": "Passion",
+                "description": "Nous sommes passionnés par l'éducation et créons des expériences significatives pour nos utilisateurs."
+            }
+        },
+        "openPositions": {
+            "title": "Postes Ouverts",
+            "subtitle": "Rejoignez notre équipe et aidez à construire l'avenir de l'apprentissage des langues"
+        },
+        "positions": {
+            "frontendDev": {
+                "title": "Développeur Frontend",
+                "department": "Ingénierie",
+                "location": "À distance / Zurich",
+                "type": "Temps plein",
+                "description": "Nous recherchons un développeur Frontend talentueux pour aider à construire de belles interfaces utilisateur responsives pour notre plateforme d'apprentissage des langues utilisant React, TypeScript et les technologies web modernes.",
+                "requirements": [
+                    "3+ années d'expérience avec React et TypeScript",
+                    "Solides connaissances en HTML5, CSS3 et JavaScript moderne",
+                    "Expérience avec la gestion d'état (Redux, Zustand ou similaire)",
+                    "Familiarité avec les frameworks CSS (Tailwind CSS préféré)",
+                    "Expérience avec les frameworks de test (Jest, React Testing Library)",
+                    "Compréhension du design responsive et de la compatibilité cross-browser",
+                    "Connaissance des systèmes de contrôle de version (Git)",
+                    "Bonnes compétences de communication en anglais"
+                ],
+                "benefits": [
+                    "Salaire compétitif avec options d'equity",
+                    "Horaires flexibles et options de travail à distance",
+                    "Assurance santé et avantages bien-être",
+                    "Budget de développement professionnel",
+                    "Dernier MacBook Pro et équipement",
+                    "Retraites d'équipe annuelles en Suisse",
+                    "Accès gratuit à toutes les fonctionnalités premium de Lingano"
+                ]
+            },
+            "backendDev": {
+                "title": "Développeur Backend",
+                "department": "Ingénierie",
+                "location": "À distance / Zurich",
+                "type": "Temps plein",
+                "description": "Rejoignez notre équipe backend pour construire des APIs et services évolutifs et sécurisés qui alimentent notre plateforme d'apprentissage des langues. Travaillez avec Node.js, PostgreSQL et les technologies cloud.",
+                "requirements": [
+                    "4+ années d'expérience avec Node.js et TypeScript",
+                    "Solides connaissances des APIs RESTful et GraphQL",
+                    "Expérience avec les bases de données (PostgreSQL, Redis)",
+                    "Connaissance des plateformes cloud (AWS, Google Cloud ou Azure)",
+                    "Expérience avec la conteneurisation (Docker, Kubernetes)",
+                    "Compréhension de l'architecture microservices",
+                    "Expérience avec les pipelines CI/CD",
+                    "Bonne compréhension des meilleures pratiques de sécurité"
+                ],
+                "benefits": [
+                    "Salaire compétitif avec options d'equity",
+                    "Horaires flexibles et options de travail à distance",
+                    "Assurance santé et avantages bien-être",
+                    "Budget de développement professionnel",
+                    "Dernier MacBook Pro et équipement",
+                    "Retraites d'équipe annuelles en Suisse",
+                    "Accès gratuit à toutes les fonctionnalités premium de Lingano"
+                ]
+            },
+            "uiUxDesigner": {
+                "title": "Designer UI/UX",
+                "department": "Design",
+                "location": "À distance / Zurich",
+                "type": "Temps plein",
+                "description": "Façonnez l'expérience utilisateur de notre plateforme d'apprentissage des langues. Créez des designs intuitifs et engageants qui rendent l'apprentissage des langues amusant et efficace pour des millions d'utilisateurs.",
+                "requirements": [
+                    "3+ années d'expérience en design UI/UX",
+                    "Maîtrise des outils de design (Figma, Sketch, Adobe Creative Suite)",
+                    "Portfolio solide présentant des designs d'applications web et mobiles",
+                    "Expérience avec les systèmes de design et bibliothèques de composants",
+                    "Connaissance de la recherche utilisateur et des tests d'utilisabilité",
+                    "Compréhension des principes d'accessibilité",
+                    "Expérience avec le prototypage et les flux utilisateur",
+                    "Bonnes compétences de communication et de présentation"
+                ],
+                "benefits": [
+                    "Salaire compétitif avec options d'equity",
+                    "Horaires flexibles et options de travail à distance",
+                    "Assurance santé et avantages bien-être",
+                    "Budget de développement professionnel",
+                    "Dernier MacBook Pro et licences d'outils de design",
+                    "Retraites d'équipe annuelles en Suisse",
+                    "Accès gratuit à toutes les fonctionnalités premium de Lingano"
+                ]
+            },
+            "devopsEngineer": {
+                "title": "Ingénieur DevOps",
+                "department": "Infrastructure",
+                "location": "À distance / Zurich",
+                "type": "Temps plein",
+                "description": "Aidez-nous à construire et maintenir une infrastructure robuste et évolutive qui supporte des millions d'apprenants de langues dans le monde entier. Travaillez avec les technologies cloud, l'automatisation et les systèmes de monitoring.",
+                "requirements": [
+                    "4+ années d'expérience en DevOps ou Site Reliability Engineering",
+                    "Solides connaissances des plateformes cloud (AWS préféré)",
+                    "Expérience avec Infrastructure as Code (Terraform, CloudFormation)",
+                    "Maîtrise de la conteneurisation (Docker, Kubernetes)",
+                    "Expérience avec les pipelines CI/CD (GitHub Actions, Jenkins)",
+                    "Connaissance des outils de monitoring et logging (Prometheus, Grafana, ELK)",
+                    "Compétences en scripting (Bash, Python ou Go)",
+                    "Compréhension des exigences de sécurité et conformité"
+                ],
+                "benefits": [
+                    "Salaire compétitif avec options d'equity",
+                    "Horaires flexibles et options de travail à distance",
+                    "Assurance santé et avantages bien-être",
+                    "Budget de développement professionnel",
+                    "Dernier MacBook Pro et équipement",
+                    "Retraites d'équipe annuelles en Suisse",
+                    "Accès gratuit à toutes les fonctionnalités premium de Lingano"
+                ]
+            }
+        },
+        "requirements": "Exigences",
+        "benefits": "Avantages",
+        "applyNow": "Postuler Maintenant",
+        "cta": {
+            "title": "Vous Ne Trouvez Pas le Rôle Parfait ?",
+            "subtitle": "Nous recherchons toujours des personnes talentueuses qui partagent notre passion pour l'éducation et la technologie. Contactez-nous !",
+            "contactUs": "Nous Contacter"
+        }
     }
 }

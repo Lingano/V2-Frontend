@@ -1,5 +1,6 @@
 import { FaTwitter, FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 // Swiss Flag SVG Component
 const SwissFlag = () => (
@@ -25,7 +26,7 @@ function Footer() {
             title: t("footer.company"),
             links: [
                 { name: t("footer.about"), href: "#" },
-                { name: t("footer.careers"), href: "#" },
+                { name: t("footer.careers"), href: "/careers" },
                 { name: t("footer.blog"), href: "#" },
                 { name: t("footer.press"), href: "#" },
             ],
