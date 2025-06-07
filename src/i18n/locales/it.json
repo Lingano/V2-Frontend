@@ -160,6 +160,48 @@
         "export": "Esporta",
         "import": "Importa"
     },
+    "auth": {
+        "login": {
+            "title": "Benvenuto in Lingano",
+            "subtitle": "Accedi per continuare ad imparare",
+            "email": "Email",
+            "password": "Password",
+            "emailPlaceholder": "Inserisci la tua email",
+            "passwordPlaceholder": "Inserisci la tua password",
+            "loginButton": "Accedi",
+            "createAccount": "Crea un account",
+            "forgotPassword": "Password dimenticata?",
+            "errors": {
+                "missingFields": "Per favore inserisci sia email che password.",
+                "invalidCredentials": "Accesso fallito. Controlla le tue credenziali.",
+                "unexpected": "Si è verificato un errore inaspettato."
+            }
+        },
+        "register": {
+            "title": "Crea un Account",
+            "subtitle": "Registrati per iniziare ad imparare",
+            "profilePicture": "Foto Profilo",
+            "name": "Nome",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Conferma Password",
+            "namePlaceholder": "Il tuo nome completo",
+            "emailPlaceholder": "Inserisci la tua email",
+            "passwordPlaceholder": "Crea una password",
+            "confirmPasswordPlaceholder": "Conferma password",
+            "registerButton": "Registrati",
+            "alreadyHaveAccount": "Hai già un account?",
+            "crop": "Ritaglia",
+            "reCrop": "Ritaglia di nuovo",
+            "avatarPreview": "anteprima avatar",
+            "errors": {
+                "allFieldsRequired": "Per favore compila tutti i campi obbligatori.",
+                "passwordMismatch": "Le password non corrispondono.",
+                "registrationFailed": "Registrazione fallita. Riprova.",
+                "unexpected": "Si è verificato un errore inaspettato."
+            }
+        }
+    },
     "careers": {
         "hero": {
             "title": "Unisciti alla Nostra Missione",

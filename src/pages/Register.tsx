@@ -1,7 +1,9 @@
 // @ts-nocheck
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Cropper as ReactCropper } from "react-cropper";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 // Utility to create a cropped image blob
 async function getCroppedImg(imageSrc: string, cropper: any): Promise<Blob> {
@@ -22,6 +24,7 @@ async function getCroppedImg(imageSrc: string, cropper: any): Promise<Blob> {
 }
 
 const Register = () => {
+    const { t } = useTranslation();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -54,17 +57,15 @@ const Register = () => {
         }
         // reset crop states when switching file
         setCroppedBlob(null);
-    };
-
-    // Before submitting, use croppedBlob if available
+    }; // Before submitting, use croppedBlob if available
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!name || !email || !password || !confirm) {
-            setError("All fields are required.");
+            setError(t("auth.register.errors.allFieldsRequired"));
             return;
         }
         if (password !== confirm) {
-            setError("Passwords do not match.");
+            setError(t("auth.register.errors.passwordMismatch"));
             return;
         }
         setLoading(true);
@@ -96,203 +97,223 @@ const Register = () => {
                 navigate("/profile");
             } else {
                 setError(
-                    data.message || "Registration failed. Please try again."
+                    data.message || t("auth.register.errors.registrationFailed")
                 );
             }
         } catch (err: any) {
-            setError(err.message || "An unexpected error occurred.");
+            setError(err.message || t("auth.register.errors.unexpected"));
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 p-4">
-            <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md max-w-md w-full">
-                <div className="card-body">
-                    <h1 className="text-4xl font-bold text-center text-primary mb-4">
-                        Create an Account
-                    </h1>
-                    <p className="text-center text-base-content mb-6">
-                        Sign up to start learning
-                    </p>
-                    {error && (
-                        <div role="alert" className="alert alert-error mb-4">
-                            <span>{error}</span>
-                        </div>
-                    )}
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-control mb-4">
-                            <label className="label justify-center">
-                                <span className="label-text text-base-content">
-                                    Profile Picture
-                                </span>
-                            </label>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900 p-4">
+            {/* Language Switcher */}
+            <div className="absolute top-4 right-4">
+                <LanguageSwitcher />
+            </div>
 
-                            {/* Multiple Croppers */}
-                            {imageSrc && !preview && (
-                                <div className="mb-4">
-                                    <ReactCropper
-                                        ref={cropperRef}
-                                        src={imageSrc}
-                                        style={{ height: 300, width: "100%" }}
-                                        aspectRatio={1}
-                                        guides
-                                        viewMode={1}
-                                        background={false}
-                                        autoCropArea={1}
-                                    />
-                                    <button
-                                        type="button"
-                                        className="btn btn-sm btn-primary mt-2"
-                                        onClick={async () => {
-                                            const cropperInstance =
-                                                cropperRef.current?.cropper;
-                                            if (!cropperInstance) return;
-                                            const blob = await getCroppedImg(
-                                                imageSrc,
-                                                cropperInstance
-                                            );
-                                            setCroppedBlob(blob);
-                                            setPreview(
-                                                URL.createObjectURL(blob)
-                                            );
-                                        }}
-                                    >
-                                        Crop
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Preview */}
-                            {preview && (
-                                <div className="flex justify-center mb-4">
-                                    <div className="avatar">
-                                        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto">
-                                            <img
-                                                src={preview}
-                                                alt="avatar preview"
-                                                className="object-cover w-full h-full"
-                                            />
+            <div className="max-w-lg w-full space-y-8">
+                <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md max-w-md w-full">
+                    <div className="card-body">
+                        <h1 className="text-4xl font-bold text-center text-primary mb-4">
+                            {t("auth.register.title")}
+                        </h1>{" "}
+                        <p className="text-center text-base-content mb-6">
+                            {t("auth.register.subtitle")}
+                        </p>
+                        {error && (
+                            <div
+                                role="alert"
+                                className="alert alert-error mb-4"
+                            >
+                                <span>{error}</span>
+                            </div>
+                        )}
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-control mb-4">
+                                <label className="label justify-center">
+                                    <span className="label-text text-base-content">
+                                        {t("auth.register.profilePicture")}
+                                    </span>
+                                </label>
+                                {/* Multiple Croppers */}
+                                {imageSrc && !preview && (
+                                    <div className="mb-4">
+                                        <ReactCropper
+                                            ref={cropperRef}
+                                            src={imageSrc}
+                                            style={{
+                                                height: 300,
+                                                width: "100%",
+                                            }}
+                                            aspectRatio={1}
+                                            guides
+                                            viewMode={1}
+                                            background={false}
+                                            autoCropArea={1}
+                                        />{" "}
+                                        <button
+                                            type="button"
+                                            className="btn btn-sm btn-primary mt-2"
+                                            onClick={async () => {
+                                                const cropperInstance =
+                                                    cropperRef.current?.cropper;
+                                                if (!cropperInstance) return;
+                                                const blob =
+                                                    await getCroppedImg(
+                                                        imageSrc,
+                                                        cropperInstance
+                                                    );
+                                                setCroppedBlob(blob);
+                                                setPreview(
+                                                    URL.createObjectURL(blob)
+                                                );
+                                            }}
+                                        >
+                                            {t("auth.register.crop")}
+                                        </button>
+                                    </div>
+                                )}
+                                {/* Preview */}
+                                {preview && (
+                                    <div className="flex justify-center mb-4">
+                                        <div className="avatar">
+                                            <div className="w-24 h-24 rounded-full overflow-hidden mx-auto">
+                                                <img
+                                                    src={preview}
+                                                    alt="avatar preview"
+                                                    className="object-cover w-full h-full"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )}
-                            {preview && (
-                                <div className="flex justify-center mb-4">
-                                    <button
-                                        className="btn btn-sm btn-secondary"
-                                        onClick={() => {
-                                            setPreview(null);
-                                            setCroppedBlob(null);
-                                        }}
-                                    >
-                                        Re-crop
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* File input */}
-                            <input
-                                type="file"
-                                accept="image/*"
-                                className="file-input file-input-bordered w-full bg-base-100/50 mt-2"
-                                onChange={onFileChange}
-                            />
-                        </div>
-
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-base-content">
-                                    Name
-                                </span>
-                            </label>
-                            <input
-                                type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Your full name"
-                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
-                                required
-                                disabled={loading}
-                            />
-                        </div>
-
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-base-content">
-                                    Email
-                                </span>
-                            </label>
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Enter your email"
-                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
-                                required
-                                disabled={loading}
-                            />
-                        </div>
-
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-base-content">
-                                    Password
-                                </span>
-                            </label>
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Create a password"
-                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
-                                required
-                                disabled={loading}
-                            />
-                        </div>
-
-                        <div className="form-control mb-6">
-                            <label className="label">
-                                <span className="label-text text-base-content">
-                                    Confirm Password
-                                </span>
-                            </label>
-                            <input
-                                type="password"
-                                value={confirm}
-                                onChange={(e) => setConfirm(e.target.value)}
-                                placeholder="Confirm password"
-                                className="input input-bordered w-full bg-base-100/50 focus:border-primary"
-                                required
-                                disabled={loading}
-                            />
-                        </div>
-
-                        <div className="form-control mt-6">
-                            <button
-                                type="submit"
-                                className="btn btn-primary w-full"
-                                disabled={loading}
-                            >
-                                {loading ? (
-                                    <span className="loading loading-spinner"></span>
-                                ) : (
-                                    "Register"
+                                )}{" "}
+                                {preview && (
+                                    <div className="flex justify-center mb-4">
+                                        <button
+                                            className="btn btn-sm btn-secondary"
+                                            onClick={() => {
+                                                setPreview(null);
+                                                setCroppedBlob(null);
+                                            }}
+                                        >
+                                            {t("auth.register.reCrop")}
+                                        </button>
+                                    </div>
                                 )}
-                            </button>
-                        </div>
+                                {/* File input */}
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    className="file-input file-input-bordered w-full bg-base-100/50 mt-2"
+                                    onChange={onFileChange}
+                                />
+                            </div>
 
-                        <div className="text-sm flex justify-between mt-4">
-                            <button
-                                type="button"
-                                className="link link-hover text-primary"
-                                onClick={() => navigate("/login2")}
-                            >
-                                Already have an account?
-                            </button>
-                        </div>
-                    </form>
+                            <div className="form-control mb-4">
+                                <label className="label">
+                                    <span className="label-text text-base-content">
+                                        {t("auth.register.name")}
+                                    </span>
+                                </label>
+                                <input
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    placeholder={t(
+                                        "auth.register.namePlaceholder"
+                                    )}
+                                    className="input input-bordered w-full bg-base-100/50 focus:border-primary"
+                                    required
+                                    disabled={loading}
+                                />
+                            </div>
+
+                            <div className="form-control mb-4">
+                                <label className="label">
+                                    <span className="label-text text-base-content">
+                                        {t("auth.register.email")}
+                                    </span>
+                                </label>
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder={t(
+                                        "auth.register.emailPlaceholder"
+                                    )}
+                                    className="input input-bordered w-full bg-base-100/50 focus:border-primary"
+                                    required
+                                    disabled={loading}
+                                />
+                            </div>
+
+                            <div className="form-control mb-4">
+                                <label className="label">
+                                    <span className="label-text text-base-content">
+                                        {t("auth.register.password")}
+                                    </span>
+                                </label>
+                                <input
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    }
+                                    placeholder={t(
+                                        "auth.register.passwordPlaceholder"
+                                    )}
+                                    className="input input-bordered w-full bg-base-100/50 focus:border-primary"
+                                    required
+                                    disabled={loading}
+                                />
+                            </div>
+
+                            <div className="form-control mb-6">
+                                <label className="label">
+                                    <span className="label-text text-base-content">
+                                        {t("auth.register.confirmPassword")}
+                                    </span>
+                                </label>
+                                <input
+                                    type="password"
+                                    value={confirm}
+                                    onChange={(e) => setConfirm(e.target.value)}
+                                    placeholder={t(
+                                        "auth.register.confirmPasswordPlaceholder"
+                                    )}
+                                    className="input input-bordered w-full bg-base-100/50 focus:border-primary"
+                                    required
+                                    disabled={loading}
+                                />
+                            </div>
+                            <div className="form-control mt-6">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary w-full"
+                                    disabled={loading}
+                                >
+                                    {loading ? (
+                                        <span className="loading loading-spinner"></span>
+                                    ) : (
+                                        t("auth.register.registerButton")
+                                    )}
+                                </button>
+                            </div>
+
+                            <div className="text-sm flex justify-between mt-4">
+                                <button
+                                    type="button"
+                                    className="link link-hover text-primary"
+                                    onClick={() => navigate("/login")}
+                                >
+                                    {t("auth.register.alreadyHaveAccount")}
+                                </button>{" "}
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

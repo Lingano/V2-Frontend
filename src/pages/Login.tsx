@@ -1,18 +1,20 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Login = () => {
+    const { t } = useTranslation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email || !password) {
-            setError("Please enter both email and password.");
+            setError(t("auth.login.errors.missingFields"));
             return;
         }
         setLoading(true);
@@ -29,12 +31,11 @@ const Login = () => {
                 navigate("/profile");
             } else {
                 setError(
-                    data.message ||
-                        "Login failed. Please check your credentials."
+                    data.message || t("auth.login.errors.invalidCredentials")
                 );
             }
         } catch (err: any) {
-            setError(err.message || "An unexpected error occurred.");
+            setError(err.message || t("auth.login.errors.unexpected"));
         } finally {
             setLoading(false);
         }
@@ -42,13 +43,19 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-400/5 via-cyan-500/5 to-blue-600/5 p-4">
+            {/* Language Switcher */}
+            <div className="absolute top-4 right-4">
+                <LanguageSwitcher />
+            </div>
+
             <div className="card shadow-xl border border-base-200 bg-base-100/20 backdrop-blur-md max-w-md w-full">
+                {" "}
                 <div className="card-body">
                     <h1 className="text-4xl font-bold text-center text-primary mb-4">
-                        Welcome to Lingano
+                        {t("auth.login.title")}
                     </h1>
                     <p className="text-center text-base-content mb-6">
-                        Sign in to continue learning
+                        {t("auth.login.subtitle")}
                     </p>
 
                     {error && (
@@ -71,40 +78,41 @@ const Login = () => {
                     )}
 
                     <form onSubmit={handleSubmit}>
+                        {" "}
                         <div className="form-control mb-4">
                             <label className="label">
                                 <span className="label-text text-base-content">
-                                    Email
+                                    {t("auth.login.email")}
                                 </span>
                             </label>
                             <input
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Enter your email"
+                                placeholder={t("auth.login.emailPlaceholder")}
                                 className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
                                 disabled={loading}
                             />
                         </div>
-
                         <div className="form-control mb-6">
                             <label className="label">
                                 <span className="label-text text-base-content">
-                                    Password
+                                    {t("auth.login.password")}
                                 </span>
                             </label>
                             <input
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Enter your password"
+                                placeholder={t(
+                                    "auth.login.passwordPlaceholder"
+                                )}
                                 className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
                                 disabled={loading}
                             />
-                        </div>
-
+                        </div>{" "}
                         <div className="form-control mt-6">
                             <button
                                 type="submit"
@@ -114,25 +122,24 @@ const Login = () => {
                                 {loading ? (
                                     <span className="loading loading-spinner"></span>
                                 ) : (
-                                    "Log In"
+                                    t("auth.login.loginButton")
                                 )}
                             </button>
                         </div>
-
                         <div className="text-sm flex justify-between mt-4">
                             <button
                                 type="button"
                                 className="link link-hover text-primary"
                                 onClick={() => navigate("/register")}
                             >
-                                Create an account
+                                {t("auth.login.createAccount")}
                             </button>
                             <button
                                 type="button"
                                 className="link link-hover text-primary"
                                 onClick={() => navigate("/forgot-password")}
                             >
-                                Forgot password?
+                                {t("auth.login.forgotPassword")}
                             </button>
                         </div>
                     </form>

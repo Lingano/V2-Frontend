@@ -160,6 +160,48 @@
         "export": "Export",
         "import": "Import"
     },
+    "auth": {
+        "login": {
+            "title": "Welcome to Lingano",
+            "subtitle": "Sign in to continue learning",
+            "email": "Email",
+            "password": "Password",
+            "emailPlaceholder": "Enter your email",
+            "passwordPlaceholder": "Enter your password",
+            "loginButton": "Log In",
+            "createAccount": "Create an account",
+            "forgotPassword": "Forgot password?",
+            "errors": {
+                "missingFields": "Please enter both email and password.",
+                "invalidCredentials": "Login failed. Please check your credentials.",
+                "unexpected": "An unexpected error occurred."
+            }
+        },
+        "register": {
+            "title": "Create an Account",
+            "subtitle": "Sign up to start learning",
+            "profilePicture": "Profile Picture",
+            "name": "Name",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Confirm Password",
+            "namePlaceholder": "Your full name",
+            "emailPlaceholder": "Enter your email",
+            "passwordPlaceholder": "Create a password",
+            "confirmPasswordPlaceholder": "Confirm password",
+            "registerButton": "Register",
+            "alreadyHaveAccount": "Already have an account?",
+            "crop": "Crop",
+            "reCrop": "Re-crop",
+            "avatarPreview": "avatar preview",
+            "errors": {
+                "allFieldsRequired": "All fields are required.",
+                "passwordMismatch": "Passwords do not match.",
+                "registrationFailed": "Registration failed. Please try again.",
+                "unexpected": "An unexpected error occurred."
+            }
+        }
+    },
     "careers": {
         "hero": {
             "title": "Join Our Mission",

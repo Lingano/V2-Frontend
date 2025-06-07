@@ -160,6 +160,48 @@
         "export": "Exportieren",
         "import": "Importieren"
     },
+    "auth": {
+        "login": {
+            "title": "Willkommen bei Lingano",
+            "subtitle": "Melden Sie sich an, um weiter zu lernen",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+            "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+            "loginButton": "Anmelden",
+            "createAccount": "Konto erstellen",
+            "forgotPassword": "Passwort vergessen?",
+            "errors": {
+                "missingFields": "Bitte geben Sie sowohl E-Mail als auch Passwort ein.",
+                "invalidCredentials": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.",
+                "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+            }
+        },
+        "register": {
+            "title": "Konto erstellen",
+            "subtitle": "Registrieren Sie sich, um mit dem Lernen zu beginnen",
+            "profilePicture": "Profilbild",
+            "name": "Name",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "confirmPassword": "Passwort bestätigen",
+            "namePlaceholder": "Ihr vollständiger Name",
+            "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+            "passwordPlaceholder": "Erstellen Sie ein Passwort",
+            "confirmPasswordPlaceholder": "Passwort bestätigen",
+            "registerButton": "Registrieren",
+            "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+            "crop": "Zuschneiden",
+            "reCrop": "Neu zuschneiden",
+            "avatarPreview": "Avatar-Vorschau",
+            "errors": {
+                "allFieldsRequired": "Bitte füllen Sie alle erforderlichen Felder aus.",
+                "passwordMismatch": "Passwörter stimmen nicht überein.",
+                "registrationFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+                "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+            }
+        }
+    },
     "careers": {
         "hero": {
             "title": "Werde Teil unserer Mission",

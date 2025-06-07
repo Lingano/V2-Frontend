@@ -160,6 +160,48 @@
         "export": "Eksportuj",
         "import": "Importuj"
     },
+    "auth": {
+        "login": {
+            "title": "Witamy w Lingano",
+            "subtitle": "Zaloguj się, aby kontynuować naukę",
+            "email": "Email",
+            "password": "Hasło",
+            "emailPlaceholder": "Wprowadź swój email",
+            "passwordPlaceholder": "Wprowadź swoje hasło",
+            "loginButton": "Zaloguj się",
+            "createAccount": "Utwórz konto",
+            "forgotPassword": "Zapomniałeś hasła?",
+            "errors": {
+                "missingFields": "Proszę wprowadzić zarówno email jak i hasło.",
+                "invalidCredentials": "Logowanie nie powiodło się. Sprawdź swoje dane logowania.",
+                "unexpected": "Wystąpił nieoczekiwany błąd."
+            }
+        },
+        "register": {
+            "title": "Utwórz Konto",
+            "subtitle": "Zarejestruj się, aby rozpocząć naukę",
+            "profilePicture": "Zdjęcie Profilowe",
+            "name": "Imię",
+            "email": "Email",
+            "password": "Hasło",
+            "confirmPassword": "Potwierdź Hasło",
+            "namePlaceholder": "Twoje pełne imię",
+            "emailPlaceholder": "Wprowadź swój email",
+            "passwordPlaceholder": "Utwórz hasło",
+            "confirmPasswordPlaceholder": "Potwierdź hasło",
+            "registerButton": "Zarejestruj się",
+            "alreadyHaveAccount": "Masz już konto?",
+            "crop": "Przytnij",
+            "reCrop": "Przytnij ponownie",
+            "avatarPreview": "podgląd awatara",
+            "errors": {
+                "allFieldsRequired": "Proszę wypełnić wszystkie wymagane pola.",
+                "passwordMismatch": "Hasła nie są zgodne.",
+                "registrationFailed": "Rejestracja nie powiodła się. Spróbuj ponownie.",
+                "unexpected": "Wystąpił nieoczekiwany błąd."
+            }
+        }
+    },
     "careers": {
         "hero": {
             "title": "Dołącz do Naszej Misji",

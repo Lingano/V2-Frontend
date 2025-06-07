@@ -160,6 +160,48 @@
         "export": "Exporter",
         "import": "Importer"
     },
+    "auth": {
+        "login": {
+            "title": "Bienvenue chez Lingano",
+            "subtitle": "Connectez-vous pour continuer à apprendre",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "emailPlaceholder": "Entrez votre e-mail",
+            "passwordPlaceholder": "Entrez votre mot de passe",
+            "loginButton": "Se connecter",
+            "createAccount": "Créer un compte",
+            "forgotPassword": "Mot de passe oublié ?",
+            "errors": {
+                "missingFields": "Veuillez entrer à la fois l'e-mail et le mot de passe.",
+                "invalidCredentials": "Connexion échouée. Veuillez vérifier vos identifiants.",
+                "unexpected": "Une erreur inattendue s'est produite."
+            }
+        },
+        "register": {
+            "title": "Créer un Compte",
+            "subtitle": "Inscrivez-vous pour commencer à apprendre",
+            "profilePicture": "Photo de Profil",
+            "name": "Nom",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "confirmPassword": "Confirmer le Mot de passe",
+            "namePlaceholder": "Votre nom complet",
+            "emailPlaceholder": "Entrez votre e-mail",
+            "passwordPlaceholder": "Créez un mot de passe",
+            "confirmPasswordPlaceholder": "Confirmez le mot de passe",
+            "registerButton": "S'inscrire",
+            "alreadyHaveAccount": "Vous avez déjà un compte ?",
+            "crop": "Recadrer",
+            "reCrop": "Re-recadrer",
+            "avatarPreview": "aperçu de l'avatar",
+            "errors": {
+                "allFieldsRequired": "Veuillez remplir tous les champs obligatoires.",
+                "passwordMismatch": "Les mots de passe ne correspondent pas.",
+                "registrationFailed": "Inscription échouée. Veuillez réessayer.",
+                "unexpected": "Une erreur inattendue s'est produite."
+            }
+        }
+    },
     "careers": {
         "hero": {
             "title": "Rejoignez Notre Mission",
