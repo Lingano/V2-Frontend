@@ -73,6 +73,12 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                     >
                         Careers
                     </Link>
+                    <Link
+                        to="/contact"
+                        className="hover:text-primary transition-colors"
+                    >
+                        {t("navbar.contact")}
+                    </Link>
                 </div>{" "}
                 {/* Desktop Actions */}
                 <div className="hidden md:flex gap-3 items-center">
@@ -186,7 +192,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {t("navbar.pricing")}
-                        </a>
+                        </a>{" "}
                         <Link
                             to="/about"
                             className="block hover:text-primary transition-colors"
@@ -200,6 +206,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             Careers
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className="block hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            {t("navbar.contact")}
                         </Link>
                         <div className="pt-3 border-t border-base-200 space-y-2">
                             <Link

@@ -524,5 +524,77 @@
             "satisfaction": "User Satisfaction",
             "support": "Support"
         }
+    },
+    "contact": {
+        "hero": {
+            "title": "Get in Touch",
+            "subtitle": "Have questions about Lingano? We're here to help you on your language learning journey."
+        },
+        "email": {
+            "title": "Email Us",
+            "description": "Send us a message anytime"
+        },
+        "phone": {
+            "title": "Call Us",
+            "description": "Mon-Fri, 9AM-6PM CET"
+        },
+        "address": {
+            "title": "Visit Us",
+            "description": "Our headquarters in Switzerland"
+        },
+        "hours": {
+            "title": "Business Hours",
+            "description": "Monday to Friday"
+        },
+        "form": {
+            "title": "Send us a Message",
+            "subtitle": "Fill out the form below and we'll get back to you as soon as possible.",
+            "name": "Full Name",
+            "namePlaceholder": "Enter your full name",
+            "email": "Email Address",
+            "emailPlaceholder": "Enter your email address",
+            "subject": "Subject",
+            "subjectPlaceholder": "Select a subject",
+            "subjects": {
+                "general": "General Inquiry",
+                "support": "Technical Support",
+                "business": "Business Partnership",
+                "press": "Press & Media"
+            },
+            "message": "Message",
+            "messagePlaceholder": "Tell us how we can help you...",
+            "send": "Send Message",
+            "sending": "Sending...",
+            "success": {
+                "title": "Message Sent!",
+                "message": "Thank you for contacting us. We'll get back to you within 24 hours."
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Quick answers to common questions about Lingano.",
+            "pricing": {
+                "question": "How does pricing work?",
+                "answer": "We offer flexible pricing plans to suit different learning needs. You can choose between monthly and yearly subscriptions, with discounts available for annual plans."
+            },
+            "languages": {
+                "question": "What languages do you support?",
+                "answer": "Lingano currently supports over 25 languages including Spanish, French, German, Italian, Portuguese, Chinese, Japanese, and many more. We're constantly adding new languages based on user demand."
+            },
+            "support": {
+                "question": "What kind of support do you provide?",
+                "answer": "We provide comprehensive support including 24/7 email support, live chat during business hours, extensive documentation, video tutorials, and access to our community forum."
+            }
+        },
+        "resources": {
+            "title": "Helpful Resources",
+            "about": "Learn more about our company",
+            "careers": "Join our team",
+            "help": "Browse help documentation"
+        },
+        "map": {
+            "title": "Find Us",
+            "description": "Visit our office in the heart of Geneva, Switzerland. We're always happy to meet with our users and partners."
+        }
     }
 }
