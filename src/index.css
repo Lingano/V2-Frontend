@@ -1,2 +1,58 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Custom Golden Light Theme */
+[data-theme="golden-light"] {
+    /* Base colors with warm golden undertones */
+    --color-base-100: oklch(98% 0.015 65); /* Very light warm cream */
+    --color-base-200: oklch(95% 0.02 60); /* Light warm beige */
+    --color-base-300: oklch(92% 0.025 55); /* Slightly darker warm beige */
+    --color-base-content: oklch(25% 0.02 50); /* Dark warm brown for text */
+
+    /* Primary colors - Rich gold palette */
+    --color-primary: oklch(65% 0.15 85); /* Rich golden yellow */
+    --color-primary-content: oklch(
+        98% 0.01 85
+    ); /* Very light gold for text on primary */
+
+    /* Secondary colors - Complementary warm tones */
+    --color-secondary: oklch(55% 0.12 45); /* Warm amber brown */
+    --color-secondary-content: oklch(
+        98% 0.01 45
+    ); /* Light text for secondary */
+
+    /* Accent colors - Deeper gold */
+    --color-accent: oklch(60% 0.18 75); /* Deep golden orange */
+    --color-accent-content: oklch(98% 0.01 75); /* Light text for accent */
+
+    /* Neutral colors - Warm grays */
+    --color-neutral: oklch(45% 0.03 50); /* Warm medium gray */
+    --color-neutral-content: oklch(98% 0.01 50); /* Light text for neutral */
+
+    /* Status colors with golden undertones */
+    --color-info: oklch(70% 0.12 220); /* Warm blue */
+    --color-info-content: oklch(98% 0.01 220);
+    --color-success: oklch(65% 0.15 140); /* Warm green */
+    --color-success-content: oklch(98% 0.01 140);
+    --color-warning: oklch(75% 0.2 75); /* Golden orange warning */
+    --color-warning-content: oklch(20% 0.05 75);
+    --color-error: oklch(65% 0.2 25); /* Warm red */
+    --color-error-content: oklch(98% 0.01 25);
+
+    /* Border radius - slightly more rounded for elegant feel */
+    --radius-selector: 1.2rem;
+    --radius-field: 0.5rem;
+    --radius-box: 0.75rem;
+
+    /* Sizing */
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+
+    /* Effects */
+    --border: 1px;
+    --depth: 1; /* Adds subtle shadows */
+    --noise: 0; /* No noise effect */
+
+    /* Additional golden color scheme */
+    color-scheme: light;
+}

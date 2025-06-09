@@ -11,6 +11,7 @@ import UserProfile from "./pages/UserProfile";
 import Careers from "./pages/Careers";
 import JobDetail from "./pages/JobDetail";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./i18n"; // Initialize i18n
@@ -24,13 +25,12 @@ const App = () => {
         }
         return false;
     });
-
     useEffect(() => {
         if (darkMode) {
             document.documentElement.setAttribute("data-theme", "dark");
             localStorage.setItem("dark-mode", "true");
         } else {
-            document.documentElement.setAttribute("data-theme", "light");
+            document.documentElement.setAttribute("data-theme", "golden-light");
             localStorage.setItem("dark-mode", "false");
         }
     }, [darkMode]);
@@ -151,11 +151,20 @@ const App = () => {
                                     setDarkMode={setDarkMode}
                                 />
                             }
-                        />
+                        />{" "}
                         <Route
                             path="/careers/:jobId"
                             element={
                                 <JobDetail
+                                    darkMode={darkMode}
+                                    setDarkMode={setDarkMode}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/contact"
+                            element={
+                                <Contact
                                     darkMode={darkMode}
                                     setDarkMode={setDarkMode}
                                 />
