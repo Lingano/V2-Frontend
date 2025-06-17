@@ -113,9 +113,9 @@ const App = () => {
                                     <Navbar
                                         darkMode={darkMode}
                                         setDarkMode={setDarkMode}
-                                    />
-                                    <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">
-                                        <Hero />
+                                    />{" "}
+                                    <section className="text-base-content transition-colors duration-300 bg-transparent">
+                                        <Hero darkMode={darkMode} />
                                     </section>
                                     <div className="divider divider-primary mx-auto w-1/2"></div>
                                     <section className="py-20 text-base-content transition-colors duration-300 bg-transparent">

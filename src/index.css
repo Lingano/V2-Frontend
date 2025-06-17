@@ -56,3 +56,81 @@
     /* Additional golden color scheme */
     color-scheme: light;
 }
+
+/* Custom utilities for Globe component */
+.bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Custom animations for floating elements */
+@keyframes float-slow {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(-1deg);
+    }
+}
+
+@keyframes float-slow-delay-1 {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(8px) rotate(-0.5deg);
+    }
+    66% {
+        transform: translateY(-12px) rotate(0.5deg);
+    }
+}
+
+@keyframes pulse-slow {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse-slow-delay-1 {
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes pulse-slow-delay-2 {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+.animate-float-slow-delay-1 {
+    animation: float-slow-delay-1 10s ease-in-out infinite;
+}
+.animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+}
+.animate-pulse-slow-delay-1 {
+    animation: pulse-slow-delay-1 8s ease-in-out infinite;
+}
+.animate-pulse-slow-delay-2 {
+    animation: pulse-slow-delay-2 7s ease-in-out infinite;
+}
