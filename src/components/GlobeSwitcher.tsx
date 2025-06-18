@@ -57,13 +57,13 @@ const GlobeSwitcher: React.FC<GlobeSwitcherProps> = () => {
                         >
                             Minimal
                         </button>
-                    </div>
+                    </div>{" "}
                     <div className="text-xs text-base-content/70 mt-1 max-w-40">
                         {globeType === "simple" && "🌟 Simple Background Globe"}
                         {globeType === "standard" &&
                             "🔵 Point Mesh + Language Points"}
                         {globeType === "minimal" &&
-                            "⭕ Pure Point Mesh Structure"}
+                            "🌑 Black Globe with Continents"}
                     </div>
                 </div>
             </div>
