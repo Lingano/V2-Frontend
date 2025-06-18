@@ -5,6 +5,7 @@ import frFlag from "../../assets/flags/fr.svg";
 import itFlag from "../../assets/flags/it.svg";
 import chFlag from "../../assets/flags/ch.svg";
 import plFlag from "../../assets/flags/pl.svg";
+import heFlag from "../../assets/flags/he.svg";
 
 interface FlagProps {
     className?: string;
@@ -60,6 +61,15 @@ export const PolishFlag: React.FC<FlagProps> = ({ className = "w-5 h-4" }) => (
     <img
         src={plFlag}
         alt="Polish Flag"
+        className={`${className} rounded-sm shadow-sm border border-gray-200 object-cover`}
+    />
+);
+
+// Hebrew/Israeli Flag - using professional flag-icons
+export const HebrewFlag: React.FC<FlagProps> = ({ className = "w-5 h-4" }) => (
+    <img
+        src={heFlag}
+        alt="Hebrew Flag"
         className={`${className} rounded-sm shadow-sm border border-gray-200 object-cover`}
     />
 );

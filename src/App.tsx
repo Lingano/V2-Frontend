@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import CTA from "./components/CTA";
@@ -17,6 +18,8 @@ import Navbar from "./components/Navbar";
 import "./i18n"; // Initialize i18n
 
 const App = () => {
+    const { i18n } = useTranslation();
+
     const [darkMode, setDarkMode] = useState(() => {
         if (typeof window !== "undefined") {
             const saved = localStorage.getItem("dark-mode");
@@ -25,6 +28,14 @@ const App = () => {
         }
         return false;
     });
+
+    // Handle RTL direction for Hebrew
+    useEffect(() => {
+        const isRTL = i18n.language === "he";
+        document.documentElement.dir = isRTL ? "rtl" : "ltr";
+        document.documentElement.lang = i18n.language;
+    }, [i18n.language]);
+
     useEffect(() => {
         if (darkMode) {
             document.documentElement.setAttribute("data-theme", "dark");

@@ -1,0 +1,600 @@
+{
+    "navbar": {
+        "home": "בית",
+        "features": "תכונות",
+        "pricing": "מחירים",
+        "about": "אודות",
+        "contact": "צור קשר",
+        "signIn": "התחברות",
+        "signUp": "הרשמה"
+    },
+    "hero": {
+        "title": "שלטו בשפות חדשות עם לינגנו",
+        "subtitle": "למדו שפות באופן טבעי, יעיל ומהנה עם הפלטפורמה החדשנית שלנו המיועדת ללומדים מודרניים. פתחו הזדמנויות גלובליות והתחברו לעולם.",
+        "getStarted": "התחילו ללמוד",
+        "learnMore": "למדו עוד"
+    },
+    "features": {
+        "title": "למה לבחור בלינגנו",
+        "subtitle": "גלו את התכונות החזקות שהופכות את לימוד השפות ליעיל ומהנה",
+        "aiPowered": {
+            "title": "למידה מבוססת בינה מלאכותית",
+            "description": "נצלו בינה מלאכותית מתקדמת כדי להתאים אישית את חוויית הלמידה שלכם, להתאים לקצב שלכם ולהתמקד בתחומים שבהם אתם זקוקים לשיפור הכי הרבה."
+        },
+        "realTime": {
+            "title": "תרגול בזמן אמת",
+            "description": "תרגלו דיבור והאזנה עם משוב בזמן אמת, שיחות אינטראקטיביות ואימון הגייה חי."
+        },
+        "secure": {
+            "title": "מעקב התקדמות",
+            "description": "עקבו אחר מסע הלמידה שלכם עם אנליטיקה מפורטת, תגי הישגים והמלצות לימוד מותאמות אישית."
+        },
+        "scalable": {
+            "title": "למידה גמישה",
+            "description": "למדו בקצב שלכם עם שיעורים בגודל נגיסה, גישה לא מקוונת ותכנית לימודים שמתאימה עצמה לתזמונים והמטרות שלכם."
+        },
+        "integration": {
+            "title": "טבילה תרבותית",
+            "description": "חוו שימוש אותנטי בשפה דרך תוכן תרבותי, תרחישים מהעולם האמיתי ואינטראקציות עם דוברי השפה הם."
+        },
+        "support": {
+            "title": "מורים מומחים",
+            "description": "קבלו הדרכה אישית ממורי שפה מוסמכים הזמינים לסשנים אחד על אחד ותמיכת קהילה."
+        }
+    },
+    "pricing": {
+        "title": "בחרו את תוכנית הלמידה שלכם",
+        "subtitle": "בחרו את התוכנית המושלמת למסע לימוד השפות שלכם",
+        "monthly": "חודשי",
+        "yearly": "שנתי",
+        "save": "חסכו 20%",
+        "starter": {
+            "name": "בסיסי",
+            "price": "$9",
+            "period": "/חודש",
+            "description": "מושלם למתחילים שמתחילים את המסע שלהם",
+            "features": [
+                "גישה לשפה אחת",
+                "שיעורים ותרגילים בסיסיים",
+                "גישה לאפליקציה ניידת",
+                "מעקב התקדמות",
+                "פורומי קהילה"
+            ],
+            "button": "התחילו ניסיון חינם"
+        },
+        "professional": {
+            "name": "פרימיום",
+            "price": "$19",
+            "period": "/חודש",
+            "description": "תכונות מתקדמות ללומדים רציניים",
+            "features": [
+                "גישה לכל השפות",
+                "שיעורים וסיפורים מתקדמים",
+                "הורדות לא מקוונות",
+                "סשני מורה חיים",
+                "תוכנית לימודים מותאמת אישית",
+                "תמיכה בעדיפות"
+            ],
+            "button": "התחילו ניסיון חינם",
+            "popular": "הכי פופולרי"
+        },
+        "enterprise": {
+            "name": "משפחה",
+            "price": "$29",
+            "period": "/חודש",
+            "description": "מושלם למשפחות וקבוצות קטנות",
+            "features": [
+                "עד 6 בני משפחה",
+                "כל התכונות של פרימיום",
+                "לוח בקרה של התקדמות משפחתית",
+                "בקרות הורים",
+                "אתגרים קבוצתיים",
+                "תמיכה משפחתית ייעודית"
+            ],
+            "button": "התחילו ניסיון חינם"
+        }
+    },
+    "footer": {
+        "tagline": "הופכים את לימוד השפות לטבעי, יעיל ומהנה לכולם.",
+        "company": "חברה",
+        "about": "אודות",
+        "careers": "קריירה",
+        "blog": "בלוג",
+        "press": "עיתונות",
+        "resources": "משאבים",
+        "languageGuides": "מדריכי שפות",
+        "community": "קהילה",
+        "tutors": "מורים",
+        "faq": "שאלות נפוצות",
+        "legal": "משפטי",
+        "privacy": "מדיניות פרטיות",
+        "terms": "תנאי שירות",
+        "cookies": "מדיניות עוגיות",
+        "contact": "צור קשר",
+        "contactUs": "צרו איתנו קשר",
+        "email": "hello@lingano.com",
+        "phone": "1-800-LINGANO22",
+        "madeInSwitzerland": "נוצר באהבה ב",
+        "switzerland": "שווייץ",
+        "copyright": "© {{year}} לינגנו. כל הזכויות שמורות."
+    },
+    "cta": {
+        "title": "מוכנים להתחיל את הניסיון החינמי שלכם?",
+        "subtitle": "הצטרפו לאלפי לומדים ששולטים בשפות חדשות עם לינגנו. התחילו את הניסיון החינמי שלכם עכשיו ופתחו את הפוטנציאל שלכם!",
+        "startTrial": "🚀 התחילו ניסיון חינם עכשיו",
+        "viewPricing": "הצגת מחירים"
+    },
+    "faq": {
+        "title": "שאלות נפוצות",
+        "whatIsLingano": {
+            "question": "מה זה לינגנו?",
+            "answer": "לינגנו הוא פלטפורמה מודרנית המיועדת להפוך את לימוד השפות למהיר, מהנה ויעיל, עם עדכונים בזמן אמת ואנליטיקה מתקדמת."
+        },
+        "freePlan": {
+            "question": "האם יש תוכנית חינמית?",
+            "answer": "כן! התוכנית הבסיסית שלנו חינמית ונותנת לכם גישה לשיעורי יסוד ותרגול יומי."
+        },
+        "upgradeCancel": {
+            "question": "האם אוכל לשדרג או לבטל בכל עת?",
+            "answer": "בהחלט! אתם יכולים לשדרג, להוריד או לבטל את המנוי שלכם בכל עת מהגדרות החשבון שלכם."
+        },
+        "teamPlans": {
+            "question": "האם אתם מציעים תוכניות צוות?",
+            "answer": "כן, תוכנית הצוות שלנו מושלמת לארגונים וכוללת ניהול צוות ותמיכה ייעודית."
+        }
+    },
+    "common": {
+        "loading": "טוען...",
+        "error": "שגיאה",
+        "success": "הצלחה",
+        "cancel": "ביטול",
+        "save": "שמירה",
+        "delete": "מחיקה",
+        "edit": "עריכה",
+        "close": "סגירה",
+        "back": "חזור",
+        "next": "הבא",
+        "previous": "הקודם",
+        "search": "חיפוש",
+        "filter": "סינון",
+        "sort": "מיון",
+        "export": "יצוא",
+        "import": "יבוא"
+    },
+    "auth": {
+        "login": {
+            "title": "ברוכים הבאים ללינגנו",
+            "subtitle": "התחברו כדי להמשיך ללמוד",
+            "email": "אימייל",
+            "password": "סיסמה",
+            "emailPlaceholder": "הזינו את האימייל שלכם",
+            "passwordPlaceholder": "הזינו את הסיסמה שלכם",
+            "loginButton": "התחברות",
+            "createAccount": "יצירת חשבון",
+            "forgotPassword": "שכחתם סיסמה?",
+            "errors": {
+                "missingFields": "אנא הזינו גם אימייל וגם סיסמה.",
+                "invalidCredentials": "ההתחברות נכשלה. אנא בדקו את הפרטים שלכם.",
+                "unexpected": "אירעה שגיאה לא צפויה."
+            }
+        },
+        "register": {
+            "title": "יצירת חשבון",
+            "subtitle": "הירשמו כדי להתחיל ללמוד",
+            "profilePicture": "תמונת פרופיל",
+            "name": "שם",
+            "email": "אימייל",
+            "password": "סיסמה",
+            "confirmPassword": "אישור סיסמה",
+            "namePlaceholder": "השם המלא שלכם",
+            "emailPlaceholder": "הזינו את האימייל שלכם",
+            "passwordPlaceholder": "צרו סיסמה",
+            "confirmPasswordPlaceholder": "אשרו סיסמה",
+            "registerButton": "הרשמה",
+            "alreadyHaveAccount": "כבר יש לכם חשבון?",
+            "crop": "חיתוך",
+            "reCrop": "חיתוך מחדש",
+            "avatarPreview": "תצוגה מקדימה של האווטר",
+            "errors": {
+                "allFieldsRequired": "כל השדות נדרשים.",
+                "passwordMismatch": "הסיסמאות לא תואמות.",
+                "registrationFailed": "ההרשמה נכשלה. אנא נסו שוב.",
+                "unexpected": "אירעה שגיאה לא צפויה."
+            }
+        }
+    },
+    "careers": {
+        "hero": {
+            "title": "הצטרפו למשימה שלנו",
+            "subtitle": "עזרו לנו לחולל מהפכה בלימוד שפות ולהפוך חינוך לנגיש לכולם ברחבי העולם. בנו איתנו את עתיד הלמידה.",
+            "viewPositions": "הצגת משרות פתוחות",
+            "learnCulture": "למדו על התרבות שלנו"
+        },
+        "culture": {
+            "title": "התרבות והערכים שלנו",
+            "subtitle": "אנחנו מאמינים ביצירת סביבה שבה כל אחד יכול לפרוח ולהשפיע בצורה משמעותית."
+        },
+        "values": {
+            "global": {
+                "title": "השפעה גלובלית",
+                "description": "אנחנו בונים מוצרים שמחברים אנשים על פני תרבויות ושפות ברחבי העולם."
+            },
+            "innovation": {
+                "title": "חדשנות",
+                "description": "אנחנו מאמצים טכנולוגיה מתקדמת ופתרונות יצירתיים כדי לפתור בעיות מורכבות."
+            },
+            "collaboration": {
+                "title": "שיתוף פעולה",
+                "description": "אנחנו עובדים יחד כצוות אחד, חולקים ידע ותומכים בצמיחה של זה בזה."
+            },
+            "passion": {
+                "title": "תשוקה",
+                "description": "אנחנו נלהבים מחינוך ומיצירת חוויות משמעותיות למשתמשים שלנו."
+            }
+        },
+        "openPositions": {
+            "title": "משרות פתוחות",
+            "subtitle": "הצטרפו לצוות שלנו ועזרו לבנות את עתיד לימוד השפות"
+        },
+        "positions": {
+            "frontendDev": {
+                "title": "מפתח Frontend",
+                "department": "הנדסה",
+                "location": "מרחוק / לוגאנו",
+                "type": "משרה מלאה",
+                "workModel": "מרחוק",
+                "compensation": "$80,000 - $120,000",
+                "description": "אנחנו מחפשים מפתח Frontend מוכשר שיעזור לבנות ממשקי משתמש יפים ורספונסיביים לפלטפורמת לימוד השפות שלנו באמצעות React, TypeScript וטכנולוגיות ווב מודרניות.",
+                "requirements": [
+                    "3+ שנות ניסיון עם React ו-TypeScript",
+                    "ידע חזק ב-HTML5, CSS3 ו-JavaScript מודרני",
+                    "ניסיון עם ניהול מצב (Redux, Zustand או דומה)",
+                    "היכרות עם frameworks של CSS (Tailwind CSS מועדף)",
+                    "ניסיון עם frameworks לבדיקות (Jest, React Testing Library)",
+                    "הבנה של עיצוב רספונסיבי ותאימות בין דפדפנים",
+                    "ידע במערכות בקרת גרסאות (Git)",
+                    "כישורי תקשורת טובים באנגלית"
+                ],
+                "responsibilities": [
+                    "פיתוח ותחזוקה של אפליקציות ווב רספונסיביות באמצעות React ו-TypeScript",
+                    "שיתוף פעולה עם מעצבים ליישום רכיבי UI מושלמים לפיקסל",
+                    "אופטימיזציה של אפליקציות למהירות ויכולת הרחבה מקסימלית",
+                    "כתיבת קוד נקי, ניתן לתחזוקה ומתועד היטב",
+                    "השתתפות בביקורות קוד ושמירה על סטנדרטים של קידוד",
+                    "עבודה צמודה עם מפתחי backend לשילוב APIs",
+                    "יישום בדיקות אוטומטיות והבטחת איכות קוד",
+                    "עדכון בטכנולוגיות frontend חדישות ובפרקטיקות מומלצות"
+                ],
+                "qualifications": [
+                    "תואר ראשון במדעי המחשב או תחום קשור",
+                    "ניסיון מוכח עם האקוסיסטם של React ו-JavaScript מודרני",
+                    "הבנה חזקה של יסודות פיתוח ווב",
+                    "ניסיון עם בקרת גרסאות ופיתוח שיתופי",
+                    "כישורי פתרון בעיות ותשומת לב לפרטים",
+                    "יכולת עבודה בסביבה מהירה ו-agile",
+                    "כישורי תקשורת ועבודת צוות מעולים",
+                    "תיק עבודות של פרויקטים קודמים"
+                ],
+                "benefits": [
+                    "משכורת תחרותית עם אפשרויות equity",
+                    "שעות עבודה גמישות ואפשרויות עבודה מרחוק",
+                    "ביטוח בריאות והטבות רווחה",
+                    "תקציב לפיתוח מקצועי",
+                    "MacBook Pro חדיש וציוד",
+                    "נסיעות צוות שנתיות לשווייץ",
+                    "גישה חינמית לכל התכונות הפרימיום של לינגנו"
+                ]
+            },
+            "backendDev": {
+                "title": "מפתח Backend",
+                "department": "הנדסה",
+                "location": "מרחוק / לוגאנו",
+                "type": "משרה מלאה",
+                "workModel": "היברידי",
+                "compensation": "$90,000 - $140,000",
+                "description": "הצטרפו לצוות ה-backend שלנו כדי לבנות APIs ושירותים מדרגיים ובטוחים שמפעילים את פלטפורמת לימוד השפות שלנו. עבדו עם Node.js, PostgreSQL וטכנולוגיות ענן.",
+                "requirements": [
+                    "4+ שנות ניסיון עם Node.js ו-TypeScript",
+                    "ידע חזק ב-RESTful APIs ו-GraphQL",
+                    "ניסיון עם מסדי נתונים (PostgreSQL, Redis)",
+                    "ידע בפלטפורמות ענן (AWS, Google Cloud או Azure)",
+                    "ניסיון עם containerization (Docker, Kubernetes)",
+                    "הבנת אדריכלות microservices",
+                    "ניסיון עם pipelines של CI/CD",
+                    "הבנה טובה של פרקטיקות אבטחה מומלצות"
+                ],
+                "responsibilities": [
+                    "עיצוב ופיתוח שירותי backend ו-APIs מדרגיים",
+                    "בנייה ותחזוקה של אדריכלות microservices",
+                    "אופטימיזציה של שאילתות מסד נתונים והבטחת שלמות נתונים",
+                    "יישום פרקטיקות אבטחה מומלצות ומערכות אימות",
+                    "שיתוף פעולה עם צוות ה-frontend על עיצוב API ושילוב",
+                    "ניטור ביצועי אפליקציה ופתרון בעיות",
+                    "כתיבת בדיקות מקיפות ושמירה על איכות קוד",
+                    "השתתפות באדריכלות מערכת והחלטות טכניות"
+                ],
+                "qualifications": [
+                    "תואר ראשון במדעי המחשב או תחום קשור",
+                    "ניסיון נרחב עם טכנולוגיות server-side",
+                    "הבנה חזקה של עיצוב מסד נתונים ואופטימיזציה",
+                    "ניסיון עם תשתית ענן ופריסה",
+                    "ידע בעקרונות אבטחה ופרקטיקות מומלצות",
+                    "יכולת לעצב מערכות מדרגיות וניתנות לתחזוקה",
+                    "כישורי פתרון בעיות וניתוח חזקים",
+                    "ניסיון עם מתודולוגיות פיתוח agile"
+                ],
+                "benefits": [
+                    "משכורת תחרותית עם אפשרויות equity",
+                    "שעות עבודה גמישות ואפשרויות עבודה מרחוק",
+                    "ביטוח בריאות והטבות רווחה",
+                    "תקציב לפיתוח מקצועי",
+                    "MacBook Pro חדיש וציוד",
+                    "נסיעות צוות שנתיות לשווייץ",
+                    "גישה חינמית לכל התכונות הפרימיום של לינגנו"
+                ]
+            },
+            "uiUxDesigner": {
+                "title": "מעצב UI/UX",
+                "department": "עיצוב",
+                "location": "מרחוק / לוגאנו",
+                "type": "משרה מלאה",
+                "workModel": "מרחוק",
+                "compensation": "$70,000 - $110,000",
+                "description": "עצבו את חוויית המשתמש של פלטפורמת לימוד השפות שלנו. צרו עיצובים אינטואיטיביים ומרתקים שהופכים את לימוד השפות למהנה ויעיל למיליוני משתמשים.",
+                "requirements": [
+                    "3+ שנות ניסיון בעיצוב UI/UX",
+                    "מיומנות בכלי עיצוב (Figma, Sketch, Adobe Creative Suite)",
+                    "תיק עבודות חזק המציג עיצובי ווב ואפליקציה ניידת",
+                    "ניסיון עם מערכות עיצוב וספריות רכיבים",
+                    "ידע במחקר משתמשים ובדיקות שימושיות",
+                    "הבנת עקרונות נגישות",
+                    "ניסיון עם prototyping ו-user flows",
+                    "כישורי תקשורת והצגה טובים"
+                ],
+                "responsibilities": [
+                    "עיצוב ממשקי משתמש לאפליקציות ווב וניידות",
+                    "ביצוע מחקר משתמשים ובדיקות שימושיות",
+                    "יצירת wireframes, prototypes ומפרטי עיצוב",
+                    "פיתוח ותחזוקה של מערכות עיצוב ומדריכי סגנון",
+                    "שיתוף פעולה עם מפתחים להבטחת יישום עיצוב",
+                    "ניתוח משוב משתמשים וחזרה על עיצובים",
+                    "הצגת רעיונות עיצוב לבעלי עניין",
+                    "עדכון במגמות עיצוב ופרקטיקות מומלצות"
+                ],
+                "qualifications": [
+                    "תואר ראשון בעיצוב, HCI או תחום קשור",
+                    "תיק עבודות חזק המדגים תהליך חשיבה עיצובית",
+                    "ניסיון עם מתודולוגיות עיצוב ממוקדות משתמש",
+                    "ידע בעקרונות עיצוב ווב ונייד",
+                    "הבנת מגבלות פיתוח frontend",
+                    "מיומנויות עיצוב ויזואלי וטיפוגרפיה מעולות",
+                    "יכולות תקשורת ושיתוף פעולה חזקות",
+                    "ניסיון ביישום מערכת עיצוב"
+                ],
+                "benefits": [
+                    "משכורת תחרותית עם אפשרויות equity",
+                    "שעות עבודה גמישות ואפשרויות עבודה מרחוק",
+                    "ביטוח בריאות והטבות רווחה",
+                    "תקציב לפיתוח מקצועי",
+                    "MacBook Pro חדיש ורישיונות כלי עיצוב",
+                    "נסיעות צוות שנתיות לשווייץ",
+                    "גישה חינמית לכל התכונות הפרימיום של לינגנו"
+                ]
+            },
+            "devopsEngineer": {
+                "title": "מהנדס DevOps",
+                "department": "תשתית",
+                "location": "מרחוק / לוגאנו",
+                "type": "משרה מלאה",
+                "workModel": "היברידי",
+                "compensation": "$95,000 - $150,000",
+                "description": "עזרו לנו לבנות ולתחזק תשתית חזקה ומדרגית שתומכת במיליוני לומדי שפות ברחבי העולם. עבדו עם טכנולוגיות ענן, אוטומציה ומערכות ניטור.",
+                "requirements": [
+                    "4+ שנות ניסיון ב-DevOps או Site Reliability Engineering",
+                    "ידע חזק בפלטפורמות ענן (AWS מועדף)",
+                    "ניסיון עם Infrastructure as Code (Terraform, CloudFormation)",
+                    "מיומנות עם containerization (Docker, Kubernetes)",
+                    "ניסיון עם pipelines של CI/CD (GitHub Actions, Jenkins)",
+                    "ידע בכלי ניטור ורישום (Prometheus, Grafana, ELK)",
+                    "כישורי סקריפטים (Bash, Python או Go)",
+                    "הבנת דרישות אבטחה ותאימות"
+                ],
+                "responsibilities": [
+                    "עיצוב ותחזוקה של תשתית ענן ו-pipelines פריסה",
+                    "יישום וניהול אפליקציות מכולות עם Kubernetes",
+                    "ניטור ביצועי מערכת והבטחת זמינות גבוהה",
+                    "אוטומציה של provisioning תשתית וניהול תצורה",
+                    "יישום פרקטיקות אבטחה מומלצות ואמצעי תאימות",
+                    "שיתוף פעולה עם צוותי פיתוח על אסטרטגיות פריסה",
+                    "פתרון בעיות ופתרון בעיות תשתית",
+                    "אופטימיזציה של עלויות וביצועים של משאבי ענן"
+                ],
+                "qualifications": [
+                    "תואר ראשון במדעי המחשב או תחום קשור",
+                    "ניסיון נרחב עם פלטפורמות ושירותי ענן",
+                    "ידע חזק ב-containerization ו-orchestration",
+                    "ניסיון עם כלי אוטומציה של תשתית",
+                    "הבנת עקרונות רשת ואבטחה",
+                    "יכולת עבודה עם צוותים רב-תפקידיים",
+                    "כישורי פתרון בעיות וחקירה חזקים",
+                    "ניסיון עם פיתוח agile ופרקטיקות DevOps"
+                ],
+                "benefits": [
+                    "משכורת תחרותית עם אפשרויות equity",
+                    "שעות עבודה גמישות ואפשרויות עבודה מרחוק",
+                    "ביטוח בריאות והטבות רווחה",
+                    "תקציב לפיתוח מקצועי",
+                    "MacBook Pro חדיש וציוד",
+                    "נסיעות צוות שנתיות לשווייץ",
+                    "גישה חינמית לכל התכונות הפרימיום של לינגנו"
+                ]
+            }
+        },
+        "requirements": "דרישות",
+        "benefits": "הטבות",
+        "applyNow": "הגישו מועמדות כעת",
+        "cta": {
+            "title": "לא רואים את התפקיד המושלם?",
+            "subtitle": "אנחנו תמיד מחפשים אנשים מוכשרים שחולקים את התשוקה שלנו לחינוך וטכנולוגיה. צרו איתנו קשר!",
+            "contactUs": "צרו איתנו קשר"
+        }
+    },
+    "jobDetail": {
+        "backToCareers": "חזרה לקריירה",
+        "responsibilities": "אחריות עיקריות",
+        "qualifications": "כישורים",
+        "benefits": "הטבות ויתרונות",
+        "applicationProcess": {
+            "title": "תהליך הגשת מועמדות",
+            "step1": {
+                "title": "הגשת מועמדות",
+                "description": "שלחו לנו את הקורות חיים שלכם וספרו לנו למה אתם מעוניינים"
+            },
+            "step2": {
+                "title": "ראיון טכני",
+                "description": "דיון על הניסיון והכישורים הטכניים שלכם"
+            },
+            "step3": {
+                "title": "ראיון סופי",
+                "description": "הכירו את הצוות ולמדו עוד על התפקיד"
+            }
+        },
+        "readyToApply": "מוכנים להגיש מועמדות?",
+        "applyDescription": "הצטרפו לצוות שלנו ועזרו לנו לבנות את עתיד לימוד השפות. אנחנו לא יכולים לחכות לשמוע מכם!",
+        "applyNow": "הגישו מועמדות כעת",
+        "compensation": "תגמול",
+        "workModel": "מודל עבודה",
+        "remote": "מרחוק",
+        "hybrid": "היברידי",
+        "onsite": "במקום",
+        "fullTime": "משרה מלאה",
+        "partTime": "משרה חלקית",
+        "contract": "חוזה",
+        "internship": "התמחות"
+    },
+    "about": {
+        "hero": {
+            "title": "אודות לינגנו",
+            "subtitle": "אנחנו מחוללים מהפכה בלימוד שפות דרך טכנולוגיה חדשנית ומסירות נלהבת לעזור לאנשים להתחבר על פני תרבויות וגבולות."
+        },
+        "mission": {
+            "title": "המשימה שלנו",
+            "description": "להפוך את לימוד השפות לנגיש, מהנה ויעיל לכולם, לשבור מחסומי תקשורת ולטפח הבנה גלובלית."
+        },
+        "story": {
+            "title": "הסיפור שלנו",
+            "paragraph1": "נוסדה ב-2024, לינגנו נולדה מתצפית פשוטה: שיטות לימוד שפות מסורתיות לא עמדו בקצב של האופן שבו אנשים באמת לומדים ומתקשרים בעידן הדיגיטלי.",
+            "paragraph2": "הצוות שלנו של בלשנים, מחנכים וטכנולוגים התאחד עם חזון משותף ליצור פלטפורמה שמתאימה עצמה לסגנון, קצב ויעדים הייחודיים של כל לומד."
+        },
+        "values": {
+            "title": "הערכים שלנו",
+            "subtitle": "העקרונות שמנחים את כל מה שאנחנו עושים",
+            "innovation": {
+                "title": "חדשנות",
+                "description": "אנחנו דוחפים כל הזמן את הגבולות של טכנולוגיית חינוך כדי ליצור חוויות למידה טובות ויעילות יותר."
+            },
+            "accessibility": {
+                "title": "נגישות",
+                "description": "לימוד שפות צריך להיות זמין לכולם, ללא קשר לרקע, מיקום או סגנון למידה."
+            },
+            "excellence": {
+                "title": "מצוינות",
+                "description": "אנחנו שואפים לאיכות הגבוהה ביותר בכל מה שאנחנו עושים, מיצירת תוכן ועד עיצוב חוויית משתמש."
+            }
+        },
+        "team": {
+            "title": "הכירו את הצוות שלנו",
+            "subtitle": "האנשים הנלהבים מאחורי הצלחת לינגנו",
+            "ceo": {
+                "role": "מנכ\"ל ושותף מייסד",
+                "description": "נלהב מהפיכת לימוד השפות לנגיש לכולם ברחבי העולם."
+            },
+            "cto": {
+                "role": "סמנכ\"ל טכנולוגיות ושותף מייסד",
+                "description": "מוביל את החדשנות הטכנית ומערכות הלמידה מבוססות הבינה המלאכותית שלנו."
+            },
+            "head_linguist": {
+                "role": "ראש הבלשנות",
+                "description": "מבטיח שהתוכן שלנו מדויק מבחינה בלשנית ונכון מבחינה פדגוגית."
+            }
+        },
+        "stats": {
+            "users": "משתמשים פעילים",
+            "languages": "שפות",
+            "satisfaction": "שביעות רצון משתמשים",
+            "support": "תמיכה"
+        }
+    },
+    "contact": {
+        "hero": {
+            "title": "צרו קשר",
+            "subtitle": "יש לכם שאלות על לינגנו? אנחנו כאן כדי לעזור לכם במסע לימוד השפות שלכם."
+        },
+        "email": {
+            "title": "שלחו לנו אימייל",
+            "description": "שלחו לנו הודעה בכל עת"
+        },
+        "phone": {
+            "title": "התקשרו אלינו",
+            "description": "ב'-ו', 9:00-18:00 CET"
+        },
+        "address": {
+            "title": "בקרו אותנו",
+            "description": "המטה שלנו בשווייץ"
+        },
+        "hours": {
+            "title": "שעות פעילות",
+            "description": "ראשון עד שישי"
+        },
+        "form": {
+            "title": "שלחו לנו הודעה",
+            "subtitle": "מלאו את הטופס למטה ונחזור אליכם בהקדם האפשרי.",
+            "name": "שם מלא",
+            "namePlaceholder": "הזינו את השם המלא שלכם",
+            "email": "כתובת אימייל",
+            "emailPlaceholder": "הזינו את כתובת האימייל שלכם",
+            "subject": "נושא",
+            "subjectPlaceholder": "בחרו נושא",
+            "subjects": {
+                "general": "פנייה כללית",
+                "support": "תמיכה טכנית",
+                "business": "שיתוף פעולה עסקי",
+                "press": "עיתונות ומדיה"
+            },
+            "message": "הודעה",
+            "messagePlaceholder": "ספרו לנו איך אנחנו יכולים לעזור לכם...",
+            "send": "שלחו הודעה",
+            "sending": "שולח...",
+            "success": {
+                "title": "ההודעה נשלחה!",
+                "message": "תודה שיצרתם איתנו קשר. נחזור אליכם תוך 24 שעות."
+            }
+        },
+        "faq": {
+            "title": "שאלות נפוצות",
+            "subtitle": "תשובות מהירות לשאלות נפוצות על לינגנו.",
+            "pricing": {
+                "question": "איך עובדת התמחור?",
+                "answer": "אנחנו מציעים תוכניות תמחור גמישות שמתאימות לצרכי למידה שונים. אתם יכולים לבחור בין מנויים חודשיים ושנתיים, עם הנחות זמינות לתוכניות שנתיות."
+            },
+            "languages": {
+                "question": "אילו שפות אתם תומכים?",
+                "answer": "לינגנו כרגע תומכת ביותר מ-25 שפות כולל ספרדית, צרפתית, גרמנית, איטלקית, פורטוגזית, סינית, יפנית ועוד רבות. אנחנו כל הזמן מוסיפים שפות חדשות על בסיס הביקוש של המשתמשים."
+            },
+            "support": {
+                "question": "איזה סוג תמיכה אתם מספקים?",
+                "answer": "אנחנו מספקים תמיכה מקיפה כולל תמיכת אימייל 24/7, צ'אט חי בשעות פעילות, תיעוד נרחב, מדריכים בווידאו וגישה לפורום הקהילה שלנו."
+            }
+        },
+        "resources": {
+            "title": "משאבים מועילים",
+            "about": "למדו עוד על החברה שלנו",
+            "careers": "הצטרפו לצוות שלנו",
+            "help": "עיינו בתיעוד עזרה"
+        },
+        "map": {
+            "title": "מצאו אותנו",
+            "description": "בקרו במשרד שלנו בלב ז'נבה, שווייץ. אנחנו תמיד שמחים להיפגש עם המשתמשים והשותפים שלנו."
+        }
+    }
+}

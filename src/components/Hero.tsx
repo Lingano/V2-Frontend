@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import GlobeSimple from "./GlobeSimple";
+import GlobeSwitcher from "./GlobeSwitcher";
 
 interface HeroProps {
     darkMode?: boolean; // Keep prop for backward compatibility
@@ -10,7 +10,7 @@ const Hero: React.FC<HeroProps> = () => {
     return (
         <section className="relative isolate overflow-hidden py-24 sm:py-32 bg-transparent text-base-content min-h-screen flex items-center">
             {/* Globe Background */}
-            <GlobeSimple />
+            <GlobeSwitcher />
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-3xl text-center">
                     <h1 className="text-5xl font-bold tracking-tight text-primary sm:text-7xl transition-colors duration-300 drop-shadow-lg">

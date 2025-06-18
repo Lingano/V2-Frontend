@@ -7,6 +7,7 @@ import {
     FrenchFlag,
     ItalianFlag,
     PolishFlag,
+    HebrewFlag,
 } from "./flags";
 
 interface Language {
@@ -21,6 +22,7 @@ const languages: Language[] = [
     { code: "fr", name: "Français", FlagComponent: FrenchFlag },
     { code: "it", name: "Italiano", FlagComponent: ItalianFlag },
     { code: "pl", name: "Polski", FlagComponent: PolishFlag },
+    { code: "he", name: "עברית", FlagComponent: HebrewFlag },
 ];
 
 const LanguageSwitcher: React.FC = () => {

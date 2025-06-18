@@ -105,18 +105,39 @@ const GlobeSimple: React.FC<GlobeSimpleProps> = ({ className = "" }) => {
     }, []); // Initialize globe settings
     useEffect(() => {
         if (globeEl.current && !isLoading) {
-            const globe = globeEl.current; // Set initial camera position - adjusted size
+            const globe = globeEl.current;
+
+            // Set initial camera position - adjusted size
             globe.pointOfView({ lat: 20, lng: 0, altitude: 1.6 });
 
             // Disable user interactions but keep controls functional
             globe.controls().enableZoom = false;
             globe.controls().enablePan = false;
             globe.controls().enableRotate = false;
-            globe.controls().enableDamping = false; // Start slower auto-rotation for better performance
+            globe.controls().enableDamping = false;
+
+            // Start slower auto-rotation for better performance
             globe.controls().autoRotate = true;
-            globe.controls().autoRotateSpeed = 0.15;
+            globe.controls().autoRotateSpeed = 0.15; // Ensure globe sphere is solid and visible
+            setTimeout(() => {
+                const scene = globe.scene();
+                const globeMesh = scene.getObjectByName("globe");
+                console.log("Globe mesh found:", !!globeMesh);
+                if (globeMesh && globeMesh.material) {
+                    console.log("Setting globe material properties");
+                    globeMesh.material.transparent = false;
+                    globeMesh.material.opacity = 1.0;
+                    globeMesh.material.roughness = 0.3;
+                    globeMesh.material.metalness = 0.1;
+                    globeMesh.material.color.setHex(
+                        darkMode ? 0x0a0f1c : 0x1e40af
+                    );
+                    globeMesh.material.needsUpdate = true;
+                    globeMesh.visible = true;
+                }
+            }, 100);
         }
-    }, [isLoading]); // Throttled mouse parallax effect for better performance
+    }, [isLoading, darkMode]); // Re-run when theme changes// Throttled mouse parallax effect for better performance
     const handleMouseMove = useCallback((event: React.MouseEvent) => {
         if (globeEl.current) {
             const rect = event.currentTarget.getBoundingClientRect();
@@ -152,38 +173,36 @@ const GlobeSimple: React.FC<GlobeSimpleProps> = ({ className = "" }) => {
                     ref={globeEl}
                     width={Math.max(size.width * 1.2, 1400)}
                     height={Math.max(size.height * 1.2, 1400)}
-                    backgroundColor="rgba(0,0,0,0)"
+                    backgroundColor="rgba(0, 255, 0, 0)"
                     showGlobe={true}
                     showGraticules={false}
                     showAtmosphere={true}
+                    globeImageUrl="" // Empty string to force solid color
                     globeMaterial={{
-                        color: darkMode ? "#1e293b" : "#f1f5f9",
-                        emissive: darkMode ? "#0f172a" : "#e2e8f0",
-                        emissiveIntensity: 0.1,
-                        shininess: 0.7,
+                        color: darkMode ? "#0a0f1c" : "#1e40af",
+                        emissive: darkMode ? "#0a0f1c" : "#1e40af",
+                        emissiveIntensity: 0.3,
+                        shininess: 100,
                         opacity: 1.0,
                         transparent: false,
                     }}
                     atmosphereColor={
                         darkMode
-                            ? "rgba(96, 165, 250, 0.4)"
-                            : "rgba(59, 130, 246, 0.3)"
+                            ? "rgba(96, 165, 250, 0.25)"
+                            : "rgba(59, 130, 246, 0.2)"
                     }
-                    atmosphereAltitude={0.15} // Country outlines - optimized for performance
+                    atmosphereAltitude={0.1}
+                    // Only country outlines - no fill
                     polygonsData={countries}
-                    polygonCapColor={() => {
-                        return darkMode
-                            ? "rgba(30, 41, 59, 0.6)"
-                            : "rgba(241, 245, 249, 0.7)";
-                    }}
-                    polygonSideColor={() => "rgba(0, 0, 0, 0)"}
+                    polygonCapColor="rgba(0,0,0,0)" // Transparent fill
+                    polygonSideColor="rgba(0,0,0,0)" // Transparent sides
                     polygonStrokeColor={() => {
                         return darkMode
-                            ? "rgba(96, 165, 250, 0.4)"
-                            : "rgba(59, 130, 246, 0.5)";
+                            ? "rgba(255, 255, 255, 0.8)"
+                            : "rgba(255, 255, 255, 0.9)";
                     }}
                     polygonsTransitionDuration={0}
-                    polygonAltitude={0}
+                    polygonAltitude={0.002} // Slightly raised for visibility
                     // Arcs only - no points
                     arcsData={arcsData}
                     arcColor={() =>

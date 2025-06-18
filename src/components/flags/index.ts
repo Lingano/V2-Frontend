@@ -5,4 +5,5 @@ export {
     ItalianFlag,
     SwissFlag,
     PolishFlag,
+    HebrewFlag,
 } from "./FlagComponents";

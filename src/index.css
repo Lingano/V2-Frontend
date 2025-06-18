@@ -134,3 +134,88 @@
 .animate-pulse-slow-delay-2 {
     animation: pulse-slow-delay-2 7s ease-in-out infinite;
 }
+
+/* RTL Support for Hebrew */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .navbar-start {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+[dir="rtl"] .navbar-end {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="rtl"] .dropdown-end {
+    left: 0;
+    right: auto;
+}
+
+/* Ensure proper spacing and alignment for RTL layouts */
+[dir="rtl"] .menu li > a,
+[dir="rtl"] .menu li > button {
+    text-align: right;
+}
+
+[dir="rtl"] .card-actions {
+    justify-content: flex-start;
+}
+
+[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+[dir="rtl"] .stats {
+    direction: ltr; /* Keep stats in LTR for numbers */
+}
+
+[dir="rtl"] .stats .stat {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .breadcrumbs ol {
+    flex-direction: row-reverse;
+}
+
+/* Flip icons and arrows for RTL */
+[dir="rtl"] .btn .icon-left {
+    order: 1;
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .btn .icon-right {
+    order: -1;
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+/* Fix form layout for RTL */
+[dir="rtl"] .form-control .label {
+    text-align: right;
+}
+
+[dir="rtl"] .input,
+[dir="rtl"] .textarea,
+[dir="rtl"] .select {
+    text-align: right;
+}
+
+/* Timeline adjustments for RTL */
+[dir="rtl"] .timeline li {
+    direction: rtl;
+}
+
+[dir="rtl"] .timeline-start {
+    text-align: right;
+}
+
+[dir="rtl"] .timeline-end {
+    text-align: left;
+}

@@ -9,6 +9,7 @@ import deTranslations from "./locales/de.json";
 import frTranslations from "./locales/fr.json";
 import itTranslations from "./locales/it.json";
 import plTranslations from "./locales/pl.json";
+import heTranslations from "./locales/he.json";
 
 const resources = {
     en: {
@@ -25,6 +26,9 @@ const resources = {
     },
     pl: {
         translation: plTranslations,
+    },
+    he: {
+        translation: heTranslations,
     },
 };
 
