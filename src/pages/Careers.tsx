@@ -229,10 +229,9 @@ const Careers = ({
 
     return (
         <div className="min-h-screen bg-base-100">
-            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />{" "}
             {/* Hero Section */}
-            <section className="relative isolate overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24">
+            <section className="careers-hero-simple-glow relative isolate overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-4xl text-center">
                         <h1 className="text-4xl font-bold tracking-tight text-base-content sm:text-6xl lg:text-7xl">
@@ -251,17 +250,26 @@ const Careers = ({
                             </a>
                         </div>
                     </div>
-                </div>
-            </section>
-
+                </div>{" "}
+            </section>{" "}
             {/* Company Credos */}
-            <section className="py-24 bg-base-200/30">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl text-center mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight text-base-content sm:text-4xl">
+            <section className="py-32 bg-gradient-to-br from-base-200/40 via-base-100/20 to-base-200/30 relative z-10 overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.02] via-transparent to-secondary/[0.02]"></div>
+                <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-secondary/5 to-accent/5 rounded-full blur-3xl"></div>
+                <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+                    <div className="mx-auto max-w-3xl text-center mb-20">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 mb-6">
+                            <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                            <span className="text-sm font-semibold text-primary">
+                                Company Values
+                            </span>
+                        </div>
+                        <h2 className="text-4xl font-bold tracking-tight text-base-content sm:text-5xl lg:text-6xl mb-6">
                             {t("careers.credos.title")}
                         </h2>
-                        <p className="mt-4 text-lg text-base-content/70">
+                        <p className="text-xl text-base-content/80 leading-relaxed">
                             {t("careers.credos.subtitle")}
                         </p>
                     </div>
@@ -269,23 +277,47 @@ const Careers = ({
                         {companyCredos.map((credo, index) => (
                             <div
                                 key={index}
-                                className="bg-base-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
+                                className="group bg-gradient-to-br from-base-100/80 to-base-100/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 border border-base-300/20 hover:border-primary/30 relative overflow-hidden"
+                                style={{
+                                    animationDelay: `${index * 150}ms`,
+                                }}
                             >
-                                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mb-6">
-                                    <credo.icon className="w-6 h-6 text-primary" />
+                                {/* Card background glow */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-secondary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                {/* Icon container with enhanced styling */}
+                                <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/15 to-secondary/10 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/15 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <credo.icon className="w-7 h-7 text-primary relative z-10 group-hover:text-secondary transition-colors duration-300" />
                                 </div>
-                                <h3 className="text-xl font-semibold text-base-content mb-4">
-                                    {credo.title}
-                                </h3>
-                                <p className="text-base-content/70 leading-relaxed">
-                                    {credo.description}
-                                </p>
+
+                                <div className="relative z-10">
+                                    <h3 className="text-xl font-bold text-base-content mb-4 group-hover:text-primary transition-colors duration-300">
+                                        {credo.title}
+                                    </h3>
+                                    <p className="text-base-content/75 leading-relaxed group-hover:text-base-content/90 transition-colors duration-300">
+                                        {credo.description}
+                                    </p>
+                                </div>
+                                {/* Subtle bottom accent */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                             </div>
                         ))}
                     </div>
-                </div>
+                </div>{" "}
             </section>
-
+            {/* Glowing Divider */}
+            <div className="relative py-12">
+                <div className="mx-auto max-w-4xl">
+                    {/* Main glowing line */}
+                    <div className="relative h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent">
+                        {/* Glow effect layers */}
+                        <div className="absolute inset-0 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent blur-sm"></div>
+                        <div className="absolute inset-0 h-2 bg-gradient-to-r from-transparent via-primary/40 to-transparent blur-md"></div>
+                        <div className="absolute inset-0 h-4 bg-gradient-to-r from-transparent via-primary/20 to-transparent blur-lg"></div>
+                    </div>
+                </div>
+            </div>
             {/* Benefits Section */}
             <section className="py-24 bg-base-100">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -319,7 +351,6 @@ const Careers = ({
                     </div>
                 </div>
             </section>
-
             {/* Open Roles Section */}
             <section id="open-roles" className="py-24 bg-base-200/30">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -649,7 +680,6 @@ const Careers = ({
                     </div>
                 </div>
             </section>
-
             {/* CTA Section */}
             <section className="py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -672,7 +702,6 @@ const Careers = ({
                     </div>
                 </div>
             </section>
-
             <Footer />
         </div>
     );

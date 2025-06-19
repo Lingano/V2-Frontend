@@ -420,3 +420,352 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
 }
+
+/* Careers page hero section glow effect */
+.careers-hero-glow {
+    position: relative;
+}
+
+.careers-hero-glow::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 200px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(79, 70, 229, 0.4) 0%,
+        rgba(139, 92, 246, 0.25) 30%,
+        rgba(59, 130, 246, 0.15) 50%,
+        transparent 70%
+    );
+    filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Enhanced glow for dark themes */
+[data-theme*="dark"] .careers-hero-glow::after {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(139, 92, 246, 0.6) 0%,
+        rgba(59, 130, 246, 0.4) 30%,
+        rgba(16, 185, 129, 0.2) 50%,
+        transparent 70%
+    );
+    filter: blur(50px);
+    height: 250px;
+}
+
+/* Subtle animation for the glow */
+@keyframes glow-pulse {
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+.careers-hero-glow::after {
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Alternative stronger glow variant */
+.careers-hero-glow-strong::after {
+    width: 90%;
+    height: 150px;
+    background: radial-gradient(
+        ellipse at center,
+        oklch(var(--primary) / 0.2) 0%,
+        oklch(var(--secondary) / 0.12) 25%,
+        oklch(var(--accent) / 0.06) 45%,
+        transparent 70%
+    );
+    filter: blur(30px);
+}
+
+/* Alternative visible glow effect */
+.careers-hero-glow-visible {
+    position: relative;
+}
+
+.careers-hero-glow-visible::before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 300px;
+    background: radial-gradient(
+        ellipse at center,
+        #8b5cf6 0%,
+        #3b82f6 25%,
+        #10b981 45%,
+        transparent 65%
+    );
+    opacity: 0.3;
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+    animation: glow-pulse-visible 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse-visible {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: translateX(-50%) scale(0.9);
+    }
+    50% {
+        opacity: 0.4;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* Simple box-shadow glow effect */
+.careers-hero-simple-glow {
+    position: relative;
+    overflow: hidden; /* Contain the glow within the section */
+    box-shadow: inset 0 -100px 200px -100px rgba(139, 92, 246, 0.2),
+        inset 0 -50px 100px -50px rgba(59, 130, 246, 0.15);
+}
+
+.careers-hero-simple-glow::after {
+    content: "";
+    position: absolute;
+    bottom: -50px; /* Reduced from -100px to contain better */
+    left: 25%;
+    right: 25%;
+    height: 100px; /* Reduced from 200px */
+    background: linear-gradient(
+        45deg,
+        rgba(139, 92, 246, 0.3),
+        rgba(59, 130, 246, 0.2),
+        rgba(16, 185, 129, 0.15)
+    );
+    filter: blur(60px); /* Reduced from 80px */
+    z-index: -1;
+    border-radius: 50%;
+    animation: simple-glow-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes simple-glow-pulse {
+    from {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0.5;
+        transform: scale(1.1); /* Reduced from 1.2 */
+    }
+}
+
+/* Enhanced credos section animations */
+@keyframes credos-card-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.credos-card {
+    animation: credos-card-fade-in 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Staggered animation delays for credos cards */
+.credos-card:nth-child(1) {
+    animation-delay: 0ms;
+}
+.credos-card:nth-child(2) {
+    animation-delay: 150ms;
+}
+.credos-card:nth-child(3) {
+    animation-delay: 300ms;
+}
+.credos-card:nth-child(4) {
+    animation-delay: 450ms;
+}
+
+/* Enhanced background decoration animations */
+@keyframes float-decoration {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+.credos-bg-decoration {
+    animation: float-decoration 8s ease-in-out infinite;
+}
+
+.credos-bg-decoration:nth-child(2) {
+    animation-delay: 2s;
+    animation-duration: 10s;
+}
+
+/* Subtle shimmer effect for credos section */
+@keyframes credos-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.credos-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: credos-shimmer 3s ease-in-out infinite;
+}
+
+/* Visual separator between sections */
+.section-separator {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient line */
+@keyframes separator-flow {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.separator-gradient-line {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        oklch(var(--primary) / 0.3) 25%,
+        oklch(var(--secondary) / 0.4) 50%,
+        oklch(var(--accent) / 0.3) 75%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: separator-flow 4s ease-in-out infinite;
+}
+
+/* Diamond separator glow effect */
+@keyframes diamond-glow {
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+            0 0 30px rgba(59, 130, 246, 0.3);
+    }
+}
+
+.separator-diamond {
+    animation: diamond-glow 3s ease-in-out infinite;
+}
+
+/* Floating particles effect */
+@keyframes float-particle {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-8px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.separator-particle {
+    animation: float-particle 2s ease-in-out infinite;
+}
+
+.separator-particle:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.separator-particle:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Subtle background shimmer */
+@keyframes separator-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.separator-shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    animation: separator-shimmer 3s ease-in-out infinite;
+}
+
+/* Visible glowing divider */
+.glowing-divider {
+    position: relative;
+}
+
+.glowing-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #8b5cf6 50%,
+        transparent 100%
+    );
+    box-shadow: 0 0 10px #8b5cf6, 0 0 20px #8b5cf650, 0 0 40px #8b5cf630;
+    animation: glow-pulse-divider 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse-divider {
+    from {
+        opacity: 0.6;
+        box-shadow: 0 0 10px #8b5cf6, 0 0 20px #8b5cf650, 0 0 40px #8b5cf630;
+    }
+    to {
+        opacity: 1;
+        box-shadow: 0 0 15px #8b5cf6, 0 0 30px #8b5cf670, 0 0 60px #8b5cf650;
+    }
+}
