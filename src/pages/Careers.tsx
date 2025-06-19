@@ -412,7 +412,7 @@ const Careers = ({
                         </div>
                     </div>{" "}
                     {/* Job Listings - Clean List Format like Scale AI */}
-                    <div className="mx-auto max-w-5xl">
+                    <div className="mx-auto max-w-full px-8">
                         {filteredJobs.length === 0 ? (
                             <div className="text-center py-12">
                                 <p className="text-lg text-base-content/70">
@@ -422,22 +422,24 @@ const Careers = ({
                         ) : (
                             <div className="bg-gradient-to-br from-base-100 via-base-100/95 to-base-200/20 backdrop-blur-md rounded-2xl border border-base-300/20 overflow-hidden shadow-2xl shadow-base-300/10 hover:shadow-3xl hover:shadow-base-300/20 transition-all duration-500 relative">
                                 {/* Subtle background gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-secondary/[0.02] pointer-events-none"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-secondary/[0.02] pointer-events-none"></div>{" "}
                                 {/* Header - Hidden on mobile, shown on desktop */}
-                                <div className="hidden lg:block bg-gradient-to-r from-base-200/40 via-base-200/30 to-base-200/20 px-8 py-5 border-b border-base-300/30 backdrop-blur-sm relative">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] to-secondary/[0.03]"></div>
-                                    <div className="grid grid-cols-12 gap-4 text-sm font-bold text-base-content/90 uppercase tracking-wider relative z-10">
+                                <div className="hidden lg:block bg-gradient-to-r from-base-200/40 via-base-200/30 to-base-200/20 px-12 py-4 border-b border-base-300/30 backdrop-blur-sm relative">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] to-secondary/[0.03]"></div>{" "}
+                                    <div className="grid grid-cols-12 gap-6 text-sm font-bold text-base-content/90 uppercase tracking-wider relative z-10">
                                         <div className="col-span-4 flex items-center gap-2">
                                             <div className="w-1 h-4 bg-gradient-to-b from-primary to-secondary rounded-full"></div>
                                             Role
                                         </div>
-                                        <div className="col-span-3">
+                                        <div className="col-span-3 flex justify-center">
                                             Department
                                         </div>
-                                        <div className="col-span-2">
+                                        <div className="col-span-2 flex justify-center">
                                             Location
                                         </div>
-                                        <div className="col-span-2">Type</div>
+                                        <div className="col-span-2 flex justify-center">
+                                            Type
+                                        </div>
                                         <div className="col-span-1"></div>
                                     </div>
                                 </div>{" "}
@@ -455,23 +457,23 @@ const Careers = ({
                                         >
                                             {/* Subtle hover effect line */}
                                             <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>{" "}
-                                            {/* Desktop Layout */}
+                                            {/* Desktop Layout */}{" "}
                                             <Link
                                                 to={`/careers/${job.id}`}
-                                                className="hidden lg:grid px-8 py-6 grid-cols-12 gap-4 items-center cursor-pointer relative overflow-hidden group-hover:translate-x-1 transition-all duration-300"
+                                                className="hidden lg:grid px-12 py-5 grid-cols-12 gap-6 items-center cursor-pointer relative overflow-hidden group-hover:translate-x-1 transition-all duration-300 place-items-center"
                                             >
                                                 {/* Subtle shimmer effect on hover */}
-                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>{" "}
                                                 {/* Position */}
-                                                <div className="col-span-4 relative z-10">
+                                                <div className="col-span-4 relative z-10 justify-self-start">
                                                     <h3 className="text-lg font-bold text-base-content group-hover:text-primary transition-all duration-300 group-hover:drop-shadow-sm">
                                                         {job.title}
                                                     </h3>
                                                     <div className="w-0 group-hover:w-12 h-0.5 bg-gradient-to-r from-primary to-secondary mt-1 transition-all duration-300"></div>
-                                                </div>
+                                                </div>{" "}
                                                 {/* Department */}
-                                                <div className="col-span-3 relative z-10">
-                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 w-fit shadow-sm hover:shadow-md border border-base-300/20 hover:border-primary/20">
+                                                <div className="col-span-3 relative z-10 justify-self-center">
+                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm hover:shadow-md border border-base-300/20 hover:border-primary/20">
                                                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                                                             {(() => {
                                                                 const DeptIcon =
@@ -483,14 +485,14 @@ const Careers = ({
                                                                 );
                                                             })()}
                                                         </div>
-                                                        <span className="text-sm font-semibold text-base-content group-hover:text-primary/80 transition-colors duration-300">
+                                                        <span className="text-sm font-semibold text-base-content group-hover:text-primary/80 transition-colors duration-300 whitespace-nowrap">
                                                             {job.department}
                                                         </span>
                                                     </div>
                                                 </div>{" "}
                                                 {/* Location */}
-                                                <div className="col-span-2 relative z-10">
-                                                    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-base-200/30 to-base-200/10 hover:from-accent/10 hover:to-accent/5 transition-all duration-300 w-fit shadow-sm border border-base-300/10 hover:border-accent/20">
+                                                <div className="col-span-2 relative z-10 justify-self-center">
+                                                    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-base-200/30 to-base-200/10 hover:from-accent/10 hover:to-accent/5 transition-all duration-300 shadow-sm border border-base-300/10 hover:border-accent/20">
                                                         {" "}
                                                         {(() => {
                                                             const FlagComponent =
@@ -501,21 +503,21 @@ const Careers = ({
                                                                 <FlagComponent className="w-5 h-4 rounded-sm shadow-sm" />
                                                             );
                                                         })()}
-                                                        <span className="text-sm font-medium text-base-content group-hover:text-accent transition-colors duration-300">
+                                                        <span className="text-sm font-medium text-base-content group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
                                                             {job.location}
                                                         </span>
                                                     </div>
-                                                </div>
+                                                </div>{" "}
                                                 {/* Type */}
-                                                <div className="col-span-2 relative z-10">
-                                                    <div className="px-3 py-2 rounded-lg bg-gradient-to-r from-secondary/10 to-secondary/5 hover:from-secondary/15 hover:to-secondary/10 transition-all duration-300 w-fit shadow-sm border border-secondary/20 hover:border-secondary/30">
-                                                        <span className="text-sm font-semibold text-base-content group-hover:text-secondary transition-colors duration-300">
+                                                <div className="col-span-2 relative z-10 justify-self-center">
+                                                    <div className="px-3 py-2 rounded-lg bg-gradient-to-r from-secondary/10 to-secondary/5 hover:from-secondary/15 hover:to-secondary/10 transition-all duration-300 shadow-sm border border-secondary/20 hover:border-secondary/30">
+                                                        <span className="text-sm font-semibold text-base-content group-hover:text-secondary transition-colors duration-300 whitespace-nowrap">
                                                             {job.type}
                                                         </span>
                                                     </div>
                                                 </div>{" "}
                                                 {/* Actions */}
-                                                <div className="col-span-1 flex justify-end relative z-10">
+                                                <div className="col-span-1 relative z-10 justify-self-end">
                                                     <div
                                                         className="dropdown dropdown-end"
                                                         onClick={(e) =>
@@ -565,7 +567,7 @@ const Careers = ({
                                             {/* Mobile Layout */}
                                             <Link
                                                 to={`/careers/${job.id}`}
-                                                className="lg:hidden px-6 py-8 block cursor-pointer hover:bg-gradient-to-r hover:from-primary/[0.02] hover:via-base-200/10 hover:to-secondary/[0.02] transition-all duration-300 relative overflow-hidden group-hover:translate-x-1"
+                                                className="lg:hidden px-6 py-6 block cursor-pointer hover:bg-gradient-to-r hover:from-primary/[0.02] hover:via-base-200/10 hover:to-secondary/[0.02] transition-all duration-300 relative overflow-hidden group-hover:translate-x-1"
                                             >
                                                 {/* Mobile shimmer effect */}
                                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
