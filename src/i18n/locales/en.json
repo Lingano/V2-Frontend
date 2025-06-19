@@ -207,35 +207,68 @@
         "hero": {
             "title": "Join Our Mission",
             "subtitle": "Help us revolutionize language learning and make education accessible to everyone around the world. Build the future of learning with us.",
-            "viewPositions": "View Open Positions",
-            "learnCulture": "Learn About Our Culture"
+            "viewPositions": "View Open Positions"
         },
-        "culture": {
-            "title": "Our Culture & Values",
-            "subtitle": "We believe in creating an environment where everyone can thrive and make a meaningful impact."
-        },
-        "values": {
-            "global": {
-                "title": "Global Impact",
-                "description": "We're building products that connect people across cultures and languages worldwide."
-            },
+        "credos": {
+            "title": "Our Credos",
+            "subtitle": "The principles that guide everything we do",
             "innovation": {
-                "title": "Innovation",
-                "description": "We embrace cutting-edge technology and creative solutions to solve complex problems."
+                "title": "Innovation First",
+                "description": "We embrace cutting-edge technology and creative solutions to solve complex problems and push the boundaries of what's possible."
             },
             "collaboration": {
-                "title": "Collaboration",
-                "description": "We work together as one team, sharing knowledge and supporting each other's growth."
+                "title": "Collaborative Spirit",
+                "description": "We work together as one team, sharing knowledge and supporting each other's growth in everything we do."
+            },
+            "global": {
+                "title": "Global Impact",
+                "description": "We're building products that connect people across cultures and languages, making a difference worldwide."
             },
             "passion": {
-                "title": "Passion",
-                "description": "We're passionate about education and creating meaningful experiences for our users."
+                "title": "Passion Driven",
+                "description": "We're passionate about education and creating meaningful experiences that transform how people learn."
             }
         },
-        "openPositions": {
-            "title": "Open Positions",
-            "subtitle": "Join our team and help build the future of language learning"
+        "benefits": {
+            "title": "Benefits & Perks",
+            "subtitle": "We believe in taking care of our team with comprehensive benefits and meaningful perks",
+            "learning": {
+                "title": "Learning & Development",
+                "description": "Annual learning budget, conference attendance, and mentorship programs to help you grow."
+            },
+            "remote": {
+                "title": "Remote Flexibility",
+                "description": "Work from anywhere with flexible hours and a healthy work-life balance."
+            },
+            "equipment": {
+                "title": "Top-tier Equipment",
+                "description": "Latest MacBook Pro, monitor, and all the tools you need to do your best work."
+            },
+            "growth": {
+                "title": "Career Growth",
+                "description": "Clear career paths, regular feedback, and opportunities to take on new challenges."
+            },
+            "travel": {
+                "title": "Team Retreats",
+                "description": "Annual team retreats in beautiful locations to connect and collaborate in person."
+            },
+            "wellness": {
+                "title": "Health & Wellness",
+                "description": "Comprehensive health insurance, mental health support, and wellness stipends."
+            }
         },
+        "openRoles": {
+            "title": "Open Roles",
+            "subtitle": "Find your next opportunity and help us build the future of education"
+        },
+        "filters": {
+            "department": "Department",
+            "location": "Location",
+            "allDepartments": "All Departments",
+            "allLocations": "All Locations"
+        },
+        "noJobsFound": "No positions match your filters. Try adjusting your search criteria.",
+        "viewDetails": "View Details",
         "positions": {
             "frontendDev": {
                 "title": "Frontend Developer",
@@ -431,7 +464,6 @@
             }
         },
         "requirements": "Requirements",
-        "benefits": "Benefits",
         "applyNow": "Apply Now",
         "cta": {
             "title": "Don't See the Perfect Role?",

@@ -135,6 +135,182 @@
     animation: pulse-slow-delay-2 7s ease-in-out infinite;
 }
 
+/* Enhanced careers page animations and effects */
+
+/* Staggered fade-in animation for job listings */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.list-row {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Beautiful gradient shadow effects */
+.shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced hover glow effects */
+@keyframes pulse-glow {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb, 79, 70, 229), 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(var(--primary-rgb, 79, 70, 229), 0);
+    }
+}
+
+.pulse-glow:hover {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.shimmer {
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Enhanced glass morphism effect */
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Beautiful gradient text effect */
+.gradient-text {
+    background: linear-gradient(
+        135deg,
+        oklch(var(--primary)),
+        oklch(var(--secondary))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced button hover effects */
+.btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scaling animation */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+/* Beautiful border gradient animation */
+@keyframes borderGradient {
+    0%,
+    100% {
+        border-image-source: linear-gradient(
+            45deg,
+            oklch(var(--primary)),
+            oklch(var(--secondary)),
+            oklch(var(--accent))
+        );
+    }
+    50% {
+        border-image-source: linear-gradient(
+            45deg,
+            oklch(var(--secondary)),
+            oklch(var(--accent)),
+            oklch(var(--primary))
+        );
+    }
+}
+
+.border-gradient-animated {
+    border-image-slice: 1;
+    animation: borderGradient 3s ease-in-out infinite;
+}
+
+/* Floating animation for subtle movement */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced job listing row animations */
+.list-row:nth-child(1) {
+    animation-delay: 0ms;
+}
+.list-row:nth-child(2) {
+    animation-delay: 100ms;
+}
+.list-row:nth-child(3) {
+    animation-delay: 200ms;
+}
+.list-row:nth-child(4) {
+    animation-delay: 300ms;
+}
+.list-row:nth-child(5) {
+    animation-delay: 400ms;
+}
+
+/* Micro-interactions for better UX */
+.interactive-element {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-element:hover {
+    transform: translateY(-1px);
+}
+
+/* Beautiful backdrop blur for dropdowns */
+.dropdown-backdrop {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
 /* RTL Support for Hebrew */
 [dir="rtl"] {
     direction: rtl;
@@ -218,4 +394,29 @@
 
 [dir="rtl"] .timeline-end {
     text-align: left;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
 }

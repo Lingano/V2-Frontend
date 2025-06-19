@@ -231,10 +231,66 @@
                 "description": "Wir haben eine Leidenschaft für Bildung und schaffen bedeutungsvolle Erfahrungen für unsere Nutzer."
             }
         },
-        "openPositions": {
+        "credos": {
+            "title": "Unsere Grundsätze",
+            "subtitle": "Die Prinzipien, die alles leiten, was wir tun",
+            "innovation": {
+                "title": "Innovation zuerst",
+                "description": "Wir setzen auf modernste Technologie und kreative Lösungen."
+            },
+            "collaboration": {
+                "title": "Kollaborativer Geist",
+                "description": "Wir arbeiten als ein Team zusammen und unterstützen uns gegenseitig."
+            },
+            "global": {
+                "title": "Globale Wirkung",
+                "description": "Wir entwickeln Produkte, die Menschen weltweit verbinden."
+            },
+            "passion": {
+                "title": "Leidenschaftlich getrieben",
+                "description": "Wir sind leidenschaftlich in Bezug auf Bildung."
+            }
+        },
+        "benefits": {
+            "title": "Vorteile & Zusatzleistungen",
+            "subtitle": "Wir betreuen unser Team mit umfassenden Vorteilen",
+            "learning": {
+                "title": "Lernen & Entwicklung",
+                "description": "Jährliches Lernbudget und Mentoring-Programme."
+            },
+            "remote": {
+                "title": "Remote-Flexibilität",
+                "description": "Von überall arbeiten mit flexiblen Arbeitszeiten."
+            },
+            "equipment": {
+                "title": "Erstklassige Ausstattung",
+                "description": "Neuestes MacBook Pro und alle benötigten Tools."
+            },
+            "growth": {
+                "title": "Karrierewachstum",
+                "description": "Klare Karrierewege und neue Herausforderungen."
+            },
+            "travel": {
+                "title": "Team-Retreats",
+                "description": "Jährliche Team-Retreats an schönen Orten."
+            },
+            "wellness": {
+                "title": "Gesundheit & Wohlbefinden",
+                "description": "Umfassende Krankenversicherung und Wellness-Unterstützung."
+            }
+        },
+        "openRoles": {
             "title": "Offene Stellen",
             "subtitle": "Werde Teil unseres Teams und hilf dabei, die Zukunft des Sprachenlernens zu gestalten"
         },
+        "filters": {
+            "department": "Abteilung",
+            "location": "Standort",
+            "allDepartments": "Alle Abteilungen",
+            "allLocations": "Alle Standorte"
+        },
+        "noJobsFound": "Keine Stellen entsprechen Ihren Filtern. Versuchen Sie, Ihre Suchkriterien anzupassen.",
+        "viewDetails": "Details anzeigen",
         "positions": {
             "frontendDev": {
                 "title": "Frontend-Entwickler",
@@ -342,7 +398,6 @@
             }
         },
         "requirements": "Anforderungen",
-        "benefits": "Vorteile",
         "applyNow": "Jetzt bewerben",
         "cta": {
             "title": "Nicht die perfekte Rolle gefunden?",
