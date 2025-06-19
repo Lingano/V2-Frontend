@@ -78,11 +78,12 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                         className="hover:text-primary transition-colors"
                     >
                         {t("navbar.contact")}
-                    </Link>
+                    </Link>{" "}
                 </div>{" "}
                 {/* Desktop Actions */}
                 <div className="hidden md:flex gap-3 items-center">
                     <LanguageSwitcher />
+                    <div className="w-px h-4 bg-base-300/60"></div>
                     <label className="swap swap-rotate">
                         <input
                             type="checkbox"
@@ -103,9 +104,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                         >
-                            <path d="M21.752 15.002A9.718 9.718 0 0112 22C6.477 22 2 17.523 2 12c0-4.418 2.865-8.166 6.839-9.489a1 1 0 01.987 1.676A7.001 7.001 0 0012 19a7.001 7.001 0 006.813-5.813 1 1 0 011.676-.987c.293.293.293.768 0 1.061z" />
+                            <path d="M21.752 15.002A9.718 9.718 0 0112 22C6.477 22 2 17.523 2 12c0-4.418 2.865-8.166 6.839-9.489a1 1 0 01.987 1.676A7.001 7.001 0 0012 19a7.001 7.001 0 006.813-5.813 1 1 0 011.676-.987c.293.293.293.768 0 1.061z" />{" "}
                         </svg>
                     </label>
+                    <div className="w-px h-4 bg-base-300/60"></div>
                     <Link
                         to="/login"
                         className="rounded-md px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/10 transition"
@@ -122,6 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center gap-2">
                     <LanguageSwitcher />
+                    <div className="w-px h-4 bg-base-300/60"></div>
                     <label className="swap swap-rotate">
                         <input
                             type="checkbox"
@@ -142,9 +145,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                         >
-                            <path d="M21.752 15.002A9.718 9.718 0 0112 22C6.477 22 2 17.523 2 12c0-4.418 2.865-8.166 6.839-9.489a1 1 0 01.987 1.676A7.001 7.001 0 0012 19a7.001 7.001 0 006.813-5.813 1 1 0 011.676-.987c.293.293.293.768 0 1.061z" />
+                            <path d="M21.752 15.002A9.718 9.718 0 0112 22C6.477 22 2 17.523 2 12c0-4.418 2.865-8.166 6.839-9.489a1 1 0 01.987 1.676A7.001 7.001 0 0012 19a7.001 7.001 0 006.813-5.813 1 1 0 011.676-.987c.293.293.293.768 0 1.061z" />{" "}
                         </svg>
                     </label>
+                    <div className="w-px h-4 bg-base-300/60"></div>
                     <button
                         className="btn btn-ghost btn-sm"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
