@@ -473,10 +473,9 @@ const Careers = ({
                                                         </h3>
                                                         <div className="w-0 group-hover:w-12 h-0.5 bg-gradient-to-r from-primary to-secondary mt-1 transition-all duration-300"></div>
                                                     </div>
-                                                </div>{" "}
-                                                {/* Department */}
+                                                </div>{" "}                                                {/* Department */}
                                                 <div className="col-span-3 relative z-10 flex justify-center">
-                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm hover:shadow-md border border-base-300/20 hover:border-primary/20 w-36 justify-start">
+                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm hover:shadow-md border border-base-300/20 hover:border-primary/20 w-44 justify-start">
                                                         {(() => {
                                                             const DeptIcon =
                                                                 getDepartmentIcon(
@@ -627,9 +626,8 @@ const Careers = ({
                                                 </div>
                                                 <p className="text-base-content/70 text-base mb-6 line-clamp-2 relative z-10 leading-relaxed">
                                                     {job.description}
-                                                </p>{" "}
-                                                <div className="flex flex-wrap gap-4 relative z-10">
-                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm border border-base-300/20 w-36 justify-start">
+                                                </p>{" "}                                                <div className="flex flex-wrap gap-4 relative z-10">
+                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm border border-base-300/20 w-44 justify-start">
                                                         {(() => {
                                                             const DeptIcon =
                                                                 getDepartmentIcon(
