@@ -461,6 +461,56 @@
                     "Annual team retreats in Switzerland",
                     "Free access to all Lingano premium features"
                 ]
+            },
+            "seniorSoftwareEngineerWarsaw": {
+                "title": "Senior Software Engineer",
+                "department": "Engineering",
+                "location": "Warsaw",
+                "type": "Full-time",
+                "workModel": "Hybrid",
+                "compensation": "$85,000 - $130,000",
+                "description": "Join our expanding engineering team in Warsaw to build scalable software solutions for our language learning platform. Work with modern technologies and help us grow our European presence.",
+                "requirements": [
+                    "5+ years of experience in software development",
+                    "Strong proficiency in JavaScript/TypeScript and Node.js",
+                    "Experience with React and modern frontend frameworks",
+                    "Knowledge of database design and optimization (PostgreSQL, MongoDB)",
+                    "Experience with cloud platforms (AWS, Google Cloud, or Azure)",
+                    "Understanding of microservices architecture",
+                    "Experience with CI/CD pipelines and DevOps practices",
+                    "Excellent communication skills in English and Polish"
+                ],
+                "responsibilities": [
+                    "Lead development of new features and improvements",
+                    "Mentor junior developers and conduct code reviews",
+                    "Collaborate with product and design teams on requirements",
+                    "Architect scalable solutions for high-traffic applications",
+                    "Optimize application performance and user experience",
+                    "Ensure code quality and maintain testing standards",
+                    "Participate in technical decision-making and system design",
+                    "Contribute to engineering culture and best practices"
+                ],
+                "qualifications": [
+                    "Master's or Bachelor's degree in Computer Science or related field",
+                    "Proven track record of building scalable web applications",
+                    "Strong understanding of software design patterns",
+                    "Experience with agile development methodologies",
+                    "Knowledge of testing frameworks and quality assurance",
+                    "Ability to work independently and lead technical initiatives",
+                    "Strong problem-solving and analytical thinking skills",
+                    "Experience working in international, multicultural teams"
+                ],
+                "benefits": [
+                    "Competitive salary with equity options",
+                    "Flexible working hours and hybrid work model",
+                    "Comprehensive health insurance",
+                    "Professional development budget and conference attendance",
+                    "Latest MacBook Pro and equipment",
+                    "Office in central Warsaw with modern amenities",
+                    "Annual team retreats and company events",
+                    "Free access to all Lingano premium features",
+                    "Relocation assistance if needed"
+                ]
             }
         },
         "requirements": "Requirements",
