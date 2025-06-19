@@ -443,55 +443,56 @@ const Careers = ({
                                         <div className="col-span-1"></div>
                                     </div>
                                 </div>{" "}
-                                {/* Job List using daisyUI List */}
-                                <ul className="list relative">
+                                {/* Job List */}
+                                <div className="relative">
                                     {filteredJobs.map((job, index) => (
-                                        <li
+                                        <div
                                             key={job.id}
-                                            className="list-row hover:bg-gradient-to-r hover:from-primary/[0.03] hover:via-base-200/20 hover:to-secondary/[0.02] transition-all duration-300 group relative overflow-hidden border-b border-base-300/10 last:border-b-0"
+                                            className="hover:bg-gradient-to-r hover:from-primary/[0.03] hover:via-base-200/20 hover:to-secondary/[0.02] transition-all duration-300 group relative overflow-hidden border-b border-base-300/10 last:border-b-0"
                                             style={{
                                                 animationDelay: `${
                                                     index * 50
                                                 }ms`,
                                             }}
                                         >
-                                            {/* Subtle hover effect line */}
+                                            {/* Subtle hover effect line */}{" "}
                                             <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>{" "}
                                             {/* Desktop Layout */}{" "}
                                             <Link
                                                 to={`/careers/${job.id}`}
-                                                className="hidden lg:grid px-12 py-5 grid-cols-12 gap-6 items-center cursor-pointer relative overflow-hidden group-hover:translate-x-1 transition-all duration-300 place-items-center"
+                                                className="hidden lg:grid px-12 py-5 grid-cols-12 gap-6 items-center cursor-pointer relative overflow-hidden transition-all duration-300"
                                             >
                                                 {/* Subtle shimmer effect on hover */}
                                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>{" "}
                                                 {/* Position */}
-                                                <div className="col-span-4 relative z-10 justify-self-start">
-                                                    <h3 className="text-lg font-bold text-base-content group-hover:text-primary transition-all duration-300 group-hover:drop-shadow-sm">
-                                                        {job.title}
-                                                    </h3>
-                                                    <div className="w-0 group-hover:w-12 h-0.5 bg-gradient-to-r from-primary to-secondary mt-1 transition-all duration-300"></div>
+                                                <div className="col-span-4 relative z-10 flex items-center gap-2">
+                                                    <div className="w-1 h-4 bg-gradient-to-b from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                                    <div>
+                                                        <h3 className="text-lg font-bold text-base-content group-hover:text-primary transition-all duration-300 group-hover:drop-shadow-sm">
+                                                            {job.title}
+                                                        </h3>
+                                                        <div className="w-0 group-hover:w-12 h-0.5 bg-gradient-to-r from-primary to-secondary mt-1 transition-all duration-300"></div>
+                                                    </div>
                                                 </div>{" "}
                                                 {/* Department */}
-                                                <div className="col-span-3 relative z-10 justify-self-center">
-                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm hover:shadow-md border border-base-300/20 hover:border-primary/20">
-                                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                                                            {(() => {
-                                                                const DeptIcon =
-                                                                    getDepartmentIcon(
-                                                                        job.department
-                                                                    );
-                                                                return (
-                                                                    <DeptIcon className="w-4 h-4 text-primary" />
+                                                <div className="col-span-3 relative z-10 flex justify-center">
+                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm hover:shadow-md border border-base-300/20 hover:border-primary/20 w-36 justify-start">
+                                                        {(() => {
+                                                            const DeptIcon =
+                                                                getDepartmentIcon(
+                                                                    job.department
                                                                 );
-                                                            })()}
-                                                        </div>
+                                                            return (
+                                                                <DeptIcon className="w-4 h-4 text-primary flex-shrink-0" />
+                                                            );
+                                                        })()}
                                                         <span className="text-sm font-semibold text-base-content group-hover:text-primary/80 transition-colors duration-300 whitespace-nowrap">
                                                             {job.department}
                                                         </span>
                                                     </div>
                                                 </div>{" "}
                                                 {/* Location */}
-                                                <div className="col-span-2 relative z-10 justify-self-center">
+                                                <div className="col-span-2 relative z-10 flex justify-center">
                                                     <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-base-200/30 to-base-200/10 hover:from-accent/10 hover:to-accent/5 transition-all duration-300 shadow-sm border border-base-300/10 hover:border-accent/20">
                                                         {" "}
                                                         {(() => {
@@ -509,7 +510,7 @@ const Careers = ({
                                                     </div>
                                                 </div>{" "}
                                                 {/* Type */}
-                                                <div className="col-span-2 relative z-10 justify-self-center">
+                                                <div className="col-span-2 relative z-10 flex justify-center">
                                                     <div className="px-3 py-2 rounded-lg bg-gradient-to-r from-secondary/10 to-secondary/5 hover:from-secondary/15 hover:to-secondary/10 transition-all duration-300 shadow-sm border border-secondary/20 hover:border-secondary/30">
                                                         <span className="text-sm font-semibold text-base-content group-hover:text-secondary transition-colors duration-300 whitespace-nowrap">
                                                             {job.type}
@@ -517,7 +518,7 @@ const Careers = ({
                                                     </div>
                                                 </div>{" "}
                                                 {/* Actions */}
-                                                <div className="col-span-1 relative z-10 justify-self-end">
+                                                <div className="col-span-1 relative z-10 flex justify-end">
                                                     <div
                                                         className="dropdown dropdown-end"
                                                         onClick={(e) =>
@@ -571,7 +572,6 @@ const Careers = ({
                                             >
                                                 {/* Mobile shimmer effect */}
                                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-
                                                 <div className="flex justify-between items-start mb-6 relative z-10">
                                                     <div className="flex-1 pr-4">
                                                         <h3 className="text-xl font-bold text-base-content hover:text-primary transition-all duration-300 mb-2 group-hover:drop-shadow-sm">
@@ -625,24 +625,20 @@ const Careers = ({
                                                         </ul>
                                                     </div>
                                                 </div>
-
                                                 <p className="text-base-content/70 text-base mb-6 line-clamp-2 relative z-10 leading-relaxed">
                                                     {job.description}
-                                                </p>
-
+                                                </p>{" "}
                                                 <div className="flex flex-wrap gap-4 relative z-10">
-                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm border border-base-300/20">
-                                                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                                                            {(() => {
-                                                                const DeptIcon =
-                                                                    getDepartmentIcon(
-                                                                        job.department
-                                                                    );
-                                                                return (
-                                                                    <DeptIcon className="w-3.5 h-3.5 text-primary" />
+                                                    <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gradient-to-r from-base-200/40 to-base-200/20 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm border border-base-300/20 w-36 justify-start">
+                                                        {(() => {
+                                                            const DeptIcon =
+                                                                getDepartmentIcon(
+                                                                    job.department
                                                                 );
-                                                            })()}
-                                                        </div>
+                                                            return (
+                                                                <DeptIcon className="w-4 h-4 text-primary flex-shrink-0" />
+                                                            );
+                                                        })()}
                                                         <span className="text-sm font-semibold text-base-content">
                                                             {job.department}
                                                         </span>
@@ -668,15 +664,15 @@ const Careers = ({
                                                         </span>
                                                     </div>
                                                 </div>
-                                            </Link>
+                                            </Link>{" "}
                                             {/* Divider between items (except last) */}
                                             {index <
                                                 filteredJobs.length - 1 && (
                                                 <div className="border-b border-base-300/30"></div>
                                             )}
-                                        </li>
+                                        </div>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         )}
                     </div>
