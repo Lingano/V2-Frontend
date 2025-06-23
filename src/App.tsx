@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import AppMain from "./app/AppMain";
 import "./i18n"; // Initialize i18n
 
 const App = () => {
@@ -181,6 +182,7 @@ const App = () => {
                                 />
                             }
                         />
+                        <Route path="/app/*" element={<AppMain />} />
                     </Routes>
                 </main>
             </div>
