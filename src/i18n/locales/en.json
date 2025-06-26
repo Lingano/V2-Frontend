@@ -8,6 +8,14 @@
         "signIn": "Sign In",
         "signUp": "Sign Up"
     },
+    "app": {
+        "Dashboard": "Dashboard",
+        "Lessons": "Lessons",
+        "Practice": "Practice",
+        "Progress": "Progress",
+        "Settings": "Settings",
+        "Logout": "Logout"
+    },
     "hero": {
         "title": "Master New Languages with Lingano",
         "subtitle": "Learn languages naturally, effectively, and enjoyably with our innovative platform designed for modern learners. Unlock global opportunities and connect with the world.",

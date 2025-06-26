@@ -1,6 +1,7 @@
 import React from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../hooks/useAuth";
 
 const NavLink = ({
     children,
@@ -24,13 +25,12 @@ const NavLink = ({
 
 const AppNavbar: React.FC = () => {
     const { t } = useTranslation();
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
 
-    // Mock user data - replace with real user context
-    const user = {
-        name: "John Doe",
-        streak: 7,
-        xp: 1250,
-        avatar: "",
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
     };
 
     return (
@@ -60,24 +60,25 @@ const AppNavbar: React.FC = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                     >
+                        {" "}
                         <li>
                             <RouterLink to="/app/dashboard">
-                                {t("Dashboard")}
+                                {t("app.Dashboard")}
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink to="/app/lessons">
-                                {t("Lessons")}
+                                {t("app.Lessons")}
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink to="/app/practice">
-                                {t("Practice")}
+                                {t("app.Practice")}
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink to="/app/progress">
-                                {t("Progress")}
+                                {t("app.Progress")}
                             </RouterLink>
                         </li>
                     </ul>
@@ -91,45 +92,53 @@ const AppNavbar: React.FC = () => {
             </div>
 
             <div className="navbar-center hidden lg:flex">
+                {" "}
                 <ul className="menu menu-horizontal px-1 gap-2">
                     <li>
-                        <NavLink to="/app/dashboard">{t("Dashboard")}</NavLink>
+                        <NavLink to="/app/dashboard">
+                            {t("app.Dashboard")}
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/app/lessons">{t("Lessons")}</NavLink>
+                        <NavLink to="/app/lessons">{t("app.Lessons")}</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/app/practice">{t("Practice")}</NavLink>
+                        <NavLink to="/app/practice">
+                            {t("app.Practice")}
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/app/progress">{t("Progress")}</NavLink>
+                        <NavLink to="/app/progress">
+                            {t("app.Progress")}
+                        </NavLink>
                     </li>
                 </ul>
             </div>
 
             <div className="navbar-end">
                 <div className="flex items-center gap-4">
+                    {" "}
                     <div className="badge badge-warning gap-2">
-                        🔥 {user.streak}
+                        🔥 {user?.streak || 0}
                     </div>
                     <div className="badge badge-secondary badge-outline">
-                        {user.xp} XP
+                        {user?.totalXP || 0} XP
                     </div>
-
                     <div className="dropdown dropdown-end">
                         <div
                             tabIndex={0}
                             role="button"
                             className="btn btn-ghost btn-circle avatar"
                         >
+                            {" "}
                             <div className="w-10 rounded-full">
-                                {user.avatar ? (
+                                {user?.avatar ? (
                                     <img alt="User avatar" src={user.avatar} />
                                 ) : (
                                     <div className="avatar placeholder">
                                         <div className="bg-neutral text-neutral-content rounded-full w-10">
                                             <span className="text-sm">
-                                                {user.name.charAt(0)}
+                                                {user?.name?.charAt(0) || "U"}
                                             </span>
                                         </div>
                                     </div>

@@ -8,7 +8,6 @@ import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ"; // Import the new component
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import UserProfile from "./pages/UserProfile";
 import Careers from "./pages/Careers";
 import JobDetail from "./pages/JobDetail";
 import About from "./pages/About";
@@ -145,7 +144,6 @@ const App = () => {
                         />{" "}
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
-                        <Route path="/profile" element={<UserProfile />} />{" "}
                         <Route
                             path="/about"
                             element={

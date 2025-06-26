@@ -7,6 +7,14 @@
         "signIn": "Se connecter",
         "signUp": "S'inscrire"
     },
+    "app": {
+        "Dashboard": "Tableau de bord",
+        "Lessons": "Leçons",
+        "Practice": "Pratique",
+        "Progress": "Progrès",
+        "Settings": "Paramètres",
+        "Logout": "Se déconnecter"
+    },
     "hero": {
         "title": "Maîtrisez de nouvelles langues avec Lingano",
         "subtitle": "Apprenez les langues naturellement, efficacement et de manière agréable avec notre plateforme innovante conçue pour les apprenants modernes. Débloquez des opportunités mondiales et connectez-vous avec le monde.",

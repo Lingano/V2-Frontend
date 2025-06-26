@@ -7,6 +7,14 @@
         "signIn": "Accedi",
         "signUp": "Registrati"
     },
+    "app": {
+        "Dashboard": "Dashboard",
+        "Lessons": "Lezioni",
+        "Practice": "Pratica",
+        "Progress": "Progresso",
+        "Settings": "Impostazioni",
+        "Logout": "Esci"
+    },
     "hero": {
         "title": "Padroneggia nuove lingue con Lingano",
         "subtitle": "Impara le lingue naturalmente, efficacemente e divertendoti con la nostra piattaforma innovativa progettata per studenti moderni. Sblocca opportunità globali e connettiti con il mondo.",

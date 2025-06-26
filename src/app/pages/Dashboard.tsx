@@ -1,20 +1,31 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useAuth } from "../hooks/useAuth";
 
 const Dashboard: React.FC = () => {
-    const { t } = useTranslation();
+    const { user } = useAuth();
 
-    // Mock data - replace with real data from your API
+    // If user is not loaded yet, show loading state
+    if (!user) {
+        return (
+            <div className="container mx-auto p-6 max-w-7xl">
+                <div className="flex justify-center items-center min-h-[400px]">
+                    <span className="loading loading-spinner loading-lg"></span>
+                </div>
+            </div>
+        );
+    }
+
+    // Enhanced user data with additional dashboard-specific info
     const userData = {
-        name: "John Doe",
-        streak: 7,
-        totalXP: 1250,
-        weeklyGoal: 5,
-        weeklyProgress: 3,
-        currentLevel: "Intermediate",
-        nextLevelXP: 1500,
-        completedLessons: 24,
-        totalLessons: 45,
+        name: user.name,
+        streak: user.streak,
+        totalXP: user.totalXP,
+        weeklyGoal: 5, // This could be added to User type later
+        weeklyProgress: 3, // This could be calculated from user activity
+        currentLevel: user.level.charAt(0).toUpperCase() + user.level.slice(1),
+        nextLevelXP: Math.ceil(user.totalXP / 500) * 500 + 500, // Dynamic calculation
+        completedLessons: Math.floor(user.totalXP / 50), // Assume 50 XP per lesson
+        totalLessons: 45, // This could come from API
     };
 
     const recentLessons = [

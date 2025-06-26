@@ -1,48 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../app/hooks/useAuth";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Login = () => {
     const { t } = useTranslation();
+    const { login, isAuthenticated, isLoading } = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const navigate = useNavigate();
 
     // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const navigate = useNavigate();
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
+    // Redirect if already authenticated
+    useEffect(() => {
+        if (isAuthenticated && !isLoading) {
+            navigate("/app");
+        }
+    }, [isAuthenticated, isLoading, navigate]);
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email || !password) {
             setError(t("auth.login.errors.missingFields"));
             return;
         }
-        setLoading(true);
+
+        setSubmitting(true);
         setError("");
+
         try {
-            const response = await fetch(`${apiBaseUrl}/api/auth/login`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
-            if (response.ok && data.token) {
-                localStorage.setItem("token", data.token);
-                navigate("/profile");
-            } else {
-                setError(
-                    data.message || t("auth.login.errors.invalidCredentials")
-                );
-            }
+            await login(email, password);
+            // Navigation will be handled by useEffect when isAuthenticated changes
         } catch (err: any) {
             setError(err.message || t("auth.login.errors.unexpected"));
         } finally {
-            setLoading(false);
+            setSubmitting(false);
         }
     };
 
@@ -89,7 +87,7 @@ const Login = () => {
                                 <span className="label-text text-base-content">
                                     {t("auth.login.email")}
                                 </span>
-                            </label>
+                            </label>{" "}
                             <input
                                 type="email"
                                 value={email}
@@ -97,7 +95,7 @@ const Login = () => {
                                 placeholder={t("auth.login.emailPlaceholder")}
                                 className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
-                                disabled={loading}
+                                disabled={submitting || isLoading}
                             />
                         </div>
                         <div className="form-control mb-6">
@@ -105,7 +103,7 @@ const Login = () => {
                                 <span className="label-text text-base-content">
                                     {t("auth.login.password")}
                                 </span>
-                            </label>
+                            </label>{" "}
                             <input
                                 type="password"
                                 value={password}
@@ -115,16 +113,17 @@ const Login = () => {
                                 )}
                                 className="input input-bordered w-full bg-base-100/50 focus:border-primary"
                                 required
-                                disabled={loading}
+                                disabled={submitting || isLoading}
                             />
                         </div>{" "}
                         <div className="form-control mt-6">
+                            {" "}
                             <button
                                 type="submit"
                                 className="btn btn-primary w-full"
-                                disabled={loading}
+                                disabled={submitting || isLoading}
                             >
-                                {loading ? (
+                                {submitting || isLoading ? (
                                     <span className="loading loading-spinner"></span>
                                 ) : (
                                     t("auth.login.loginButton")
